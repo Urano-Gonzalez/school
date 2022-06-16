@@ -17,13 +17,15 @@ class asistenciaController extends Controller{
 
     $this->id  = get_user('id');
     $this->rol = get_user_role();
-
+    /*
     if (!is_admin($this->rol)) {
       Flasher::new(get_notificaciones(), 'danger');
       Redirect::back();
     }
+    */
     }
     function index(){
+      
         $data = 
         [
         'title' => 'Asistencia de alumnos',

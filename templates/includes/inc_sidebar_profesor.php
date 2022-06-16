@@ -25,7 +25,15 @@
 		<a class="nav-link" href="materias/asignadas">
 			<i class="fas fa-fw fa-book"></i>
 			<span>Materias</span></a>
-	</li>
+</li>
+<!-- Nav Item - Lecciones -->
+<!--Nav Item - Asistencia-->
+<li class="nav-item <?php echo $slug === 'asistencia' ? 'active' : null; ?>">
+		<a  class="nav-link" href="asistencia">
+		<i class="fas fa-fwd fa-list-alt"></i>
+		<span>Asistencia</span>
+		</a>
+</li>
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
