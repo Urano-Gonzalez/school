@@ -25,11 +25,14 @@ class asistenciaController extends Controller{
     */
     }
     function index(){
-      
+        $materias = materiaModel::materias_profesor($this->id);
+        json_encode($materias, true);
         $data = 
         [
         'title' => 'Asistencia de alumnos',
-        'slug'  => 'asistencia'
+        'slug'  => 'asistencia',
+        'id_prof' => $this->id,
+        'materias' => $materias
         ];
         
         // Descomentar vista si requerida
