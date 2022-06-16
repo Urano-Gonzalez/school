@@ -6,9 +6,9 @@
     <div class="card-body "  >
         <?php if (!empty($d->id_prof)): ?>
             <div class="form-group">
-                <label for="id_grupo">Selecciona tu materia:</label>
+                <label for="id_grupo">Selecciona tu grupo:</label>
                 <select name="id_grupo" id="id_materia_profe" class="form-control">
-                    <?php foreach ($d->materias as $g): ?>
+                    <?php foreach ($d->grupos->rows as $g): ?>
                     
                       <?php echo sprintf('<option value="%s">%s</option>', $g->id, $g->nombre); ?>
                     <?php endforeach; ?>
@@ -16,12 +16,16 @@
             </div>
         <?php else: ?>
             <div class="form-group">
-                <label for="id_grupo">Selecciona tu materia:</label>
-                <div class="alert alert-danger">No hay materias registradas.</div>
+                <label for="id_grupo">Selecciona tu grupo:</label>
+                <div class="alert alert-danger">No hay grupos.</div>
             </div>
         <?php endif; ?>
-        <?php echo $d->id_prof?>
-        <?php var_dump( $d->materias);?>
+        <!--
+        <?php //echo $d->id_prof?>
+        <?php //var_dump( $d->grupos->rows);?>
+        <?php //echo "<br/>" ?>
+        <?php //var_dump( $d->grupos);?>
+        -->
         <div class="asistencia-div" data-id="<?php echo $d->id_prof ?>"><!-- agregar con ajax la lista de materias --></div>
        
     </div>
