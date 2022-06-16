@@ -56,6 +56,14 @@
 			<span>Lecciones</span></a>
 	</li>
 
+	<!--Nav Item - Asistencia-->
+	<li class="nav-item <?php echo $slug === 'asistencia' ? 'active' : null; ?>">
+		<a  class="nav-link" href="asistencia">
+		<i class="fas fa-fwd fa-list-alt"></i>
+		<span>Asistencia</span>
+		</a>
+	</li>
+
 	<!-- Divider -->
 	<hr class="sidebar-divider d-none d-md-block">
 
