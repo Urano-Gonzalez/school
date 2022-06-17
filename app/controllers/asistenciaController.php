@@ -35,7 +35,7 @@ class asistenciaController extends Controller{
         'slug'  => 'asistencia',
         'id_prof' => $this->id,
         'materias' => $materias,
-        'grupos' => profesorModel::grupos_asignados($this->id)
+        'grupos' => profesorModel::grupos_asignados($this->id),
         ];
         
         // Descomentar vista si requerida

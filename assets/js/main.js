@@ -444,6 +444,81 @@ $(document).ready(function() {
   }
   get_materias_disponibles_profesor();
 
+
+  /** Alumnos por grupo */
+  function primerGrupo(){
+    var id_grupo = $('#id_materia_profe').val();
+
+    var wrapper = $('.wrapper_alumnos'),
+  
+    action      = 'get',
+    hook        = 'bee_hook';
+    // AJAX
+    $.ajax({
+      url: 'ajax/traerAlumnosPorGrupo',
+      type: 'get',
+      dataType: 'json',
+      data : { 
+        '_t': Bee.csrf,
+        id_grupo,
+        action,
+        hook
+      },
+      beforeSend: function() {
+       
+      }
+    }).done(function(res) {
+      console.log("Esta es la respuesta del controller")
+      console.log(res)
+      wrapper.html(res.data);
+    }).fail(function(err) {
+      toastr.error('Hubo un error en la petición88.', '¡Upss!');
+    }).always(function() {
+    
+    })
+    console.log(id_grupo)
+  }
+  primerGrupo();
+
+
+  $("#id_materia_profe").change(function(){
+
+    var id_grupo = $('#id_materia_profe').val();
+
+    var wrapper = $('.wrapper_alumnos'),
+  
+    action      = 'get',
+    hook        = 'bee_hook';
+
+    
+
+    // AJAX
+    $.ajax({
+      url: 'ajax/traerAlumnosPorGrupo',
+      type: 'get',
+      dataType: 'json',
+      data : { 
+        '_t': Bee.csrf,
+        id_grupo,
+        action,
+        hook
+      },
+      beforeSend: function() {
+       
+      }
+    }).done(function(res) {
+      console.log("Esta es la respuesta del controller")
+      console.log(res)
+      wrapper.html(res.data);
+    }).fail(function(err) {
+      toastr.error('Hubo un error en la petición.', '¡Upss!');
+    }).always(function() {
+    
+    })
+    console.log(id_grupo)
+});
+  /** Fin alumnos por grupo*/
+
   // Función para cargar las materias del profesor
   function get_materias_profesor() {
 
@@ -1343,3 +1418,15 @@ $(document).ready(function() {
     })
   }
 });
+
+function capturarAsistencia(){
+  console.log("Capturar Asistencia")
+  $("#capturar-asistencia").show();
+  $("#consultar-asistencia").hide();
+}
+
+function consultarAsistencia(){
+  console.log("Consultar Asistencia")
+  $("#capturar-asistencia").hide();
+  $("#consultar-asistencia").show();
+}

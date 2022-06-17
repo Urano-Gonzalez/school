@@ -316,6 +316,23 @@ class ajaxController extends Controller {
     }
   }
 
+
+  /** Traer alumnos */
+
+  function traerAlumnosPorGrupo(){
+    $id =$_GET["id_grupo"];
+    
+    $alumnos  = grupoModel::alumnos_asignados($id);
+    $html     = get_module('grupos/asistencias', $alumnos);
+    json_output(json_build(200, $html));
+    
+    
+    }
+
+  /** Fin */
+
+
+
   function add_materia_profesor()
   {
     try {
