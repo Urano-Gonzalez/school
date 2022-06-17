@@ -1437,5 +1437,13 @@ function accionAsistencia(status){
 /** Guardar reporte */
 function guardarReporte(){
   console.log("Guardar reporte")
+ 
+  let list = document.querySelector('#lista-items').getElementsByTagName('li');
+  [].forEach.call(list, element => {
+    console.log(element.name)
+  });
+
+
+  console.log(list)
 }
 /** Fin Guardar reporte */

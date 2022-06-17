@@ -37,7 +37,7 @@
         <div class="wrapper_alumnos" ><!--  agregar con ajax la lista de materias --></div>
         <br>
         <div class="boton-guardar-reporte">
-            <button class="btn btn-success" onClick="guardarReporte();" type="button">Guardar asistencia</button>
+            <button class="btn btn-success" form="guardar-asistencia-form" onClick="guardarReporte();" type="button">Guardar asistencia</button>
         </div>
     </div>
     <!--Fin vista asistencia-->
