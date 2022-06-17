@@ -334,7 +334,7 @@ class ajaxController extends Controller {
     $id =$_GET['dataCheck']['id_grupo'];
     $json_check =$_GET['dataCheck']['json_check'];
     $json_check=  json_encode($json_check);
-    $fecha = date('Y-m-d H:i:s');
+    $fecha = date('Y-m-d');
     // Reiniciar tabla usuarios
     $sql = "INSERT INTO reportes_asistencias(fecha_reporte,id_grupo,json_check) VALUES ('$fecha',$id,'$json_check')";
     //
