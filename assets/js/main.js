@@ -1496,8 +1496,8 @@ function guardarReporte(){
       }
     }).done(function(res) {
       console.log("Esta es la respuesta del controller")
-      console.log(res)
-      
+      console.log(res.data)
+      toastr.success('Todo salio bien', 'Done');
     }).fail(function(err) {
       toastr.error('Hubo un error en la petición88.', '¡Upss!');
     }).always(function() {
