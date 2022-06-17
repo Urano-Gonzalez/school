@@ -5,8 +5,8 @@
     </div>
 
     <div class="card-body">
-        <button class="btn btn-success" onClick="capturarAsistencia();" type="button">Capturar Asistencia</button>
-        <button class="btn btn-success" onClick="consultarAsistencia();" type="button">Consultar reporte de asistencia</button>
+        <button class="btn btn-success" onClick="accionAsistencia(true);" type="button">Capturar Asistencia</button>
+        <button class="btn btn-success" onClick="accionAsistencia(false);" type="button">Consultar reporte de asistencia</button>
     </div>
 
     <!--Vista capturar asistencia-->

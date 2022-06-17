@@ -1419,14 +1419,13 @@ $(document).ready(function() {
   }
 });
 
-function capturarAsistencia(){
-  console.log("Capturar Asistencia")
-  $("#capturar-asistencia").show();
-  $("#consultar-asistencia").hide();
-}
-
-function consultarAsistencia(){
-  console.log("Consultar Asistencia")
-  $("#capturar-asistencia").hide();
-  $("#consultar-asistencia").show();
+function accionAsistencia(status){
+  console.log(status)
+  if(status == true){
+    $("#capturar-asistencia").show();
+    $("#consultar-asistencia").hide();
+  }else{
+    $("#capturar-asistencia").hide();
+    $("#consultar-asistencia").show();
+  }
 }
