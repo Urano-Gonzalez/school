@@ -1419,6 +1419,9 @@ $(document).ready(function() {
   }
 });
 
+
+/** Funciones para las vistas */
+/** Vistas nav */
 function accionAsistencia(status){
   console.log(status)
   if(status == true){
@@ -1429,3 +1432,10 @@ function accionAsistencia(status){
     $("#consultar-asistencia").show();
   }
 }
+/** Fin vistas */
+
+/** Guardar reporte */
+function guardarReporte(){
+  console.log("Guardar reporte")
+}
+/** Fin Guardar reporte */

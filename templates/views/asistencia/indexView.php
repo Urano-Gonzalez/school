@@ -5,13 +5,12 @@
     </div>
 
     <div class="card-body">
-        <button class="btn btn-success" onClick="accionAsistencia(true);" type="button">Capturar Asistencia</button>
-        <button class="btn btn-success" onClick="accionAsistencia(false);" type="button">Consultar reporte de asistencia</button>
+        <button class="btn btn-info" onClick="accionAsistencia(true);" type="button">Capturar Asistencia</button>
+        <button class="btn btn-info" onClick="accionAsistencia(false);" type="button">Consultar reporte de asistencia</button>
     </div>
 
     <!--Vista capturar asistencia-->
     <div class="card-body " id="capturar-asistencia" style="display:none;" >
-        <span>Vista Capturar asistencia</span>
         <?php if (!empty($d->id_prof)): ?>
             <div class="form-group">
                 <label for="id_grupo">Selecciona tu grupo:</label>
@@ -37,8 +36,8 @@
         <div class="asistencia-div" data-id="<?php echo $d->id_prof ?>"><!-- agregar con ajax la lista de materias --></div>
         <div class="wrapper_alumnos" ><!--  agregar con ajax la lista de materias --></div>
         <br>
-        <div>
-        <a class="btn btn-success btn-sm" href="lecciones/agregar?hook=aprende&amp;action=doing-task&amp;id_materia=5"><i class="fas fa-plus"></i> Guardar </a>
+        <div class="boton-guardar-reporte">
+            <button class="btn btn-success" onClick="guardarReporte();" type="button">Guardar asistencia</button>
         </div>
     </div>
     <!--Fin vista asistencia-->
@@ -46,6 +45,28 @@
     <!--Vista consultar reporte asitencia-->
     <div class="card-body" id="consultar-asistencia" style="display:none;">
         Consultar Reporte Asistencia
+        <?php if (!empty($d->id_prof)): ?>
+            <div class="form-group">
+                <label for="id_grupo">Selecciona tu grupo:</label>
+                <select name="id_grupo" id="id_materia_profe" class="form-control">
+                    <?php foreach ($d->grupos->rows as $g): ?>
+                    
+                      <?php echo sprintf('<option value="%s">%s</option>', $g->id, $g->nombre); ?>
+                    <?php endforeach; ?>
+                  </select>
+            </div>
+            <div class="form-group">
+                <input type="date" class="form-control">
+            </div>
+            <div class="form-group boton-consultar-reporte">
+                <button class="btn btn-success" onClick="consultarReporte();" type="button">Consultar reporte de asistencia</button>
+            </div>
+        <?php else: ?>
+            <div class="form-group">
+                <label for="id_grupo">Selecciona tu grupo:</label>
+                <div class="alert alert-danger">No hay grupos.</div>
+            </div>
+        <?php endif; ?>
     </div>
     <!--Fin vista consultar reporte asistencia-->
 </div>
