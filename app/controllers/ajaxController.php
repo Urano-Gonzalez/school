@@ -330,6 +330,13 @@ class ajaxController extends Controller {
     }
 
   /** Fin */
+  function insertarCheck(){
+    $id =$_GET['dataCheck']['id_grupo'];
+    $json_check =$_GET['dataCheck']['json_check'];
+    $json_check=  json_encode($json_check);
+    echo $json_check;
+    
+  }
 
 
 
@@ -633,6 +640,9 @@ class ajaxController extends Controller {
       json_output(json_build(400, null, $e->getMessage()));
     }
   }
+ 
+
+
 
   function remover_suspension_alumno()
   {
@@ -826,4 +836,8 @@ class ajaxController extends Controller {
       json_output(json_build(400, null, $e->getMessage()));
     }
   }
+
+  
+
+
 }

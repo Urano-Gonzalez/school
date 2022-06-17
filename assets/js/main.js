@@ -1436,14 +1436,78 @@ function accionAsistencia(status){
 
 /** Guardar reporte */
 function guardarReporte(){
-  console.log("Guardar reporte")
+ //Crear array de chesks
+  let array_check = [];
  
-  let list = document.querySelector('#lista-items').getElementsByTagName('li');
-  [].forEach.call(list, element => {
-    console.log(element.name)
+  let lista = document.querySelector('#lista-items').getElementsByTagName('li');
+  [].forEach.call(lista, element => {
+   
+    id_buscar= "name-"+element.id;
+    let nombre_usuario = document.getElementById(id_buscar);
+
+    checkbox_buscar = "check_asistencia-"+element.id;
+    let checkbox_asistencia = document.getElementById(checkbox_buscar);
+    
+
+    if (checkbox_asistencia.checked == true){
+      array_check.push({"id":element.id, "name":nombre_usuario.value, "status":1})
+    }else{
+      array_check.push({"id":element.id, "name":nombre_usuario.value, "status":0})
+    }
   });
+  
+
+  // traer id_de grupo
+  var select = document.getElementById('id_materia_profe');
+ 
+
+  /**Array completo para mandar*/
+   dataCheck = {
+    "id_grupo": select.value,
+    "json_check": array_check
+
+  }
+  csrf = Bee.csrf;
+  console.log(csrf)
+
+  $.ajaxSetup({ 
+    headers: { 'X-CSRF-TOKEN': csrf } }); 
+  // Ajax
+
+  // Ajax con get
 
 
-  console.log(list)
+  
+    action      = 'get',
+    hook        = 'bee_hook';
+    // AJAX
+    $.ajax({
+      url: 'ajax/insertarCheck',
+      type: 'get',
+      dataType: 'json',
+      data : { 
+        '_t': Bee.csrf,
+        dataCheck,
+        action,
+        hook
+      },
+      beforeSend: function() {
+       
+      }
+    }).done(function(res) {
+      console.log("Esta es la respuesta del controller")
+      console.log(res)
+      
+    }).fail(function(err) {
+      toastr.error('Hubo un error en la petición88.', '¡Upss!');
+    }).always(function() {
+    
+    })
+   
+  console.log("Array a mandar")
+  
+  
+ 
+ 
 }
 /** Fin Guardar reporte */

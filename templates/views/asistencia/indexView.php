@@ -16,7 +16,7 @@
                 <label for="id_grupo">Selecciona tu grupo:</label>
                 <select name="id_grupo" id="id_materia_profe" class="form-control">
                     <?php foreach ($d->grupos->rows as $g): ?>
-                    
+                      
                       <?php echo sprintf('<option value="%s">%s</option>', $g->id, $g->nombre); ?>
                     <?php endforeach; ?>
                   </select>
