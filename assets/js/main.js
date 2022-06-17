@@ -1511,3 +1511,17 @@ function guardarReporte(){
  
 }
 /** Fin Guardar reporte */
+
+/** Consultar reporte */
+function consultarReporte(){
+  var select = document.getElementById('id_grupo_profe');
+  let id_grupo = select.value;
+
+  let fecha = document.getElementById("fecha_consulta").value;
+
+  console.log("consultar reporte")
+  console.log(id_grupo)
+  console.log(fecha)
+}
+
+/** Fin consultar reporte */

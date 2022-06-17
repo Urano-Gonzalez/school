@@ -46,21 +46,23 @@
     <div class="card-body" id="consultar-asistencia" style="display:none;">
         Consultar Reporte Asistencia
         <?php if (!empty($d->id_prof)): ?>
-            <div class="form-group">
-                <label for="id_grupo">Selecciona tu grupo:</label>
-                <select name="id_grupo" id="id_materia_profe" class="form-control">
-                    <?php foreach ($d->grupos->rows as $g): ?>
-                    
-                      <?php echo sprintf('<option value="%s">%s</option>', $g->id, $g->nombre); ?>
-                    <?php endforeach; ?>
-                  </select>
-            </div>
-            <div class="form-group">
-                <input type="date" class="form-control">
-            </div>
-            <div class="form-group boton-consultar-reporte">
-                <button class="btn btn-success" onClick="consultarReporte();" type="button">Consultar reporte de asistencia</button>
-            </div>
+            <form id="form-consultar-reporte" method="Post">
+                <div class="form-group">
+                    <label for="id_grupo">Selecciona tu grupo:</label>
+                    <select name="id_grupo" id="id_grupo_profe" class="form-control">
+                        <?php foreach ($d->grupos->rows as $g): ?>
+                        
+                        <?php echo sprintf('<option value="%s">%s</option>', $g->id, $g->nombre); ?>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" id="fecha_consulta">
+                </div>
+                <div class="form-group boton-consultar-reporte">
+                    <button class="btn btn-success" onClick="consultarReporte();" type="button">Consultar reporte de asistencia</button>
+                </div>
+            </form>
         <?php else: ?>
             <div class="form-group">
                 <label for="id_grupo">Selecciona tu grupo:</label>
