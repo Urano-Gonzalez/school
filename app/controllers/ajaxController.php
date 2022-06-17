@@ -343,6 +343,11 @@ class ajaxController extends Controller {
     
   }
 
+  function traerCheck(){
+    $fecha =$_GET['dataCheck']['fecha'];
+    json_output(json_build(200, $fecha));
+  }
+
 
 
   function add_materia_profesor()

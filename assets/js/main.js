@@ -1522,6 +1522,43 @@ function consultarReporte(){
   console.log("consultar reporte")
   console.log(id_grupo)
   console.log(fecha)
+  // Peticion Ajax
+  csrf = Bee.csrf;
+  console.log(csrf)
+  dataCheck = {
+    "id_grupo": id_grupo,
+    "fecha": fecha
+  }
+  $.ajaxSetup({ 
+    headers: { 'X-CSRF-TOKEN': csrf } }); 
+  // Ajax
+
+  
+    action      = 'get',
+    hook        = 'bee_hook';
+    // AJAX
+    $.ajax({
+      url: 'ajax/traerCheck',
+      type: 'get',
+      dataType: 'json',
+      data : { 
+        '_t': Bee.csrf,
+        dataCheck,
+        action,
+        hook
+      },
+      beforeSend: function() {
+       
+      }
+    }).done(function(res) {
+      console.log("Esta es la respuesta del controller")
+      console.log(res.data)
+      toastr.success('Todo salio bien', 'Done');
+    }).fail(function(err) {
+      toastr.error('Hubo un error en la petición88.', '¡Upss!');
+    }).always(function() {
+    
+    })
 }
 
 /** Fin consultar reporte */
