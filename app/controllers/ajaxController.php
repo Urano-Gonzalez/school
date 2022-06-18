@@ -345,7 +345,12 @@ class ajaxController extends Controller {
 
   function traerCheck(){
     $fecha =$_GET['dataCheck']['fecha'];
-    json_output(json_build(200, $fecha));
+    $id_grupo = $_GET['dataCheck']['id_grupo'];
+    $sql = "SELECT * FROM reportes_asistencias WHERE id_grupo = $id_grupo AND fecha_reporte = '$fecha'";
+    $reporte = Model::query($sql, [], ['transaction' => false]);
+
+
+    json_output(json_build(200, $reporte[0]));
   }
 
 
