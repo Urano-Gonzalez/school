@@ -350,7 +350,7 @@ class ajaxController extends Controller {
     $reporte = Model::query($sql, [], ['transaction' => false]);
 
 
-    json_output(json_build(200, $reporte[0]));
+    json_output(json_build(200, $reporte[0]['json_check']));
   }
 
 
