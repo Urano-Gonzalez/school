@@ -13,6 +13,9 @@
     <div class="card-body " id="capturar-asistencia" style="display:none;" >
         <?php if (!empty($d->id_prof)): ?>
             <div class="form-group">
+                    <b>Fecha: <?php echo(date('d-m-Y')); ?> </b>
+            </div>
+            <div class="form-group">
                 <label for="id_grupo">Selecciona tu grupo:</label>
                 <select name="id_grupo" id="id_materia_profe" class="form-control">
                     <?php foreach ($d->grupos->rows as $g): ?>
@@ -44,9 +47,12 @@
 
     <!--Vista consultar reporte asitencia-->
     <div class="card-body" id="consultar-asistencia" style="display:none;">
-        Consultar Reporte Asistencia
+        
         <?php if (!empty($d->id_prof)): ?>
             <form id="form-consultar-reporte" method="Post">
+                <div class="form-group">
+                    <b>Fecha: <?php echo(date('d-m-Y')); ?> </b>
+                </div>
                 <div class="form-group">
                     <label for="id_grupo">Selecciona tu grupo:</label>
                     <select name="id_grupo" id="id_grupo_profe" class="form-control">
