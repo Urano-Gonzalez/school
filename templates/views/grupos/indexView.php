@@ -13,7 +13,7 @@
 						<tr>
 							<th width="5%">#</th>
 							<th>Nombre</th>
-							<th>Horario</th>
+							<!--<th>Horario</th>-->
 							<th width="10%">Acción</th>
 						</tr>
 					</thead>
@@ -22,6 +22,7 @@
 							<tr>
 								<td><?php echo sprintf('<a href="grupos/ver/%s">%s</a>', $g->id, $g->numero); ?></td>
 								<td><?php echo add_ellipsis($g->nombre, 50); ?></td>
+								<!--
 								<td>
 									<?php if (is_file(UPLOADS.$g->horario)): ?>
 										<a href="<?php echo get_uploaded_image($g->horario); ?>" data-lightbox="<?php echo $g->numero; ?>" title="<?php echo sprintf('Horario del grupo %s', $g->nombre); ?>">
@@ -31,6 +32,7 @@
 										<small class="text-muted">No existe el horario.</small>
 									<?php endif; ?>
 								</td>
+									-->
 								<td>
 									<div class="btn-group">
 										<a href="<?php echo 'grupos/ver/'.$g->id; ?>" class="btn btn-sm btn-success"><i class="fas fa-eye"></i></a>

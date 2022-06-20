@@ -50,11 +50,13 @@
 	</li>
 
 	<!-- Nav Item - Lecciones -->
+	<!--
 	<li class="nav-item <?php echo $slug === 'lecciones' ? 'active' : null; ?>">
 		<a class="nav-link" href="lecciones">
 			<i class="fas fa-fw fa-chalkboard-teacher"></i>
 			<span>Lecciones</span></a>
 	</li>
+-->
 
 	<!--Nav Item - Asistencia-->
 	<li class="nav-item <?php echo $slug === 'asistencia' ? 'active' : null; ?>">
