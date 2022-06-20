@@ -1430,6 +1430,7 @@ function accionAsistencia(status){
   }else{
     $("#capturar-asistencia").hide();
     $("#consultar-asistencia").show();
+    $("#tabla").hide();
   }
 }
 /** Fin vistas */
@@ -1558,10 +1559,34 @@ function consultarReporte(){
       }
     }).done(function(res) {
       console.log("Esta es la respuesta del controller")
-      console.log(res.data)
+      //console.log(res.data)
+  
+      $("#tabla").show();
+    //console.log(DatosJson);
+   
+    var jsonReporte = JSON.parse(res.data)
+
+    
+    
+
+
+    for (x of jsonReporte){
+      console.log(x.name)
+      
+    $("#tabla").append('<tr>' + 
+        '<td  style="dislay: none;">' + x.name + '</td>'+
+        '<td  style="dislay: none;">' + x.status + '</td>'
+        );
+        
+    }
+    $('#vista-reporte').append(' <button class="btn btn-success" id="boton-descargar" onClick="consultarReporte();" type="button">Descargar reporte</button>');
+
+
       toastr.success('Todo salio bien', 'Done');
     }).fail(function(err) {
-      toastr.error('Hubo un error en la petición88.', '¡Upss!');
+      toastr.error('No se encontro reporte en la fecha seleccionada.', '¡Upss!');
+      $("#tabla").hide();
+      $("#boton-descargar").hide();
     }).always(function() {
     
     })

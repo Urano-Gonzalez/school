@@ -69,6 +69,23 @@
                     <button class="btn btn-success" onClick="consultarReporte();" type="button">Consultar reporte de asistencia</button>
                 </div>
             </form>
+            <div class="mostrarReporte" id="vista-reporte" >
+                <table class="table table-bordered" id="tabla" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							
+							<th>Nombre</th>
+							<th>Status</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+					
+					</tbody>
+                   
+				</table>
+                
+            </div>
         <?php else: ?>
             <div class="form-group">
                 <label for="id_grupo">Selecciona tu grupo:</label>
