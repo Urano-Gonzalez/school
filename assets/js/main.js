@@ -1491,6 +1491,12 @@ function guardarReporte(){
 
 /** Consultar reporte */
 function consultarReporte(){
+  $elemento = document.getElementById('cuerpo-tabla');
+  $elemento.innerHTML = "";
+  $elemento_boton = document.getElementById('contenedor-boton');
+  $elemento_boton.innerHTML = "";
+  
+ 
   var select = document.getElementById('id_grupo_profe');
   let id_grupo = select.value;
 
@@ -1542,14 +1548,15 @@ function consultarReporte(){
 
     for (x of jsonReporte){
       console.log(x.name)
-      
-    $("#tabla").append('<tr>' + 
-        '<td  style="dislay: none;">' + x.name + '</td>'+
-        '<td  style="dislay: none;">' + x.status + '</td>'
-        );
+    if(x.status == 1){
+      $("#tabla").append('<tr>' + '<td  style="dislay: none;">' + x.name + '</td>' + '<td  style="dislay: none;">' + x.status +' <i class="fas fa-check-square"></i>'+ '</td>');
+    }else{
+      $("#tabla").append('<tr>' + '<td  style="dislay: none;">' + x.name + '</td>' + '<td  style="dislay: none;">' + x.status +' <i class="fa fa-times" aria-hidden="true"></i>'+ '</td>');
+    }
+    
         
     }
-    $('#vista-reporte').append(' <button class="btn btn-success" id="boton-descargar" onClick="exportTableToExcel();" type="button">Descargar reporte</button>');
+    $('#contenedor-boton').append(' <button class="btn btn-success" id="boton-descargar" onClick="exportTableToExcel();" type="button">Descargar reporte</button>');
 
 
       toastr.success('Todo salio bien', 'Done');
@@ -1572,9 +1579,9 @@ function exportTableToExcel (filename = ''){
   var dataType = 'application/vnd.ms-excel';
   var tableSelect = document.getElementById('tabla');
   var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
-  
+  var date = new Date();
   // Specify file name
-  filename = filename?filename+'.xls':'excel_data.xls';
+  filename = filename?filename+'.xls':'reporte'+date.toDateString()+'.xls';
   
   // Create download link element
   downloadLink = document.createElement("a");

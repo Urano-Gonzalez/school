@@ -79,12 +79,14 @@
 							
 						</tr>
 					</thead>
-					<tbody>
+					<tbody id="cuerpo-tabla">
 					
 					</tbody>
                    
 				</table>
-                
+                <div class="contenedor-boton" id="contenedor-boton">
+
+                </div>
             </div>
         <?php else: ?>
             <div class="form-group">
