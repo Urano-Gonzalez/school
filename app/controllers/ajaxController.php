@@ -335,11 +335,24 @@ class ajaxController extends Controller {
     $json_check =$_GET['dataCheck']['json_check'];
     $json_check=  json_encode($json_check);
     $fecha = date('Y-m-d');
-    // Reiniciar tabla usuarios
-    $sql = "INSERT INTO reportes_asistencias(fecha_reporte,id_grupo,json_check) VALUES ('$fecha',$id,'$json_check')";
+    $verificarReporteExiste = "SELECT EXISTS (SELECT * FROM reportes_asistencias WHERE fecha_reporte='$fecha' AND id_grupo='$id')";
+    
+    $statusReporte = Model::query($verificarReporteExiste, [], ['transaction' => false]);
+    
+    
+    $estatusDelReporte = $statusReporte[0]["EXISTS (SELECT * FROM reportes_asistencias WHERE fecha_reporte='$fecha' AND id_grupo='$id')"];
+    
+
+    if($estatusDelReporte == 0){
+      $sql = "INSERT INTO reportes_asistencias(fecha_reporte,id_grupo,json_check) VALUES ('$fecha',$id,'$json_check')";
     //
-    Model::query($sql, [], ['transaction' => false]);
-    json_output(json_build(200, $sql));
+      Model::query($sql, [], ['transaction' => false]);
+      json_output(json_build(200, $sql));
+    }else{
+      $existe = "El reporte ya fue registrado";
+      json_output(json_build(201, $existe));
+    }
+    
     
   }
 

@@ -1497,7 +1497,13 @@ function guardarReporte(){
     }).done(function(res) {
       console.log("Esta es la respuesta del controller")
       console.log(res.data)
-      toastr.success('Todo salio bien', 'Done');
+      if(res.status === 200){
+        toastr.success('Reporte ingresado', 'Done');
+      }
+     
+      if(res.status === 201){
+        toastr.error('Reporte capturado.', '¡Upss!');
+      }
     }).fail(function(err) {
       toastr.error('Hubo un error en la petición88.', '¡Upss!');
     }).always(function() {
