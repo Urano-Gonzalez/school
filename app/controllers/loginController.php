@@ -83,11 +83,11 @@ class loginController extends Controller {
   
       // Información del usuario loggeado, simplemente se puede reemplazar aquí con un query a la base de datos
       // para cargar la información del usuario si es existente 
-      /* 
+      
       if (!password_verify($password.AUTH_SALT, $user['password'])) {
         throw new Exception('Las credenciales no son correctas.');
       }
-      */
+      
 
       // Validar el status del usuario
       if ($user['status'] === 'pendiente') {
