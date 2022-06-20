@@ -446,40 +446,8 @@ $(document).ready(function() {
 
 
   /** Alumnos por grupo */
-  function primerGrupo(){
-    var id_grupo = $('#id_materia_profe').val();
-
-    var wrapper = $('.wrapper_alumnos'),
-  
-    action      = 'get',
-    hook        = 'bee_hook';
-    // AJAX
-    $.ajax({
-      url: 'ajax/traerAlumnosPorGrupo',
-      type: 'get',
-      dataType: 'json',
-      data : { 
-        '_t': Bee.csrf,
-        id_grupo,
-        action,
-        hook
-      },
-      beforeSend: function() {
-       
-      }
-    }).done(function(res) {
-      console.log("Esta es la respuesta del controller")
-      console.log(res)
-      wrapper.html(res.data);
-    }).fail(function(err) {
-      toastr.error('Hubo un error en la petición88.', '¡Upss!');
-    }).always(function() {
-    
-    })
-    console.log(id_grupo)
-  }
-  primerGrupo();
-
+ 
+ 
 
   $("#id_materia_profe").change(function(){
 
@@ -1427,6 +1395,7 @@ function accionAsistencia(status){
   if(status == true){
     $("#capturar-asistencia").show();
     $("#consultar-asistencia").hide();
+    primerGrupo();
   }else{
     $("#capturar-asistencia").hide();
     $("#consultar-asistencia").show();
@@ -1437,6 +1406,7 @@ function accionAsistencia(status){
 
 /** Guardar reporte */
 function guardarReporte(){
+ 
  //Crear array de chesks
   let array_check = [];
  
@@ -1579,7 +1549,7 @@ function consultarReporte(){
         );
         
     }
-    $('#vista-reporte').append(' <button class="btn btn-success" id="boton-descargar" onClick="consultarReporte();" type="button">Descargar reporte</button>');
+    $('#vista-reporte').append(' <button class="btn btn-success" id="boton-descargar" onClick="exportTableToExcel();" type="button">Descargar reporte</button>');
 
 
       toastr.success('Todo salio bien', 'Done');
@@ -1593,3 +1563,70 @@ function consultarReporte(){
 }
 
 /** Fin consultar reporte */
+function descargarReporte(){
+  console.log('Descargar Reporte')
+}
+
+function exportTableToExcel (filename = ''){
+  var downloadLink;
+  var dataType = 'application/vnd.ms-excel';
+  var tableSelect = document.getElementById('tabla');
+  var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+  
+  // Specify file name
+  filename = filename?filename+'.xls':'excel_data.xls';
+  
+  // Create download link element
+  downloadLink = document.createElement("a");
+  
+  document.body.appendChild(downloadLink);
+  
+  if(navigator.msSaveOrOpenBlob){
+      var blob = new Blob(['ufeff', tableHTML], {
+          type: dataType
+      });
+      navigator.msSaveOrOpenBlob( blob, filename);
+  }else{
+      // Create a link to the file
+      downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+  
+      // Setting the file name
+      downloadLink.download = filename;
+      
+      //triggering the function
+      downloadLink.click();
+  }
+}
+
+function primerGrupo(){
+  var id_grupo = $('#id_materia_profe').val();
+
+  var wrapper = $('.wrapper_alumnos'),
+
+  action      = 'get',
+  hook        = 'bee_hook';
+  // AJAX
+  $.ajax({
+    url: 'ajax/traerAlumnosPorGrupo',
+    type: 'get',
+    dataType: 'json',
+    data : { 
+      '_t': Bee.csrf,
+      id_grupo,
+      action,
+      hook
+    },
+    beforeSend: function() {
+     
+    }
+  }).done(function(res) {
+    console.log("Esta es la respuesta del controller")
+    console.log(res)
+    wrapper.html(res.data);
+  }).fail(function(err) {
+    toastr.error('Hubo un error en la petición88.', '¡Upss!');
+  }).always(function() {
+  
+  })
+  console.log(id_grupo)
+}
