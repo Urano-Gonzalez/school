@@ -69,7 +69,27 @@
           </div>
       </div>
     </div>
+    <!--/ fin de primera card-->
   </div>
+  <!-- Card Form completo-->
+  <div class="col-xl-6 col-md-6 col-12">
+    <!--Card completar data-->
+    <div class="card shadow mb-4">
+      <a href="#alumno_data_completa" class="d-block card-header py-3" data-toggle="collapse"
+            role="button" aria-expanded="true" aria-controls="alumno_data_completa">
+            <h6 class="m-0 font-weight-bold text-primary">Completar registro</h6>
+      </a> 
+      <!--Contenido de card-->
+      <div class="collapse show" id="alumno_data_completa">
+         <div class="card-body">
+          <form action="alumnos/post_completar" method="post"></form>
+         </div>
+      </div>
+      <!--./Fin Contenido de card-->
+    </div>
+    <!--Fin card completar-->
+  </div>
+  <!-- ./ fin card-->
 </div>
 
 <?php require_once INCLUDES.'inc_footer.php'; ?>
