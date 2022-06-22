@@ -77,12 +77,53 @@
     <div class="card shadow mb-4">
       <a href="#alumno_data_completa" class="d-block card-header py-3" data-toggle="collapse"
             role="button" aria-expanded="true" aria-controls="alumno_data_completa">
-            <h6 class="m-0 font-weight-bold text-primary">Completar registro</h6>
+            <h6 class="m-0 font-weight-bold text-primary">REGISTRO DE LA PERSONA BENEFICIARIA DEL INEA</h6>
       </a> 
       <!--Contenido de card-->
-      <div class="collapse show" id="alumno_data_completa">
+      <div class="collapse" id="alumno_data_completa">
          <div class="card-body">
-          <form action="alumnos/post_completar" method="post"></form>
+          <form action="alumnos/post_completar" method="post">
+            <?php echo insert_inputs(); ?>
+            <input type="hidden" name="id" value="<?php echo $d->a->id; ?>" required>
+
+            <div class="form-group">
+              <label for="coordinacion-zona">Coordinación de zona</label>
+              <input type="text" class="form-control" id="numero-zona" name="numero-zona" placeholder="Número de zona">
+              <br>
+              <input type="text" class="form-control" id="nombre-zona" name="nombre-zona" placeholder="Nombre de zona">
+            </div>
+            <div class="form-group">
+                <label for="fecha-registro">FECHA DEL REGISTRO</label>
+                <input type="date" class="form-control" id="fecha-registro" name="fecha-registro" placeholder="Fecha de registro">
+            </div>
+            <div class="form-group text-lg-left">
+              <label for="incorporacion"><input type="radio"  name="check-option" id="incorporacion"> Incorporación</label>
+              <label for="reincorporacion"><input type="radio"  name="check-option" id="reincorporacion"> Reincorporación</label>
+              <label for="registro-sasa"><input type="radio"  name="check-option" id="registro-sasa"> Registro en SASA</label>
+              <label for="registro-siga"><input type="radio"  name="check-option" id="registro-siga"> Registro en SIGA</label>
+            </div>
+            <!--Div de datos generales-->
+            <div class="datos-generales">
+                <div class="form-group">
+                  <label for="datos-generales"><b>Datos generales:</b></label>
+                </div>
+                <div class="form-group">
+                  <label for="apellidos">Apellidos:</label>
+                  <input type="text" class="form-control" name="primer-apellido" id="primer-apellido" placeholder="Primer Apellido">
+                  <br>
+                  <input type="text" class="form-control" name="segundo-apellido" id="segundo-apellido" placeholder="Segundo Apellido">
+                </div>
+                <div class="form-group">
+                  <label for="nombres">Nombre(s):</label>
+                  <input type="text" class="form-control" name="nombres" id="nombres" placeholder="Nombre(s)">
+                </div>
+                <div class="form-group">
+                  <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+                  <input type="date" class="form-control" name="fecha-nacimiento" id="fecha-nacimiento">
+                </div>
+            </div>
+            <!--./ Fin Div de datos generales-->
+          </form>
          </div>
       </div>
       <!--./Fin Contenido de card-->
