@@ -88,88 +88,94 @@
             <?php echo insert_inputs(); ?>
             <input type="hidden" name="id" value="<?php echo $d->a->id; ?>" required>
 
-            <div class="form-group">
-              <label for="coordinacion-zona">Coordinación de zona</label>
-              <input type="text" class="form-control" id="numero-zona" name="numero-zona" placeholder="Número de zona">
+            <div class="form-group coordinacion-zona">
+              <label for="coordinacion-zona">Coordinación de zona: </label>
+              <input type="text" class="form-control col-4 " id="numero-zona" name="numero-zona" placeholder="Número de zona">
               <br>
-              <input type="text" class="form-control" id="nombre-zona" name="nombre-zona" placeholder="Nombre de zona">
+              <input type="text" class="form-control col-4" id="nombre-zona" name="nombre-zona" placeholder="Nombre de zona">
             </div>
-            <div class="form-group">
+            <div class="form-group fecha-registro">
                 <label for="fecha-registro">FECHA DEL REGISTRO</label>
-                <input type="date" class="form-control" id="fecha-registro" name="fecha-registro" placeholder="Fecha de registro">
+                <input type="date" class="form-control col-4" id="fecha-registro" name="fecha-registro" placeholder="Fecha de registro">
             </div>
             <div class="form-group text-lg-left">
-              <label for="incorporacion"><input type="radio"  name="check-option" id="incorporacion"> Incorporación</label>
-              <label for="reincorporacion"><input type="radio"  name="check-option" id="reincorporacion"> Reincorporación</label>
-              <label for="registro-sasa"><input type="radio"  name="check-option" id="registro-sasa"> Registro en SASA</label>
-              <label for="registro-siga"><input type="radio"  name="check-option" id="registro-siga"> Registro en SIGA</label>
+              <label for="incorporacion"><input type="radio"  name="check-option" id="incorporacion"><b> Incorporación</b></label>
+              <label for="reincorporacion"><input type="radio"  name="check-option" id="reincorporacion"><b> Reincorporación</b></label>
+              <label for="registro-sasa"><input type="radio"  name="check-option" id="registro-sasa"><b> Registro en SASA</b></label>
+              <label for="registro-siga"><input type="radio"  name="check-option" id="registro-siga"><b> Registro en SIGA</b></label>
             </div>
             <!--Div de datos generales-->
             <div class="datos-generales">
                 <div class="form-group">
                   <label for="datos-generales"><b>Datos generales:</b></label>
                 </div>
-                <div class="form-group">
+                <div class="form-group apellidos">
                   <label for="apellidos">Apellidos:</label>
                   <input type="text" class="form-control" name="primer-apellido" id="primer-apellido" placeholder="Primer Apellido">
                   <br>
                   <input type="text" class="form-control" name="segundo-apellido" id="segundo-apellido" placeholder="Segundo Apellido">
                 </div>
-                <div class="form-group">
+                <div class="form-group nombre">
                   <label for="nombres">Nombre(s):</label>
                   <input type="text" class="form-control" name="nombres" id="nombres" placeholder="Nombre(s)">
                 </div>
-                <div class="form-group">
-                  <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
-                  <input type="date" class="form-control" name="fecha-nacimiento" id="fecha-nacimiento">
+                <div class="fecha-rfe">
+                  <div class="form-group">
+                    <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" class="form-control" name="fecha-nacimiento" id="fecha-nacimiento">
+                  </div>
+                  <div class="form-group">
+                    <label for="rfe">RFE:</label>
+                    <input type="text" class="form-control" name="rfe" id="rfe" placeholder="RFE">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="rfe">RFE:</label>
-                  <input type="text" class="form-control" name="rfe" id="rfe" placeholder="RFE">
-                </div>
+                
                 <hr>
-                <div class="form-group">
-                  <label for="nacionalidad">Nacionalidad:</label>
-                  <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad">
+                <div class="nacionalidad">
+                  <div class="form-group">
+                    <label for="nacionalidad">Nacionalidad:</label>
+                    <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad">
+                  </div>
+                  <div class="form-group">
+                    <label for="entidad-nacimiento">Entidad de nacimiento:</label>
+                    <input type="text" class="form-control" name="entidad-nacimiento" id="entidad-nacimiento" placeholder="Entidad de nacimiento">
+                  </div>
+                  <div class="form-group">
+                    <label for="sexo">Sexo:</label>
+                    <label for="hombre"><input type="radio"  name="check-sexo" id="radio-sex-hombre"> Hombre</label>
+                    <label for="mujer"><input type="radio"  name="check-sexo" id="radio-sex-mujer"> Mujer</label>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="entidad-nacimiento">Entidad de nacimiento:</label>
-                  <input type="text" class="form-control" name="entidad-nacimiento" id="entidad-nacimiento" placeholder="Entidad de nacimiento">
-                </div>
-                <div class="form-group">
-                  <label for="sexo">Sexo:</label>
-                  <label for="hombre"><input type="radio"  name="check-sexo" id="radio-sex-hombre"> Hombre</label>
-                  <label for="mujer"><input type="radio"  name="check-sexo" id="radio-sex-mujer"> Mujer</label>
-                </div>
+               
             </div>
             <!--./ Fin Div de datos generales-->
             <!--Estado civil-->
             <div class="estado-civil">
-              <div class="form-group">
+              
                 <label for="estado-civil"><b>Estado civil:</b></label>
                 <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero"> Soltero</label>
-                <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero"> Casado</label>
-                <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero"> Unión libre</label>
-                <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero"> Separado</label>
-                <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero"> Divorciado</label>
-                <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero"> Viudo</label>
-                <label for="n-hijos">Numero de hijos:</label>
-                <input type="number" class="form-control" name="n-hijos" id="n-hijos" placeholder="Numero de hijos">
-              </div>
+                <label for="casado"><input type="radio"  name="check-estado-civil" id="casado"> Casado</label>
+                <label for="union-libre"><input type="radio"  name="check-estado-civil" id="union-libre"> Unión libre</label>
+                <label for="separado"><input type="radio"  name="check-estado-civil" id="separado"> Separado</label>
+                <label for="divorciado"><input type="radio"  name="check-estado-civil" id="divorciado"> Divorciado</label>
+                <label for="viudo"><input type="radio"  name="check-estado-civil" id="viudo"> Viudo</label>
+                <label for="n-hijos">Numero de hijos:<input type="number" class="form-control " name="n-hijos" id="n-hijos" placeholder="Numero de hijos"></label>
+                
+              
             </div>
             <!--./Estado civil-->
             <!--lenguas-->
-            <div class="form-group">
+            <div class=" lenguas borde acomodar-horizontal">
               <label for="hablas-espanol">Habla español? <input type="radio" name="hablas-espanol" id="hablas-espanol"></label>
               <label for="habla-dialecto-o-lengua">Habla algun dialecto o lengua indigena ? <input type="radio" name="habla-dialecto-o-lengua" id="habla-dialecto-o-lengua"></label>
               <br>
               <label for="cual">Cual?</label>
-              <input type="text" class="form-control" name="cual" id="cual" >
+              <input type="text" class="form-control col-2" name="cual" id="cual" >
               <br>
-              <label for="habla-dialecto-o-lengua">Otro idioma adicional al español ? <input type="radio" name="idioma-adicional" id="idioma-adicional"></label>
+              <label for="idioma-adicional">Otro idioma adicional al español ? <input type="radio" name="idioma-adicional" id="idioma-adicional"></label>
               <br>
               <label for="cual-adicional">Cual?</label>
-              <input type="text" class="form-control" name="cual-adicional" id="cual-adicional" >
+              <input type="text" class="form-control col-2" name="cual-adicional" id="cual-adicional" >
             </div>
             <!--./ fin lenguas-->
             <hr>
