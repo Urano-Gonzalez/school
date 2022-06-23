@@ -71,8 +71,10 @@
     </div>
     <!--/ fin de primera card-->
   </div>
-  <!-- Card Form completo-->
-  <div class="col-xl-6 col-md-6 col-12">
+  
+</div>
+<!-- Card Form completo-->
+<div class="col-xl-12 col-md-6 col-12">
     <!--Card completar data-->
     <div class="card shadow mb-4">
       <a href="#alumno_data_completa" class="d-block card-header py-3" data-toggle="collapse"
@@ -121,6 +123,10 @@
                   <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
                   <input type="date" class="form-control" name="fecha-nacimiento" id="fecha-nacimiento">
                 </div>
+                <div class="form-group">
+                  <label for="rfe">RFE:</label>
+                  <input type="text" class="form-control" name="rfe" id="rfe" placeholder="RFE">
+                </div>
             </div>
             <!--./ Fin Div de datos generales-->
           </form>
@@ -131,6 +137,5 @@
     <!--Fin card completar-->
   </div>
   <!-- ./ fin card-->
-</div>
 
 <?php require_once INCLUDES.'inc_footer.php'; ?>
