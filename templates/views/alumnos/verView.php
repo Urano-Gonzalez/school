@@ -196,8 +196,319 @@
                 <input type="text" class="form-control" name="tipo-asentamiento" id="tipo-asentamiento" placeholder="Asentamiento humano">
                 <input type="text" class="form-control" name="nombre-asentamiento" id="nombre-asentamiento">
               </div>
+              <div class="form-group">
+                <label for="entre-que-vialidad">Entre que vialidad: </label>
+                <input type="text" class="form-control" name="tipo-entre-vialidad-1" id="tipo-entre-vialidad-1" placeholder="Tipo">
+                <input type="text" class="form-control" name="nombre-entre-vialidad-1" id="nombre-entre-vialidad-1" placeholder="Nombre">
+              </div>
+              <div class="form-group">
+                <label for="entre-que-vialidad-2">Y <br> que vialidad:</label>
+                <input type="text" class="form-control" name="tipo-entre-vialidad-2" id="tipo-entre-vialidad-2" placeholder="Tipo">
+                <input type="text" class="form-control" name="nombre-entre-vialidad-2" id="nombre-entre-vialidad-2" placeholder="Nombre">
+                <input type="text" class="form-control" name="c-p" id="c-p" placeholder="C.P">
+              </div>
+              <hr>
+              <div>
+                <div class="form-group">
+                  <label for="localidad">Localidad:</label>
+                  <input type="text" class="form-control" name="localidad" id="localidad" placeholder="Localidad">
+                </div>
+                <div class="form-group">
+                  <label for="municipio">Municipio:</label>
+                  <input type="text" class="form-control" name="municipio" id="municipio" placeholder="Municipio">
+                </div>
+                <div class="form-group">
+                  <label for="entidad-federativa">Entidad federativa:</label>
+                  <input type="text" class="form-control" name="entidad-federativa" id="entidad-federativa" placeholder="Entidad federativa">
+                </div>
+              </div>
+              <!--Telefonos-->
+              <div class="telefonos">
+                <div class="form-group">
+                <label for="telefono-fijo">Telefono fijo:</label>
+                  <input type="tel" class="form-control" name="telefono-fijo" id="telefono-fijo" placeholder="Numero (10 digitos)">
+                </div>
+                <div class="form-group">
+                <label for="telefono-celular">Telefono celular:</label>
+                  <input type="tel" class="form-control" name="telefono-celular" id="telefono-celular" placeholder="Numero (10 digitos)">
+                </div>
+              </div>
+              <!--./Telefonos-->
+              <div class="form-group">
+                <label for="equipo-computo">Tiene equipo de computo <input type="radio" name="equipo-computo" id="equipo-computo"></label>
+                <br>
+                <label for="correo-personal">Correo electronico personal:</label>
+                <input type="email" class="form-control" name="correo-personal" id="correo-personal">
+              </div>
+              <div class="form-group">
+                <label for="acceso-internet">Tiene acceso a internet <input type="radio" name="acceso-internet" id="acceso-internet"></label>
+                <br>
+                <label for="correo-inea">Correo electronico INEA:</label>
+                <input type="email" class="form-control" name="correo-inea" id="correo-inea">
+              </div>
+              
             </div>
             <!--./Fin domicilio-->
+
+            <!--Dificultades-->
+            <div class="form-group">
+              <label for="dificultades"><b>En su vida daria, usted tiene dificultad para:</b></label>
+              <span>Nota: Se puede seleccionar mas de una opcion.</span>
+              <br>
+              <label for="caminar-subir-bajar">Caminar, subir o bajar <input type="radio" name="caminar-subir-bajar" id="caminar-subir-bajar"></label>
+              <label for="oir">Oir, aun usando aparato auditivo <input type="radio" name="oir" id="oir"></label>
+              <label for="ver">Ver, aun usando lentes <input type="radio" name="ver" id="ver"></label>
+              <label for="banarse-vestirse-comer">Bañarse, vestirse o comer <input type="radio" name="banarse-vestirse-comer" id="banarse-vestirse-comer"></label>
+              <label for="hablar-comunicarse">Hablar o comunicarse (por ejemplo: entender o ser entendidos por otros) <input type="radio" name="hablar-comunicarse" id="hablar-comunicarse"></label>
+              <label for="recordar-concentrarse">Recordar o concentrarse <input type="radio" name="recordar-concentrarse" id="recordar-concentrarse"></label>
+              <label for="condicion-mental">Tiene algun problema o condicion mental? (Autismo, sindrome de Down, esquizofrenia, etc) <input type="radio" name="condicion-mental" id="condicion-mental"></label>
+            </div>
+            <!--./Fin dificultades-->
+            <!--Trabajo-->
+            <div class="trabajo">
+              <div class="form-group">
+                <label for="trabajo-activo"><b>Tiene trabajo activo?</b></label>
+                <label for="jubilado-pensionado"><input type="radio" name="trabajo-activo" id="jubilado-pensionado"> Jubilado/Pensionado</label>
+                <label for="desempleado"><input type="radio" name="trabajo-activo" id="desempleado"> Desempleado</label>
+                <label for="estudiante"><input type="radio" name="trabajo-activo" id="estudiante"> Estudiante</label>
+                <input type="text" class="form-control" name="otro-empleo" id="otro-empleo" placeholder="Otro">
+              </div>
+              <div class="form-group">
+                <label for="tipos-ocupacion"><b>Tipos de ocupación:</b></label>
+                <label for="trabajador-agropecuario"><input type="radio" name="trabajador-agropecuario" id="trabajador-agropecuario"> Trabajador agropecuario</label>
+                <label for="inspector-supervisor"><input type="radio" name="inspector-supervisor" id="inspector-supervisor"> Inspector o supervisor</label>
+                <label for="artesano"><input type="radio" name="artesano" id="artesano"> Artesano</label>
+                <label for="obrero"><input type="radio" name="obrero" id="obrero"> Obrero</label>
+                <label for="ayudante"><input type="radio" name="ayudante" id="ayudante"> Ayudante o similar</label>
+                <label for="empleado-gobierno"><input type="radio" name="empleado-gobierno" id="empleado-gobierno"> Empleado de gobierno</label>
+                <label for="operador"><input type="radio" name="operador" id="operador"> Operador de transporte o maquinaria en movimiento</label>
+                <label for="comerciante-vendedor"><input type="radio" name="comerciante-vendedor" id="comerciante-vendedor"> Comerciante o vendedor</label>
+                <label for="trabajador-hogar"><input type="radio" name="trabajar-hogar" id="trabajar-hogar"> Trabajador/a del hogar</label>
+                <label for="proteccion-vigilancia"><input type="radio" name="proteccion-vigilancia" id="proteccion-vigilancia"> Protección o vigilancia</label>
+                <label for="quehaceres-hogar"><input type="radio" name="quehaceres-hogar" id="quehaceres-hogar"> Quehaceres del hogar</label>
+                <label for="trabajador-ambulante"><input type="radio" name="trabajador-ambulante" id="trabajador-ambulante"> Trabajador ambulante</label>
+                <label for="deportista"><input type="radio" name="deportista" id="deportista"> Deportista</label>
+              </div>
+            </div>
+            <!--./Trabajo-->
+            <!--Nivel al que ingresa-->
+            <div class="nivel-ingresa">
+              <div class="form-group">
+                <label for="nivel-al-que-ingresa"><b> Nivel al que ingresa:</b></label>
+                <label for="alfabetizacion"><input type="radio" name="alfabetizacion" id="alfabetizacion"> Alfabetización</label>
+                <label for="primaria"><input type="radio" name="primaria" id="primaria"> Primaria</label>
+                <label for="primaria-10-14"><input type="radio" name="primaria-10-14" id="primaria-10-14"> Primaria 10-14</label>
+                <label for="secundaria"><input type="radio" name="secundaria" id="secundaria"> Secundaria</label>
+               
+                <label for="antecedentes-escolares"><b> Antecedentes escolares:</b></label>
+                <label for="sin-estudios"><input type="radio" name="sin-estudios" id="sin-estudios"> Sin estudios</label>
+                <label for="hispanohablante"><input type="radio" name="hispanohablante" id="hispanohablante"> Hispanohablante</label>
+                
+                <label for="primaria-antecedente"><input type="radio" name="primaria-antecedente" id="primaria-antecedente"> Primaria</label>
+                
+                <input type="text" name="primaria-grado" id="inputprimaria-grado"  value="" required="required" pattern="" title="" placeholder="Grado">
+                
+                <label for="hablante-lengua-indigena"><input type="radio" name="hablante-lengua-indigena" id="hablante-lengua-indigena"> Hablante de lengua indigena</label>
+                <label for="secundaria-antecedente"><input type="radio" name="secundaria-antecedente" id="secundaria-antecedente"> Secundaria</label>
+                <input type="text" name="grado-secundaria" id="grado-secundaria" placeholder="Grado">
+                <label for="etnia-lengua">Etnia/Lengua</label>
+                <input type="text" name="etnia-lengua" id="etnia-lengua" placeholder="Etnia/Lengua">
+                <label for="ejercicio-diagnostico"><input type="radio" name="ejercicio-diagnostico" id="ejercicio-diagnostico"> Ejercicio diagnostico (alfabetización)</label>
+                <label for="examen-diagnostico"><input type="radio" name="examen-diagnostico" id="examen-diagnostico"> Examen diagnostico</label>
+                <label for="reconocimiento-saberes"><input type="radio" name="reconocimiento-saberes" id="reconocimiento-saberes"> Reconocimiento de saberes</label>
+                <label for="atencion-educativa"><input type="radio" name="atencion-educativa" id="atencion-educativa"> Atencion educativa</label>
+              </div>
+            </div>
+            <!--./Fin Nivel al que ingresa-->
+
+            <!--Motivacion a estudiar-->
+            <div class="motivacion">
+              <div class="form-group">
+                <label for="motivacion"><b>Que le motiva a estudiar?</b></label>
+                <label for="obtener-certificado-primaria-secundaria"><input type="radio" name="obtener-certificado-primaria-secundaria" id="obtener-certificado-primaria-secundaria"> Obtener el certificado de Primaria/Secundaria</label>
+                <label for="continuar-media-superior"><input type="radio" name="continuar-media-superior" id="continuar-media-superior"> Continuar la educacion Media Superior</label>
+                <label for="obtener-empleo"><input type="radio" name="obtener-empleo" id="obtener-empleo"> Obtener un empleo</label>
+                <label for="condiciones-laborales"><input type="radio" name="condiciones-laborales" id="condiciones-laborales"> Mejorar mis condiciones laborales</label>
+                <label for="ayudar-con-tarea"><input type="radio" name="ayudar-con-tarea" id="ayudar-con-tarea"> Ayudar a mis hijos/nietos con las tareas</label>
+                <label for="superacion-personal"><input type="radio" name="superacion-personal" id="superacion-personal"> Superacion personal</label>
+                <label for="otro"><input type="radio" name="otro" id="otro"> Otro</label>
+                <input type="text" name="otro-motivo" id="otro-motivo">
+              </div>
+            </div>
+            <!--./ Fin Motivacion a estudiar-->
+
+            <!--Como se entero--->
+            <div class="como-se-entero">
+              <div class="form-group">
+                <label for="como-se-entero"><b>Como se entero de nuestro servicio?</b></label>
+                <label for="difucion-inea"><input type="radio" name="difucion-inea" id="difucion-inea"> Difucion del INEA</label>
+                <label for="invitacion-personal"><input type="radio" name="invitacion-personal" id="invitacion-personal"> Invitacion personal</label>
+                <label for="como-se-entero-otro">Otro<input type="text" name="como-se-entero-otro" id="como-se-entero-otro"></label>
+              </div>
+              <div class="form-group">
+                <label for="subproyecto"><b>Subproyecto:</b></label>
+                <input type="text" class="form-control" name="subproyecto" id="subproyecto">
+                <label for="dependencia"><b>Dependencia:</b></label>
+                <input type="text" class="form-control" name="dependencia" id="dependencia">
+              </div>
+            </div>
+            <!--./ Fin Como se entero--->
+            
+            <!--Documentacion de la persona-->
+            <div class="documentacion">
+              <div class="form-group">
+                <label for="documentacion-persona"><b>Documentación de la persona beneficiaria:</b></label>
+                <label for="fotografia"><input type="radio" name="fotografia" id="fotografia"> Fotografia</label>
+                <label for="ficha-cereso"><input type="radio" name="ficha-cereso" id="ficha-cereso"> Ficha signaletica (CERESO)</label>
+                <label for="documento-legal-equivalente"><input type="radio" name="documento-legal-equivalente" id="documento-legal-equivalente"> Documento legal equivalente (extranjeros)</label>
+              </div>
+              <div class="form-group">
+                <label for="documentos-probatorios"><b>Documentos Probatorios / Constancias de capacitación</b></label>
+                <label for="certificado-primaria"><input type="radio" name="certificado-primaria" id="certificado-primaria"> Certificado de primaria</label>
+                <label for="informe-calificaciones-inea"><input type="radio" name="informe-calificaciones-inea" id="informe-calificaciones-ineacertificado-primaria"> Informe de calificaciones INEA</label>
+                <label for="boletas-de-primaria"><input type="radio" name="boletas-de-primaria" id="boletas-de-primaria"> Boletas de primaria</label>
+                <input type="text" name="grado-boleta-secundaria" id="grado-boleta-secundaria" placeholder="Grado">
+                <label for="boletas-de-secundaria"><input type="radio" name="boletas-de-secundaria" id="boletas-de-secundaria"> Boletas de secundaria</label>
+                <input type="text" name="grado-boleta-secundaria" id="grado-boleta-secundaria" placeholder="Grado">
+                <label for="contanciaa-capacitacion">Constancias de Capacitacion</label>
+                <label for="numero-constancias">Numero:</label>
+                <input type="text" name="numero-constancias" id="numero-constancias">
+                <label for="horas-capacitacion">Horas:</label>
+                <input type="text" name="horas-capacitacion" id="horas-capacitacion">
+              </div>
+
+
+            </div>
+            <!--./ FIn Documentacion de la persona-->
+            
+            <!--Cotejo de documentos-->
+            <div class="cotejo-documentos">
+              <div class="form-group">
+                <label for="cotejo-documentos"><b>Cotejo de Documentos impresos por la persona beneficiaria</b></label>
+              </div>
+              <div class="form-group">
+                <label for="nombre-completo">Nombre completo de quien cotejo los documentos</label>
+                <input type="text" name="nombre-completo-cotejo" id="nombre-completo-cotejo">
+              </div>
+              <div class="form-group">
+                <label for="fecha-cotejo">fecha de cotejo de documentos</label>
+                <input type="date" class="form-control" name="fecha-cotejo" id="fecha-cotejo">
+              </div>
+              <div class="form-group">
+                <label for="firma-cotejo">Firma de quien cotejo los documentos</label>
+                <input type="text" name="firma-cotejo" id="firma-cotejo">
+              </div>
+              <div class="form-group">
+                <span><b>Nota: Solo se debe registrar en el SItema Informatico de Control Escolar, a la persona beneficiaria cuyos documentos impresos o digitales hayan sido cotejados</b></span>
+              </div>
+            </div>
+            <!--./Fin Cotejo de documentos-->
+
+            <!--Informacion unidad operativa-->
+            <div class="informacion-unidad-operativa">
+              <div class="form-group">
+                <label for="informacion-unidad-operativa"><b>Información de la Unidad Operativa</b></label>
+              </div>
+              <div class="form-group">
+                <label for="unidad-operativa"><b>Unidad operativa</b></label>
+                <input type="text" name="unidad-operativa" id="unidad-operativa">
+              </div>
+              <div class="form-group">
+                <label for="circulo-estudio"><b>Circulo de estudio</b></label>
+                <input type="text" name="circulo-estudio" id="circulo-estudio">
+              </div>
+            </div>
+            <!--./Fin Informacion unidad operativa-->
+            
+            <!--Declaracion-->
+            <div class="declaracion">
+              <div class="form-group">
+                <label for="declaracion-nota"><b>Declaración de NO haber obtenido certificado de estudios del nivel que pretende estudiar en el INEA</b></label>
+                <p>Con fundamento en el Artículo 3 de la Constitución Política de los Estados Unidos Mexicanos, y el Artículo 247, fracción I del Código Penal Federal, bajo protesta de decir
+                verdad, manifiesto que no recibo ninguno de los apoyos señalados en las Reglas de Operación, así como no haber obtenido certificado/certificación de estudios de nivel
+                primaria y/o secundaria, según sea el caso, en alguna institución de educación. </p>
+                <p>De ser persona beneficiaria de algún apoyo del Programa Educación para Adultos (INEA) autorizo se me dé de baja del mismo.</p>
+              </div>
+              <div class="form-group">
+                <input type="text" name="nombre-beneficiario-inea" id="nombre-beneficiario-inea"><b>Nombre completo de la persona beneficiaria del INEA</b>
+                <span>ATENTAMENTE</span>
+                <input type="text" name="firma-beneficiario-inea" id="firma-beneficiario-inea"><b>Firma de la persona beneficiaria del INEA o huella del dedo indice</b>
+              </div>
+            </div>
+            <!--./Declaracion-->
+
+            <!--ultima parte-->
+            <div class="parte-final">
+              <div class="form-group">
+                <label for="fecha-llenado-registro">FECHA DE LLENADO DEL REGISTRO</label>
+                <input type="date" name="fecha-llenado-registro" id="fecha-llenado-registro">
+              </div>
+              <div class="form-group">
+                <p>Autorizo el uso de la información registrada en este documento, con la finalidad de generar y respaldar datos relevantes para la toma de decisiones en los procesos de
+                planificación, control escolar, evaluación educativa o de investigación</p>
+                <p>“Manifiesto bajo protesta de decir verdad que la información y los datos aquí asentados son verdaderos, que durante mi estancia en los Estados Unidos de América curse
+                (primaria y/o secundaria o equivalente), o bien que cursé en la República Mexicana algún grado de educación primaria o secundaria, sin embargo no cuento con
+                documentación alguna que lo acredite, reconozco que en caso de faltar a la verdad, estaré incurriendo en el delito de falsedad de declaración ante una autoridad pública
+                distinta de la judicial, y podría ser acreedor(a) a una pena de cuatro a ocho años de prisión y de cien a trescientos días multa (art. 247, fracción I del Código Penal Federal), y
+                demás sanciones aplicables.” </p>
+              </div>
+              <div class="form-group">
+              <input type="text" name="nombre-beneficiario-inea" id="nombre-beneficiario-inea"><b>Nombre completo de la persona beneficiaria del INEA</b>
+              <input type="text" name="nombre-padre-tutor" id="nombre-padre-tutor"><b>Nombre completo y firma del padre o tutor En caso de inscripción al MEVyT 10-14</b>
+              <input type="text" name="nombre-firma-figura-incorpora" id="nombre-firma-figura-incorpora"><b>Nombre completo y firma de la figura que incorpora</b>
+              <input type="text" name="nombre-firma-coordinador-zona" id="nombre-firma-coordinador-zona"><b>Nombre completo y firma del Coordinador de Zona</b>
+              <input type="text" name="firma-huella-beneficiario-inea" id="firma-huella-beneficiario-inea"><b>Firma de la persona beneficiaria del INEA o huella del dedo índice</b>
+              <input type="text" name="nombre-firma-acreditacion-coordinacion" id="nombre-firma-acreditacion-coordinacion"><b>Nombre completo y firma del Responsable de Acreditación de la
+              Coordinación de Zona</b>
+              <input type="text" name="nombre-firma-persona-capturo" id="nombre-firma-persona-capturo"><b>Nombre completo y firma de la persona que capturó</b>
+              </div>
+              <div class="form-group">
+                <p>Aviso de Privacidad: Los datos personales recabados serán protegidos, incorporados y tratados, según corresponda, en los sistemas institucionales del INEA que han sido
+                debidamente inscrito en el Listado de Sistemas de Datos Personales ante el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales
+                (INAI). Los datos recabados en este registro consideran lo establecido en los artículos 16, 17, 18 y 21 de la Ley General de Protección de Datos Personales en Posesión de sujetos
+                obligados.</p>
+                <p><b>Este programa es público, ajeno a cualquier partido político. Queda prohibido el uso para fines distintos a los establecidos en el programa.
+                </b></p>
+                <p><b>Si te condicionaron o pidieron algo a cambio para realizar este trámite DENÚNCIALO al 800-0060-300 o en la Coordinación de Zona, Plaza comunitaria
+                u oficina del INEA más cercana.</b></p>
+                <p><b>Todos los servicios que proporciona el INEA son gratuitos.</b></p>
+              </div>
+              <div class="form-group">
+                <div>
+                  <span><b>Comprobante de entrega de correo electrónico a la persona beneficiaria</b></span>
+                  <label for="nombre-beneficiario-inea">Nombre de la persona beneficiaria del INEA:</label>
+                  <input type="text" name="nombre-beneficiario" id="nombre-beneficiario">
+                  <label for="cuenta-correo">Cuenta de correo:</label>
+                  <input type="text" name="cuenta-correo" id="cuenta-correo">
+                  <label for="pass">Contraseña:</label>
+                  <input type="text" name="pass" id="pass">
+                  <label for="acceso-internet"><b>Tiene acceso a Internet</b></label>
+                  <label for="si">SI<input type="radio" name="accesi-inter" id="si"></label>
+                  <label for="no">NO<input type="radio" name="accesi-inter" id="no"></label>
+                  <p><b>Es responsabilidad total del usuario del correo, el mal uso que se pueda dar al mismo.</b></p>
+                  <p><b>La asignación y uso de este correo se relaciona con el proceso educativo de la persona beneficiaria</b></p>
+                  <p><b>PERSONA BENEFICIARIA DEL INEA</b></p>
+                </div>
+                <div>
+                  <span><b>Comprobante de entrega de correo electrónico a la persona beneficiar</b></span>
+                    <label for="nombre-beneficiario-inea">Nombre de la persona beneficiaria del INEA:</label>
+                    <input type="text" name="nombre-beneficiario" id="nombre-beneficiario">
+                    <label for="cuenta-correo">Cuenta de correo:</label>
+                    <input type="text" name="cuenta-correo" id="cuenta-correo">
+                    <label for="fecha">Fecha de entrega:</label>
+                    <input type="date" name="fecha" id="fecha">
+                    <label for="acceso-internet"><b>Tiene acceso a Internet</b></label>
+                    <label for="si">SI<input type="radio" name="accesi-inter" id="si"></label>
+                    <label for="no">NO<input type="radio" name="accesi-inter" id="no"></label>
+                    <label for="firma"><b>Firma de la persona beneficiaria del INEA</b>:</label>
+                    <input type="text" name="firma" id="firma">
+                   
+                </div>
+              </div>
+            </div>
+            <!--./ultima parte-->
+
+            
           </form>
          </div>
       </div>
