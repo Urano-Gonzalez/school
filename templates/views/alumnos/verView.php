@@ -82,7 +82,7 @@
             <h6 class="m-0 font-weight-bold text-primary">REGISTRO DE LA PERSONA BENEFICIARIA DEL INEA</h6>
       </a> 
       <!--Contenido de card-->
-      <div class="collapse" id="alumno_data_completa">
+      <div class="collapse show" id="alumno_data_completa">
          <div class="card-body">
           <form action="alumnos/post_completar" method="post">
             <?php echo insert_inputs(); ?>
@@ -127,8 +127,77 @@
                   <label for="rfe">RFE:</label>
                   <input type="text" class="form-control" name="rfe" id="rfe" placeholder="RFE">
                 </div>
+                <hr>
+                <div class="form-group">
+                  <label for="nacionalidad">Nacionalidad:</label>
+                  <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad">
+                </div>
+                <div class="form-group">
+                  <label for="entidad-nacimiento">Entidad de nacimiento:</label>
+                  <input type="text" class="form-control" name="entidad-nacimiento" id="entidad-nacimiento" placeholder="Entidad de nacimiento">
+                </div>
+                <div class="form-group">
+                  <label for="sexo">Sexo:</label>
+                  <label for="hombre"><input type="radio"  name="check-sexo" id="radio-sex-hombre"> Hombre</label>
+                  <label for="mujer"><input type="radio"  name="check-sexo" id="radio-sex-mujer"> Mujer</label>
+                </div>
             </div>
             <!--./ Fin Div de datos generales-->
+            <!--Estado civil-->
+            <div class="estado-civil">
+              <div class="form-group">
+                <label for="estado-civil"><b>Estado civil:</b></label>
+                <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero"> Soltero</label>
+                <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero"> Casado</label>
+                <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero"> Unión libre</label>
+                <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero"> Separado</label>
+                <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero"> Divorciado</label>
+                <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero"> Viudo</label>
+                <label for="n-hijos">Numero de hijos:</label>
+                <input type="number" class="form-control" name="n-hijos" id="n-hijos" placeholder="Numero de hijos">
+              </div>
+            </div>
+            <!--./Estado civil-->
+            <!--lenguas-->
+            <div class="form-group">
+              <label for="hablas-espanol">Habla español? <input type="radio" name="hablas-espanol" id="hablas-espanol"></label>
+              <label for="habla-dialecto-o-lengua">Habla algun dialecto o lengua indigena ? <input type="radio" name="habla-dialecto-o-lengua" id="habla-dialecto-o-lengua"></label>
+              <br>
+              <label for="cual">Cual?</label>
+              <input type="text" class="form-control" name="cual" id="cual" >
+              <br>
+              <label for="habla-dialecto-o-lengua">Otro idioma adicional al español ? <input type="radio" name="idioma-adicional" id="idioma-adicional"></label>
+              <br>
+              <label for="cual-adicional">Cual?</label>
+              <input type="text" class="form-control" name="cual-adicional" id="cual-adicional" >
+            </div>
+            <!--./ fin lenguas-->
+            <hr>
+            <!--Cultura-->
+            <div class="form-group">
+              <label for="se-considera-indigena">De acuerdo a su cultura, usted se considera indigena? <input type="radio" name="se-considera-indigenra" id="se-considera-indigena"></label>
+              <label for="se-considera-afro">Usted se considera afromexicano(a) negro(a) o afrodescendiente? <input type="radio" name="se-considera-afro" id="se-considera-afro"></label>
+            </div>
+            <!-- ./cultura-->
+            <!--Domicilio-->
+            <div class="domicilio">
+              <label for="domicilio"><b>Domicilio:</b></label>
+              <div class="form-group">
+                <label for="vialidad">Vialidad:</label>
+                <span>(Tipo: andador, avenida, boulevard, callejón, calle, cerrada, privada, corredor, prolongación, carretera, camino, terraceria, etc)</span>
+                <input type="text" class="form-control" name="tipo-vialidad" id="tipo-vialidad" placeholder="Tipo">
+                <br>
+                <input type="text"  class="form-control" name="nombre-vialidad" id="nombre-vialidad" placeholder="Nombre vialidad">
+              </div>
+
+              <div class="form-group">
+                <label for="asentamiento-humano">Asentamiento humano:</label>
+                <span>(Tipo: colonia, conjunto habitacional, ejido, ex hacienda, fraccinamiento, manzana. H., pueblo, rancho, zona militar, etc)</span>
+                <input type="text" class="form-control" name="tipo-asentamiento" id="tipo-asentamiento" placeholder="Asentamiento humano">
+                <input type="text" class="form-control" name="nombre-asentamiento" id="nombre-asentamiento">
+              </div>
+            </div>
+            <!--./Fin domicilio-->
           </form>
          </div>
       </div>
