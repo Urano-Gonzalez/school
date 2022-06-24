@@ -31,3 +31,90 @@
   display: flex;
   justify-content: right;
 }
+.coordinacion-zona{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.fecha-registro{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.datos-generales{
+  border: 2px solid rgb(87, 85, 85);
+  border-radius: 5px;
+  padding: 10px;
+}
+.apellidos{
+  display: flex;
+  align-items: center;
+}
+.nombre{
+  display: flex;
+  align-items: center;
+}
+.fecha-rfe{
+  display: flex;
+  justify-content: space-around;
+}
+.nacionalidad{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.estado-civil{
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid rgb(87, 85, 85);
+  border-radius: 5px;
+  padding: 10px;
+}
+.lenguas{
+  display: flex;
+  align-items: center;
+}
+.acomodar-horizontal{
+  display: flex;
+  align-items: center;
+}
+.borde{
+  border: 2px solid rgb(87, 85, 85);
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 5px;
+}
+.cultura{
+  justify-content: space-around;
+}
+.domicilio span{
+  font-size: 15px;
+}
+.localidad{
+  justify-content: space-around;
+}
+.telefonos{
+  justify-content: space-around;
+}
+.ajustar-elementos{
+  justify-content: space-around;
+}
+.dificultades{
+  justify-content: center;
+}
+.documentacion{
+  display: flex;
+}
+.fecha-p-final{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.firmas{
+  display: flex;
+}
+.cupones{
+  display: flex;
+}
