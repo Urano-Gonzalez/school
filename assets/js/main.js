@@ -1637,3 +1637,32 @@ function primerGrupo(){
   })
   console.log(id_grupo)
 }
+
+/**Descargar registro INEA */
+function descargarRegistroINEA(){
+  console.log("Descargar")
+  var doc = new jsPDF();
+  //doc.text(20, 20, 'Hola mundo');
+  //doc.text(20,30, 'Vamos a generar un pdf desde el lado del cliente');
+  // Add new
+  //doc.addPage();
+  //doc.text(20,20, 'Prueba pdf');
+  //
+  //doc.save('Documento.pdf');
+  var reporte = $('#alumno_data_completa').html();
+  var specialElementHandlers = {
+    '#elementH': function (element, renderer) {
+        return true;
+    }
+};
+doc.fromHTML(reporte, 15, 15, {
+    'width': 170,
+    'elementHandlers': specialElementHandlers
+});
+
+// Save the PDF
+doc.save('sample-document.pdf');
+
+// Save the PDF
+
+}

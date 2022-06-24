@@ -118,3 +118,14 @@
 .cupones{
   display: flex;
 }
+.radios-dificultades{
+  flex-wrap: wrap;
+}
+.trabajo-estilos{
+  justify-content: space-around;
+}
+.tipos-ocupacion{
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

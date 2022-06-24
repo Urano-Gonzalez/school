@@ -14,6 +14,7 @@
 <script src="<?php echo ASSETS.'vendor/datatables/dataTables.bootstrap4.min.js'; ?>"></script>
 
 <!-- Page level custom scripts -->
+<script src="<?php echo ASSETS.'js/jspdf.min.js'; ?>"></script>
 <!-- <script src="<?php echo JS.'demo/chart-area-demo.js'; ?>"></script>
 <script src="<?php echo JS.'demo/chart-pie-demo.js'; ?>"></script> -->
 
