@@ -312,6 +312,25 @@ class alumnosController extends Controller {
     }
   }
 
+  /** Registro INEA */
+
+  function registroINEA()
+  {
+    $post = clean($_POST);
+    $id = clean($_POST["id"]);
+    $numero_zona = clean($_POST["numero-zona"]);
+    $nombre_zona = clean($_POST["nombre-zona"]);
+    $fecha_registro = clean($_POST["fecha-registro"]);
+    $incorporacion = clean($_POST["incorporacion"]);
+    
+    echo $id;
+    echo $numero_zona;
+    echo $fecha_registro;
+    echo $incorporacion;
+    die;
+    Redirect::back();
+  }
+  /** Registro INEA */
   function borrar($id)
   {
     try {

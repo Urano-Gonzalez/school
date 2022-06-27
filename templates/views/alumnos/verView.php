@@ -87,23 +87,23 @@
           <div class="card-body">
             <form id="registro-inea" method="post">
               <?php echo insert_inputs(); ?>
-              <input type="hidden" name="id" value="<?php echo $d->a->id; ?>" required>
+              <input type="hidden" id="idBeneficiario" name="id" id="idBeneficiario" value="<?php echo $d->a->id; ?>" required>
 
               <div class="form-group coordinacion-zona">
                 <label for="coordinacion-zona">Coordinación de Zona: </label>
-                <input type="text" class="form-control col-4 " id="numero-zona" name="numero-zona" placeholder="Número de zona" require>
+                <input type="text" class="form-control col-4 " id="numero-zona" name="numero-zona" placeholder="Número de zona" require value="01">
                 <br>
-                <input type="text" class="form-control col-4" id="nombre-zona" name="nombre-zona" placeholder="Nombre de zona" require>
+                <input type="text" class="form-control col-4" id="nombre-zona" name="nombre-zona" placeholder="Nombre de zona" require value="Zona 01">
               </div>
               <div class="form-group fecha-registro">
                   <label for="fecha-registro">FECHA DE REGISTRO</label>
-                  <input type="date" class="form-control col-4" id="fecha-registro" name="fecha-registro" placeholder="Fecha de registro" require>
+                  <input type="date" class="form-control col-4" id="fecha-registro" name="fecha-registro" placeholder="Fecha de registro" required>
               </div>
               <div class="form-group text-lg-left">
-                <label for="incorporacion"><input type="radio"  name="check-option" id="incorporacion"><b> Incorporación</b></label>
-                <label for="reincorporacion"><input type="radio"  name="check-option" id="reincorporacion"><b> Reincorporación</b></label>
-                <label for="registro-sasa"><input type="radio"  name="check-option" id="registro-sasa"><b> Registro en SASA</b></label>
-                <label for="registro-siga"><input type="radio"  name="check-option" id="registro-siga"><b> Registro en SIGA</b></label>
+                <label for="incorporacion"><input type="radio"  name="check-option" id="incorporacion" value="incorporacion"><b> Incorporación</b></label>
+                <label for="reincorporacion"><input type="radio"  name="check-option" id="reincorporacion" value="reincorporacion"><b> Reincorporación</b></label>
+                <label for="registro-sasa"><input type="radio"  name="check-option" id="registro-sasa" value="registro-sasa"><b> Registro en SASA</b></label>
+                <label for="registro-siga"><input type="radio"  name="check-option" id="registro-siga" value="registro-siga"><b> Registro en SIGA</b></label>
               </div>
               <!--Div de datos generales-->
               <div class="datos-generales">
@@ -112,13 +112,13 @@
                   </div>
                   <div class="form-group apellidos">
                     <label for="apellidos">Apellidos:</label>
-                    <input type="text" class="form-control" name="primer-apellido" id="primer-apellido" placeholder="Primer Apellido" require>
+                    <input type="text" class="form-control" name="primer-apellido" id="primer-apellido" placeholder="Primer Apellido" require value="Martinez">
                     <br>
-                    <input type="text" class="form-control" name="segundo-apellido" id="segundo-apellido" placeholder="Segundo Apellido" require>
+                    <input type="text" class="form-control" name="segundo-apellido" id="segundo-apellido" placeholder="Segundo Apellido" require value="Mendoza">
                   </div>
                   <div class="form-group nombre">
                     <label for="nombres">Nombre(s):</label>
-                    <input type="text" class="form-control" name="nombres" id="nombres" placeholder="Nombre(s)" require>
+                    <input type="text" class="form-control" name="nombres" id="nombres" placeholder="Nombre(s)" require value="erick santiago">
                   </div>
                   <div class="fecha-rfe">
                     <div class="form-group">
@@ -127,7 +127,7 @@
                     </div>
                     <div class="form-group">
                       <label for="rfe">RFE:</label>
-                      <input type="text" class="form-control" name="rfe" id="rfe" placeholder="RFE" require>
+                      <input type="text" class="form-control" name="rfe" id="rfe" placeholder="RFE" require value="RGSREEAF">
                     </div>
                   </div>
                   
@@ -135,11 +135,11 @@
                   <div class="nacionalidad">
                     <div class="form-group">
                       <label for="nacionalidad">Nacionalidad:</label>
-                      <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad" require>
+                      <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad" require value="Mexicano">
                     </div>
                     <div class="form-group">
                       <label for="entidad-nacimiento">Entidad de nacimiento:</label>
-                      <input type="text" class="form-control" name="entidad-nacimiento" id="entidad-nacimiento" placeholder="Entidad de nacimiento" require>
+                      <input type="text" class="form-control" name="entidad-nacimiento" id="entidad-nacimiento" placeholder="Entidad de nacimiento" require value="coacalco">
                     </div>
                     <div class="form-group">
                       <label for="sexo">Sexo:</label>
@@ -193,13 +193,13 @@
                   <div class="form-group acomodar-horizontal">
                     <label for="vialidad">Vialidad:</label>
                     <div class="acomodar-vertical col-4">
-                      <input type="text" class="form-control" name="tipo-vialidad" id="tipo-vialidad" placeholder="Tipo" require>
+                      <input type="text" class="form-control" name="tipo-vialidad" id="tipo-vialidad" placeholder="Tipo" require value="privada">
                       
                     </div>
                     
-                    <input type="text"  class="form-control" name="nombre-vialidad" id="nombre-vialidad" placeholder="Nombre vialidad" require>
-                    <input type="text"  class="form-control col-2" name="num-exterior" id="num-exterior" placeholder="Núm. Exterior" require>
-                    <input type="text"  class="form-control col-2" name="num-interior" id="num-interior" placeholder="Núm. Interior" require>
+                    <input type="text"  class="form-control" name="nombre-vialidad" id="nombre-vialidad" placeholder="Nombre vialidad" require value="Oyamel">
+                    <input type="text"  class="form-control col-2" name="num-exterior" id="num-exterior" placeholder="Núm. Exterior" require value="127">
+                    <input type="text"  class="form-control col-2" name="num-interior" id="num-interior" placeholder="Núm. Interior" require value="127">
                 </div>
                 <span>(Tipo: andador, avenida, boulevard, callejón, calle, cerrada, privada, corredor, prolongación, carretera, camino, terraceria, etc)</span>
                 </div>
@@ -208,8 +208,8 @@
                   <div class="form-group acomodar-horizontal">
                     <label for="asentamiento-humano">Asentamiento humano:</label>
                     
-                    <input type="text" class="form-control col-4" name="tipo-asentamiento" id="tipo-asentamiento" placeholder="Tipo" require>
-                    <input type="text" class="form-control col-4" name="nombre-asentamiento" id="nombre-asentamiento" placeholder="Nombre" require >
+                    <input type="text" class="form-control col-4" name="tipo-asentamiento" id="tipo-asentamiento" placeholder="Tipo" require value="colonia">
+                    <input type="text" class="form-control col-4" name="nombre-asentamiento" id="nombre-asentamiento" placeholder="Nombre" require value="hacienda2">
                     
                   </div>
                   <span>(Tipo: colonia, conjunto habitacional, ejido, ex hacienda, fraccinamiento, manzana. H., pueblo, rancho, zona militar, etc)</span>
@@ -217,39 +217,39 @@
                 <hr>
                 <div class="form-group acomodar-horizontal">
                   <label for="entre-que-vialidad">Entre que vialidad: </label>
-                  <input type="text" class="form-control col-4" name="tipo-entre-vialidad-1" id="tipo-entre-vialidad-1" placeholder="Tipo" require>
-                  <input type="text" class="form-control col-4" name="nombre-entre-vialidad-1" id="nombre-entre-vialidad-1" placeholder="Nombre" require>
+                  <input type="text" class="form-control col-4" name="tipo-entre-vialidad-1" id="tipo-entre-vialidad-1" placeholder="Tipo" require value="privada">
+                  <input type="text" class="form-control col-4" name="nombre-entre-vialidad-1" id="nombre-entre-vialidad-1" placeholder="Nombre" require value="diamante">
                 </div>
                 <div class="form-group acomodar-horizontal">
                   <label for="entre-que-vialidad-2">Y <br> que vialidad:</label>
-                  <input type="text" class="form-control" name="tipo-entre-vialidad-2" id="tipo-entre-vialidad-2" placeholder="Tipo" require>
-                  <input type="text" class="form-control" name="nombre-entre-vialidad-2" id="nombre-entre-vialidad-2" placeholder="Nombre" require>
-                  <input type="text" class="form-control" name="c-p" id="c-p" placeholder="C.P" require>
+                  <input type="text" class="form-control" name="tipo-entre-vialidad-2" id="tipo-entre-vialidad-2" placeholder="Tipo" require value="privada">
+                  <input type="text" class="form-control" name="nombre-entre-vialidad-2" id="nombre-entre-vialidad-2" placeholder="Nombre" require value="crisolita">
+                  <input type="text" class="form-control" name="c-p" id="c-p" placeholder="C.P" require value="51225">
                 </div>
                 <hr>
                 <div class="localidad acomodar-horizontal">
                   <div class="form-group">
                     <label for="localidad">Localidad:</label>
-                    <input type="text" class="form-control" name="localidad" id="localidad" placeholder="Localidad" require>
+                    <input type="text" class="form-control" name="localidad" id="localidad" placeholder="Localidad" require value="hacienda">
                   </div>
                   <div class="form-group">
                     <label for="municipio">Municipio:</label>
-                    <input type="text" class="form-control" name="municipio" id="municipio" placeholder="Municipio" require>
+                    <input type="text" class="form-control" name="municipio" id="municipio" placeholder="Municipio" require value="Tultepec">
                   </div>
                   <div class="form-group">
                     <label for="entidad-federativa">Entidad federativa:</label>
-                    <input type="text" class="form-control" name="entidad-federativa" id="entidad-federativa" placeholder="Entidad federativa" require>
+                    <input type="text" class="form-control" name="entidad-federativa" id="entidad-federativa" placeholder="Entidad federativa" require value="EDO.MEX">
                   </div>
                 </div>
                 <!--Telefonos-->
                 <div class="telefonos acomodar-horizontal">
                   <div class="form-group">
                     <label for="telefono-fijo">Telefono fijo:</label>
-                    <input type="tel" class="form-control" name="telefono-fijo" id="telefono-fijo" placeholder="Numero (10 digitos)" require>
+                    <input type="tel" class="form-control" name="telefono-fijo" id="telefono-fijo" placeholder="Numero (10 digitos)" require value="5533043275">
                   </div>
                   <div class="form-group">
                     <label for="telefono-celular">Telefono celular:</label>
-                    <input type="tel" class="form-control" name="telefono-celular" id="telefono-celular" placeholder="Numero (10 digitos)" require>
+                    <input type="tel" class="form-control" name="telefono-celular" id="telefono-celular" placeholder="Numero (10 digitos)" require value="5533043275">
                   </div>
                 </div>
                 <!--./Telefonos-->
@@ -257,13 +257,13 @@
                   <label for="equipo-computo">Tiene equipo de computo <input type="radio" name="equipo-computo" id="equipo-computo"></label>
                   <br>
                   <label for="correo-personal">Correo electronico personal:</label>
-                  <input type="email" class="form-control col-4" name="correo-personal" id="correo-personal" require>
+                  <input type="email" class="form-control col-4" name="correo-personal" id="correo-personal" require value="santiago_mendozaisc@outlook.com">
                 </div>
                 <div class="form-group acomodar-horizontal ajustar-elementos">
                   <label for="acceso-internet">Tiene acceso a internet <input type="radio" name="acceso-internet" id="acceso-internet"></label>
                   <br>
                   <label for="correo-inea">Correo electronico INEA:</label>
-                  <input type="email" class="form-control col-4" name="correo-inea" id="correo-inea" require>
+                  <input type="email" class="form-control col-4" name="correo-inea" id="correo-inea" require value="santiago@inea.com">
                 </div>
                 
               </div>
@@ -405,12 +405,12 @@
                   <div class="horas-capacitacion">
                     <div class="form-group">
                       <label for="numero-constancias">Numero:</label>
-                      <input type="text" class="form-control" name="numero-constancias" id="numero-constancias">
+                      <input type="text" class="form-control" name="numero-constancias" id="numero-constancias" value="5">
                     </div>
                   
                     <div class="form-group">
                       <label for="horas-capacitacion">Horas:</label>
-                      <input type="text" class="form-control" name="horas-capacitacion" id="horas-capacitacion">
+                      <input type="text" class="form-control" name="horas-capacitacion" id="horas-capacitacion" value="25">
                     </div>
                  
                   </div>
@@ -429,7 +429,7 @@
                 </div>
                 <div class="form-group">
                   <label for="nombre-completo">Nombre completo de quien cotejo los documentos</label>
-                  <input type="text"  class="form-control" name="nombre-completo-cotejo" id="nombre-completo-cotejo" require>
+                  <input type="text"  class="form-control" name="nombre-completo-cotejo" id="nombre-completo-cotejo" require value="Ivan Ovalle">
                 </div>
                 <div class="cotejo acomodar-horizontal">
                   <div class="form-group">
@@ -456,11 +456,11 @@
                 <div class="unidad-operativa-circulo">
                   <div class="form-group acomodar-horizontal">
                     <label for="unidad-operativa"><b>Unidad operativa</b></label>
-                    <input type="text" class="form-control" name="unidad-operativa" id="unidad-operativa" require>
+                    <input type="text" class="form-control" name="unidad-operativa" id="unidad-operativa" require value="0203udn">
                   </div>
                   <div class="form-group acomodar-horizontal">
                     <label for="circulo-estudio"><b>Circulo de estudio</b></label>
-                    <input type="text" class="form-control" name="circulo-estudio" id="circulo-estudio" require>
+                    <input type="text" class="form-control" name="circulo-estudio" id="circulo-estudio" require value="primer circulo">
                   </div>
                 </div>
                 
@@ -563,15 +563,15 @@
                     
                     <div class="form-group">
                       <label for="nombre-beneficiario-inea">Nombre de la persona beneficiaria del INEA:</label>
-                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario" require>
+                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario" require value="Erick Santiago">
                     </div>
                     <div class="form-group">
                       <label for="cuenta-correo">Cuenta de correo:</label>
-                      <input type="text" class="form-control" name="cuenta-correo" id="cuenta-correo" require>
+                      <input type="text" class="form-control" name="cuenta-correo" id="cuenta-correo" require value="santiago_mendoza.com">
                     </div>
                     <div class="form-group">
                       <label for="pass">Contraseña:</label>
-                      <input type="text" class="form-control" name="pass" id="pass" require>
+                      <input type="password" class="form-control" name="pass" id="pass" require value="TeHyCa420">
                     </div>
                     <div class="form-group">
                       <label for="acceso-internet"><b>Tiene acceso a Internet</b></label>
@@ -588,11 +588,11 @@
                     <span><b>Comprobante de entrega de correo electrónico a la persona beneficiar</b></span>
                     <div class="form-group">
                       <label for="nombre-beneficiario-inea">Nombre de la persona beneficiaria del INEA:</label>
-                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario" require>
+                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario" require value="Santiago mendoza">
                     </div>
                     <div class="form-group">
                       <label for="cuenta-correo">Cuenta de correo:</label>
-                      <input type="text" class="form-control" name="cuenta-correo" id="cuenta-correo" require>
+                      <input type="text" class="form-control" name="cuenta-correo" id="cuenta-correo" require value="pedro@pedro.com">
                     </div>
                     <div class="form-group">
                       <label for="fecha">Fecha de entrega:</label>

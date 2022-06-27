@@ -1670,4 +1670,11 @@ doc.save('sample-document.pdf');
 function guardarRegistroINEA(){
   console.log("Guardar registro INEA")
   console.log($('#registro-inea').serialize());
+  let idBeneficiario = document.getElementById('idBeneficiario').value;
+  let numeroZona = document.getElementById('numero-zona').value;
+  let nombreZona = document.getElementById('nombre-zona').value;
+  let fecha_registro = document.getElementById('fecha-registro').value;
+  let incorporacion = document.querySelector('input[name="check-option"]:checked').value;
+  debugger
+  console.log('id: '+idBeneficiario);
 }
