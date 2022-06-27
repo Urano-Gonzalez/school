@@ -85,19 +85,19 @@
         <!--Contenido de card-->
       <div class="collapse show" id="alumno_data_completa">
           <div class="card-body">
-            <form action="alumnos/post_completar" method="post">
+            <form id="registro-inea" method="post">
               <?php echo insert_inputs(); ?>
               <input type="hidden" name="id" value="<?php echo $d->a->id; ?>" required>
 
               <div class="form-group coordinacion-zona">
                 <label for="coordinacion-zona">Coordinación de Zona: </label>
-                <input type="text" class="form-control col-4 " id="numero-zona" name="numero-zona" placeholder="Número de zona">
+                <input type="text" class="form-control col-4 " id="numero-zona" name="numero-zona" placeholder="Número de zona" require>
                 <br>
-                <input type="text" class="form-control col-4" id="nombre-zona" name="nombre-zona" placeholder="Nombre de zona">
+                <input type="text" class="form-control col-4" id="nombre-zona" name="nombre-zona" placeholder="Nombre de zona" require>
               </div>
               <div class="form-group fecha-registro">
                   <label for="fecha-registro">FECHA DE REGISTRO</label>
-                  <input type="date" class="form-control col-4" id="fecha-registro" name="fecha-registro" placeholder="Fecha de registro">
+                  <input type="date" class="form-control col-4" id="fecha-registro" name="fecha-registro" placeholder="Fecha de registro" require>
               </div>
               <div class="form-group text-lg-left">
                 <label for="incorporacion"><input type="radio"  name="check-option" id="incorporacion"><b> Incorporación</b></label>
@@ -112,22 +112,22 @@
                   </div>
                   <div class="form-group apellidos">
                     <label for="apellidos">Apellidos:</label>
-                    <input type="text" class="form-control" name="primer-apellido" id="primer-apellido" placeholder="Primer Apellido">
+                    <input type="text" class="form-control" name="primer-apellido" id="primer-apellido" placeholder="Primer Apellido" require>
                     <br>
-                    <input type="text" class="form-control" name="segundo-apellido" id="segundo-apellido" placeholder="Segundo Apellido">
+                    <input type="text" class="form-control" name="segundo-apellido" id="segundo-apellido" placeholder="Segundo Apellido" require>
                   </div>
                   <div class="form-group nombre">
                     <label for="nombres">Nombre(s):</label>
-                    <input type="text" class="form-control" name="nombres" id="nombres" placeholder="Nombre(s)">
+                    <input type="text" class="form-control" name="nombres" id="nombres" placeholder="Nombre(s)" require>
                   </div>
                   <div class="fecha-rfe">
                     <div class="form-group">
                       <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
-                      <input type="date" class="form-control" name="fecha-nacimiento" id="fecha-nacimiento">
+                      <input type="date" class="form-control" name="fecha-nacimiento" id="fecha-nacimiento" require>
                     </div>
                     <div class="form-group">
                       <label for="rfe">RFE:</label>
-                      <input type="text" class="form-control" name="rfe" id="rfe" placeholder="RFE">
+                      <input type="text" class="form-control" name="rfe" id="rfe" placeholder="RFE" require>
                     </div>
                   </div>
                   
@@ -135,11 +135,11 @@
                   <div class="nacionalidad">
                     <div class="form-group">
                       <label for="nacionalidad">Nacionalidad:</label>
-                      <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad">
+                      <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad" require>
                     </div>
                     <div class="form-group">
                       <label for="entidad-nacimiento">Entidad de nacimiento:</label>
-                      <input type="text" class="form-control" name="entidad-nacimiento" id="entidad-nacimiento" placeholder="Entidad de nacimiento">
+                      <input type="text" class="form-control" name="entidad-nacimiento" id="entidad-nacimiento" placeholder="Entidad de nacimiento" require>
                     </div>
                     <div class="form-group">
                       <label for="sexo">Sexo:</label>
@@ -193,13 +193,13 @@
                   <div class="form-group acomodar-horizontal">
                     <label for="vialidad">Vialidad:</label>
                     <div class="acomodar-vertical col-4">
-                      <input type="text" class="form-control" name="tipo-vialidad" id="tipo-vialidad" placeholder="Tipo">
+                      <input type="text" class="form-control" name="tipo-vialidad" id="tipo-vialidad" placeholder="Tipo" require>
                       
                     </div>
                     
-                    <input type="text"  class="form-control" name="nombre-vialidad" id="nombre-vialidad" placeholder="Nombre vialidad">
-                    <input type="text"  class="form-control col-2" name="num-exterior" id="num-exterior" placeholder="Núm. Exterior">
-                    <input type="text"  class="form-control col-2" name="num-interior" id="num-interior" placeholder="Núm. Interior">
+                    <input type="text"  class="form-control" name="nombre-vialidad" id="nombre-vialidad" placeholder="Nombre vialidad" require>
+                    <input type="text"  class="form-control col-2" name="num-exterior" id="num-exterior" placeholder="Núm. Exterior" require>
+                    <input type="text"  class="form-control col-2" name="num-interior" id="num-interior" placeholder="Núm. Interior" require>
                 </div>
                 <span>(Tipo: andador, avenida, boulevard, callejón, calle, cerrada, privada, corredor, prolongación, carretera, camino, terraceria, etc)</span>
                 </div>
@@ -208,8 +208,8 @@
                   <div class="form-group acomodar-horizontal">
                     <label for="asentamiento-humano">Asentamiento humano:</label>
                     
-                    <input type="text" class="form-control col-4" name="tipo-asentamiento" id="tipo-asentamiento" placeholder="Tipo">
-                    <input type="text" class="form-control col-4" name="nombre-asentamiento" id="nombre-asentamiento" placeholder="Nombre" >
+                    <input type="text" class="form-control col-4" name="tipo-asentamiento" id="tipo-asentamiento" placeholder="Tipo" require>
+                    <input type="text" class="form-control col-4" name="nombre-asentamiento" id="nombre-asentamiento" placeholder="Nombre" require >
                     
                   </div>
                   <span>(Tipo: colonia, conjunto habitacional, ejido, ex hacienda, fraccinamiento, manzana. H., pueblo, rancho, zona militar, etc)</span>
@@ -217,39 +217,39 @@
                 <hr>
                 <div class="form-group acomodar-horizontal">
                   <label for="entre-que-vialidad">Entre que vialidad: </label>
-                  <input type="text" class="form-control col-4" name="tipo-entre-vialidad-1" id="tipo-entre-vialidad-1" placeholder="Tipo">
-                  <input type="text" class="form-control col-4" name="nombre-entre-vialidad-1" id="nombre-entre-vialidad-1" placeholder="Nombre">
+                  <input type="text" class="form-control col-4" name="tipo-entre-vialidad-1" id="tipo-entre-vialidad-1" placeholder="Tipo" require>
+                  <input type="text" class="form-control col-4" name="nombre-entre-vialidad-1" id="nombre-entre-vialidad-1" placeholder="Nombre" require>
                 </div>
                 <div class="form-group acomodar-horizontal">
                   <label for="entre-que-vialidad-2">Y <br> que vialidad:</label>
-                  <input type="text" class="form-control" name="tipo-entre-vialidad-2" id="tipo-entre-vialidad-2" placeholder="Tipo">
-                  <input type="text" class="form-control" name="nombre-entre-vialidad-2" id="nombre-entre-vialidad-2" placeholder="Nombre">
-                  <input type="text" class="form-control" name="c-p" id="c-p" placeholder="C.P">
+                  <input type="text" class="form-control" name="tipo-entre-vialidad-2" id="tipo-entre-vialidad-2" placeholder="Tipo" require>
+                  <input type="text" class="form-control" name="nombre-entre-vialidad-2" id="nombre-entre-vialidad-2" placeholder="Nombre" require>
+                  <input type="text" class="form-control" name="c-p" id="c-p" placeholder="C.P" require>
                 </div>
                 <hr>
                 <div class="localidad acomodar-horizontal">
                   <div class="form-group">
                     <label for="localidad">Localidad:</label>
-                    <input type="text" class="form-control" name="localidad" id="localidad" placeholder="Localidad">
+                    <input type="text" class="form-control" name="localidad" id="localidad" placeholder="Localidad" require>
                   </div>
                   <div class="form-group">
                     <label for="municipio">Municipio:</label>
-                    <input type="text" class="form-control" name="municipio" id="municipio" placeholder="Municipio">
+                    <input type="text" class="form-control" name="municipio" id="municipio" placeholder="Municipio" require>
                   </div>
                   <div class="form-group">
                     <label for="entidad-federativa">Entidad federativa:</label>
-                    <input type="text" class="form-control" name="entidad-federativa" id="entidad-federativa" placeholder="Entidad federativa">
+                    <input type="text" class="form-control" name="entidad-federativa" id="entidad-federativa" placeholder="Entidad federativa" require>
                   </div>
                 </div>
                 <!--Telefonos-->
                 <div class="telefonos acomodar-horizontal">
                   <div class="form-group">
                     <label for="telefono-fijo">Telefono fijo:</label>
-                    <input type="tel" class="form-control" name="telefono-fijo" id="telefono-fijo" placeholder="Numero (10 digitos)">
+                    <input type="tel" class="form-control" name="telefono-fijo" id="telefono-fijo" placeholder="Numero (10 digitos)" require>
                   </div>
                   <div class="form-group">
                     <label for="telefono-celular">Telefono celular:</label>
-                    <input type="tel" class="form-control" name="telefono-celular" id="telefono-celular" placeholder="Numero (10 digitos)">
+                    <input type="tel" class="form-control" name="telefono-celular" id="telefono-celular" placeholder="Numero (10 digitos)" require>
                   </div>
                 </div>
                 <!--./Telefonos-->
@@ -257,13 +257,13 @@
                   <label for="equipo-computo">Tiene equipo de computo <input type="radio" name="equipo-computo" id="equipo-computo"></label>
                   <br>
                   <label for="correo-personal">Correo electronico personal:</label>
-                  <input type="email" class="form-control col-4" name="correo-personal" id="correo-personal">
+                  <input type="email" class="form-control col-4" name="correo-personal" id="correo-personal" require>
                 </div>
                 <div class="form-group acomodar-horizontal ajustar-elementos">
                   <label for="acceso-internet">Tiene acceso a internet <input type="radio" name="acceso-internet" id="acceso-internet"></label>
                   <br>
                   <label for="correo-inea">Correo electronico INEA:</label>
-                  <input type="email" class="form-control col-4" name="correo-inea" id="correo-inea">
+                  <input type="email" class="form-control col-4" name="correo-inea" id="correo-inea" require>
                 </div>
                 
               </div>
@@ -344,15 +344,6 @@
                     <label for="reconocimiento-saberes"><input type="radio" name="reconocimiento-saberes" id="reconocimiento-saberes"> Reconocimiento de saberes</label>
                     <label for="atencion-educativa"><input type="radio" name="atencion-educativa" id="atencion-educativa"> Atencion educativa</label>
                   </div>
-                  
-                
-                  
-                  
-                  
-                  
-                  
-                  
-                  
                 </div>
               </div>
               <!--./Fin Nivel al que ingresa-->
@@ -384,9 +375,9 @@
                 </div>
                 <div class="form-group acomodar-horizontal">
                   <label for="subproyecto"><b>Subproyecto:</b></label>
-                  <input type="text" class="form-control" name="subproyecto" id="subproyecto">
+                  <input type="text" class="form-control" name="subproyecto" id="subproyecto" require>
                   <label for="dependencia"><b>Dependencia:</b></label>
-                  <input type="text" class="form-control" name="dependencia" id="dependencia">
+                  <input type="text" class="form-control" name="dependencia" id="dependencia" require>
                 </div>
               </div>
               <!--./ Fin Como se entero--->
@@ -438,16 +429,16 @@
                 </div>
                 <div class="form-group">
                   <label for="nombre-completo">Nombre completo de quien cotejo los documentos</label>
-                  <input type="text"  class="form-control" name="nombre-completo-cotejo" id="nombre-completo-cotejo">
+                  <input type="text"  class="form-control" name="nombre-completo-cotejo" id="nombre-completo-cotejo" require>
                 </div>
                 <div class="cotejo acomodar-horizontal">
                   <div class="form-group">
                     <label for="fecha-cotejo">Fecha de cotejo de documentos</label>
-                    <input type="date" class="form-control" name="fecha-cotejo" id="fecha-cotejo">
+                    <input type="date" class="form-control" name="fecha-cotejo" id="fecha-cotejo" require>
                   </div>
                   <div class="form-group">
                     <label for="firma-cotejo">Firma de quien cotejo los documentos</label>
-                    <input type="text" class="form-control" name="firma-cotejo" id="firma-cotejo">
+                    <input type="text" class="form-control" name="firma-cotejo" id="firma-cotejo" require>
                   </div>
                   
                 </div>
@@ -465,11 +456,11 @@
                 <div class="unidad-operativa-circulo">
                   <div class="form-group acomodar-horizontal">
                     <label for="unidad-operativa"><b>Unidad operativa</b></label>
-                    <input type="text" class="form-control" name="unidad-operativa" id="unidad-operativa">
+                    <input type="text" class="form-control" name="unidad-operativa" id="unidad-operativa" require>
                   </div>
                   <div class="form-group acomodar-horizontal">
                     <label for="circulo-estudio"><b>Circulo de estudio</b></label>
-                    <input type="text" class="form-control" name="circulo-estudio" id="circulo-estudio">
+                    <input type="text" class="form-control" name="circulo-estudio" id="circulo-estudio" require>
                   </div>
                 </div>
                 
@@ -567,20 +558,20 @@
                   <p ><b>Todos los servicios que proporciona el INEA son gratuitos.</b></p>
                 </div>
                 <div class="form-group  cupones">
-                  <div class="borde cupon">
+                  <div class="borde-punteado cupon">
                     <span><b>Comprobante de entrega de correo electrónico a la persona beneficiaria</b></span>
                     
                     <div class="form-group">
                       <label for="nombre-beneficiario-inea">Nombre de la persona beneficiaria del INEA:</label>
-                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario">
+                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario" require>
                     </div>
                     <div class="form-group">
                       <label for="cuenta-correo">Cuenta de correo:</label>
-                      <input type="text" class="form-control" name="cuenta-correo" id="cuenta-correo">
+                      <input type="text" class="form-control" name="cuenta-correo" id="cuenta-correo" require>
                     </div>
                     <div class="form-group">
                       <label for="pass">Contraseña:</label>
-                      <input type="text" class="form-control" name="pass" id="pass">
+                      <input type="text" class="form-control" name="pass" id="pass" require>
                     </div>
                     <div class="form-group">
                       <label for="acceso-internet"><b>Tiene acceso a Internet</b></label>
@@ -593,19 +584,19 @@
                     <p><b>La asignación y uso de este correo se relaciona con el proceso educativo de la persona beneficiaria</b></p>
                     <p style="text-align: end;"><b>PERSONA BENEFICIARIA DEL INEA</b></p>
                   </div>
-                  <div class="borde cupon">
+                  <div class="borde-punteado cupon">
                     <span><b>Comprobante de entrega de correo electrónico a la persona beneficiar</b></span>
                     <div class="form-group">
                       <label for="nombre-beneficiario-inea">Nombre de la persona beneficiaria del INEA:</label>
-                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario">
+                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario" require>
                     </div>
                     <div class="form-group">
                       <label for="cuenta-correo">Cuenta de correo:</label>
-                      <input type="text" class="form-control" name="cuenta-correo" id="cuenta-correo">
+                      <input type="text" class="form-control" name="cuenta-correo" id="cuenta-correo" require>
                     </div>
                     <div class="form-group">
                       <label for="fecha">Fecha de entrega:</label>
-                      <input type="date" class="form-control" name="fecha" id="fecha">
+                      <input type="date" class="form-control" name="fecha" id="fecha" require>
                     </div>
                     <div class="form-group">
                     <label for="acceso-internet"><b>Tiene acceso a Internet</b></label>
@@ -628,7 +619,7 @@
               </div>
               <!--./ultima parte-->
               <br>
-              <button class="btn btn-success" type="submit" <?php echo empty($d->grupos) ? 'disabled' : null; ?>>Guardar cambios</button>
+              <button class="btn btn-success" type="button" onClick="guardarRegistroINEA();" <?php echo empty($d->grupos) ? 'disabled' : null; ?>>Guardar cambios</button>
               <button class="btn btn-info" onClick="descargarRegistroINEA()">Descargar</button>
             </form>
           </div>

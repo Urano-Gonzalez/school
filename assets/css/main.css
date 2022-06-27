@@ -155,3 +155,8 @@
 .horas-capacitacion{
   display: flex;
 }
+.borde-punteado{
+  border-style: dashed ;
+  margin: 5px;
+  padding: 10px;
+}

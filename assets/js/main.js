@@ -1666,3 +1666,8 @@ doc.save('sample-document.pdf');
 // Save the PDF
 
 }
+// Registro INEA
+function guardarRegistroINEA(){
+  console.log("Guardar registro INEA")
+  console.log($('#registro-inea').serialize());
+}
