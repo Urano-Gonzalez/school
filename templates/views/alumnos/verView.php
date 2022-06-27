@@ -330,7 +330,7 @@
                     <label for="primaria-antecedente"><input type="radio" name="primaria-antecedente" id="primaria-antecedente"> Primaria</label>
                     <input type="text" name="primaria-grado" id="inputprimaria-grado"  value=""  pattern="" title="" placeholder="Grado">
                     <label for="secundaria-antecedente"><input type="radio" name="secundaria-antecedente" id="secundaria-antecedente"> Secundaria</label>
-                    <input type="text" name="grado-secundaria" id="grado-secundaria" placeholder="Grado">
+                    <input type="text" name="grado-secundaria" class="" id="grado-secundaria" placeholder="Grado">
                   </div>
                   <div class="form-group">
                     <label for="hispanohablante"><input type="radio" name="hispanohablante" id="hispanohablante"> Hispanohablante</label>
@@ -367,8 +367,9 @@
                   <label for="condiciones-laborales"><input type="radio" name="condiciones-laborales" id="condiciones-laborales"> Mejorar mis condiciones laborales</label>
                   <label for="ayudar-con-tarea"><input type="radio" name="ayudar-con-tarea" id="ayudar-con-tarea"> Ayudar a mis hijos/nietos con las tareas</label>
                   <label for="superacion-personal"><input type="radio" name="superacion-personal" id="superacion-personal"> Superacion personal</label>
+                  <br>
                   <label for="otro"><input type="radio" name="otro" id="otro"> Otro</label>
-                  <input type="text" name="otro-motivo" id="otro-motivo">
+                  <input type="text" class="form-control col-4" name="otro-motivo" id="otro-motivo">
                 </div>
               </div>
               <!--./ Fin Motivacion a estudiar-->
@@ -379,7 +380,7 @@
                   <label for="como-se-entero"><b>Como se entero de nuestro servicio?</b></label>
                   <label for="difucion-inea"><input type="radio" name="difucion-inea" id="difucion-inea"> Difucion del INEA</label>
                   <label for="invitacion-personal"><input type="radio" name="invitacion-personal" id="invitacion-personal"> Invitacion personal</label>
-                  <label for="como-se-entero-otro">Otro<input type="text" name="como-se-entero-otro" id="como-se-entero-otro"></label>
+                  <label for="como-se-entero-otro">Otro<input type="text" class="form-control" name="como-se-entero-otro" id="como-se-entero-otro"></label>
                 </div>
                 <div class="form-group acomodar-horizontal">
                   <label for="subproyecto"><b>Subproyecto:</b></label>
@@ -394,23 +395,36 @@
               <div class="documentacion borde">
                 <div class="form-group">
                   <label for="documentacion-persona"><b>Documentación de la persona beneficiaria:</b></label>
+                  <br>
                   <label for="fotografia"><input type="radio" name="fotografia" id="fotografia"> Fotografia</label>
                   <label for="ficha-cereso"><input type="radio" name="ficha-cereso" id="ficha-cereso"> Ficha signaletica (CERESO)</label>
                   <label for="documento-legal-equivalente"><input type="radio" name="documento-legal-equivalente" id="documento-legal-equivalente"> Documento legal equivalente (extranjeros)</label>
                 </div>
                 <div class="form-group">
                   <label for="documentos-probatorios"><b>Documentos Probatorios / Constancias de capacitación</b></label>
+                  <br>
                   <label for="certificado-primaria"><input type="radio" name="certificado-primaria" id="certificado-primaria"> Certificado de primaria</label>
                   <label for="informe-calificaciones-inea"><input type="radio" name="informe-calificaciones-inea" id="informe-calificaciones-ineacertificado-primaria"> Informe de calificaciones INEA</label>
                   <label for="boletas-de-primaria"><input type="radio" name="boletas-de-primaria" id="boletas-de-primaria"> Boletas de primaria</label>
-                  <input type="text" name="grado-boleta-secundaria" id="grado-boleta-secundaria" placeholder="Grado">
+                  <input type="text" class="form-control col-4" name="grado-boleta-secundaria" id="grado-boleta-secundaria" placeholder="Grado">
                   <label for="boletas-de-secundaria"><input type="radio" name="boletas-de-secundaria" id="boletas-de-secundaria"> Boletas de secundaria</label>
-                  <input type="text" name="grado-boleta-secundaria" id="grado-boleta-secundaria" placeholder="Grado">
+                  <input type="text" class="form-control col-4" name="grado-boleta-secundaria" id="grado-boleta-secundaria" placeholder="Grado">
+                  <br>
                   <label for="contanciaa-capacitacion">Constancias de Capacitacion</label>
-                  <label for="numero-constancias">Numero:</label>
-                  <input type="text" name="numero-constancias" id="numero-constancias">
-                  <label for="horas-capacitacion">Horas:</label>
-                  <input type="text" name="horas-capacitacion" id="horas-capacitacion">
+                  <div class="horas-capacitacion">
+                    <div class="form-group">
+                      <label for="numero-constancias">Numero:</label>
+                      <input type="text" class="form-control" name="numero-constancias" id="numero-constancias">
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="horas-capacitacion">Horas:</label>
+                      <input type="text" class="form-control" name="horas-capacitacion" id="horas-capacitacion">
+                    </div>
+                 
+                  </div>
+                 
+                  
                 </div>
 
 
@@ -424,7 +438,7 @@
                 </div>
                 <div class="form-group">
                   <label for="nombre-completo">Nombre completo de quien cotejo los documentos</label>
-                  <input type="text" name="nombre-completo-cotejo" id="nombre-completo-cotejo">
+                  <input type="text"  class="form-control" name="nombre-completo-cotejo" id="nombre-completo-cotejo">
                 </div>
                 <div class="cotejo acomodar-horizontal">
                   <div class="form-group">
@@ -433,7 +447,7 @@
                   </div>
                   <div class="form-group">
                     <label for="firma-cotejo">Firma de quien cotejo los documentos</label>
-                    <input type="text" name="firma-cotejo" id="firma-cotejo">
+                    <input type="text" class="form-control" name="firma-cotejo" id="firma-cotejo">
                   </div>
                   
                 </div>
@@ -444,18 +458,21 @@
               <!--./Fin Cotejo de documentos-->
 
               <!--Informacion unidad operativa-->
-              <div class="informacion-unidad-operativa acomodar-horizontal borde">
+              <div class="informacion-unidad-operativa  borde">
                 <div class="form-group">
                   <label for="informacion-unidad-operativa"><b>Información de la Unidad Operativa</b></label>
                 </div>
-                <div class="form-group">
-                  <label for="unidad-operativa"><b>Unidad operativa</b></label>
-                  <input type="text" name="unidad-operativa" id="unidad-operativa">
+                <div class="unidad-operativa-circulo">
+                  <div class="form-group acomodar-horizontal">
+                    <label for="unidad-operativa"><b>Unidad operativa</b></label>
+                    <input type="text" class="form-control" name="unidad-operativa" id="unidad-operativa">
+                  </div>
+                  <div class="form-group acomodar-horizontal">
+                    <label for="circulo-estudio"><b>Circulo de estudio</b></label>
+                    <input type="text" class="form-control" name="circulo-estudio" id="circulo-estudio">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="circulo-estudio"><b>Circulo de estudio</b></label>
-                  <input type="text" name="circulo-estudio" id="circulo-estudio">
-                </div>
+                
               </div>
               <!--./Fin Informacion unidad operativa-->
               
@@ -468,10 +485,16 @@
                   primaria y/o secundaria, según sea el caso, en alguna institución de educación. </p>
                   <p>De ser persona beneficiaria de algún apoyo del Programa Educación para Adultos (INEA) autorizo se me dé de baja del mismo.</p>
                 </div>
-                <div class="form-group">
-                  <input type="text" name="nombre-beneficiario-inea" id="nombre-beneficiario-inea"><b>Nombre completo de la persona beneficiaria del INEA</b>
+                <div class="form-group declaracion-firmas">
+                  <div class="form-group firmas">
+                    <textarea name="" id="" cols="30" rows="3"></textarea><b>Nombre completo de la persona beneficiaria del INEA</b>
+                  </div>
+                  
                   <span>ATENTAMENTE</span>
-                  <input type="text" name="firma-beneficiario-inea" id="firma-beneficiario-inea"><b>Firma de la persona beneficiaria del INEA o huella del dedo indice</b>
+                  <div class="form-group firmas">
+                    <textarea name="" id="" cols="30" rows="3"></textarea><b>Firma de la persona beneficiaria del INEA o huella del dedo indice</b>
+                  </div>
+                  
                 </div>
               </div>
               <!--./Declaracion-->
@@ -480,7 +503,7 @@
               <div class="parte-final borde">
                 <div class="form-group fecha-p-final">
                   <label for="fecha-llenado-registro">FECHA DE LLENADO DEL REGISTRO</label>
-                  <input type="date" name="fecha-llenado-registro" id="fecha-llenado-registro">
+                  <input type="date" class="form-control col-4" name="fecha-llenado-registro" id="fecha-llenado-registro">
                 </div>
                 <div class="form-group">
                   <p>Autorizo el uso de la información registrada en este documento, con la finalidad de generar y respaldar datos relevantes para la toma de decisiones en los procesos de
@@ -491,23 +514,48 @@
                   distinta de la judicial, y podría ser acreedor(a) a una pena de cuatro a ocho años de prisión y de cien a trescientos días multa (art. 247, fracción I del Código Penal Federal), y
                   demás sanciones aplicables.” </p>
                 </div>
-                <div class="form-group firmas">
+                <div class="form-group columnas-firmas">
                   <div>
-                    <input type="text" name="nombre-beneficiario-inea" id="nombre-beneficiario-inea"><b>Nombre completo de la persona beneficiaria del INEA</b>
-                    <input type="text" name="nombre-padre-tutor" id="nombre-padre-tutor"><b>Nombre completo y firma del padre o tutor En caso de inscripción al MEVyT 10-14</b>
-                    <input type="text" name="nombre-firma-figura-incorpora" id="nombre-firma-figura-incorpora"><b>Nombre completo y firma de la figura que incorpora</b>
-                    <input type="text" name="nombre-firma-coordinador-zona" id="nombre-firma-coordinador-zona"><b>Nombre completo y firma del Coordinador de Zona</b>
+                    <div class="form-group firmas">
+                      <textarea name="" id="" cols="30" rows="3"></textarea>
+                      <b>Nombre completo de la persona beneficiaria del INEA</b>
+                    </div>
+                    <div class="form-group firmas">
+                      <textarea name="" id="" cols="30" rows="3"></textarea>
+                      <b>Nombre completo y firma del padre o tutor En caso de inscripción al MEVyT 10-14</b>
+                    </div>
+                    <div class="form-group firmas">
+                      <textarea name="" id="" cols="30" rows="3"></textarea>
+                      <b>Nombre completo y firma de la figura que incorpora</b>
+                    </div>
+                    <div class="form-group firmas">
+                    <textarea name="" id="" cols="30" rows="3"></textarea>
+                      <b>Nombre completo y firma del Coordinador de Zona</b>
+                    </div>
+                  
                     
                   </div>
                   <div>
-                    <input type="text" name="firma-huella-beneficiario-inea" id="firma-huella-beneficiario-inea"><b>Firma de la persona beneficiaria del INEA o huella del dedo índice</b>
-                    <input type="text" name="nombre-firma-acreditacion-coordinacion" id="nombre-firma-acreditacion-coordinacion"><b>Nombre completo y firma del Responsable de Acreditación de la
+                    <div class="form-group firmas">
+                      <textarea name="" id="" cols="30" rows="3"></textarea>
+                      <b>Firma de la persona beneficiaria del INEA o huella del dedo índice</b>
+
+                    </div>
+                    <div class="form-group firmas">
+                      <textarea name="" id="" cols="30" rows="3"></textarea>
+                    <b>Nombre completo y firma del Responsable de Acreditación de la
                       Coordinación de Zona</b>
-                    <input type="text" name="nombre-firma-persona-capturo" id="nombre-firma-persona-capturo"><b>Nombre completo y firma de la persona que capturó</b>
+                    </div>
+                    <div class="form-group firmas">
+                      <textarea name="" id="" cols="30" rows="3"></textarea>
+                      <b>Nombre completo y firma de la persona que capturó</b>
+                    </div>
+                  
+                 
                   </div>
                 
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="text-align: center;">
                   <p>Aviso de Privacidad: Los datos personales recabados serán protegidos, incorporados y tratados, según corresponda, en los sistemas institucionales del INEA que han sido
                   debidamente inscrito en el Listado de Sistemas de Datos Personales ante el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales
                   (INAI). Los datos recabados en este registro consideran lo establecido en los artículos 16, 17, 18 y 21 de la Ley General de Protección de Datos Personales en Posesión de sujetos
@@ -516,38 +564,65 @@
                   </b></p>
                   <p><b>Si te condicionaron o pidieron algo a cambio para realizar este trámite DENÚNCIALO al 800-0060-300 o en la Coordinación de Zona, Plaza comunitaria
                   u oficina del INEA más cercana.</b></p>
-                  <p><b>Todos los servicios que proporciona el INEA son gratuitos.</b></p>
+                  <p ><b>Todos los servicios que proporciona el INEA son gratuitos.</b></p>
                 </div>
                 <div class="form-group  cupones">
-                  <div class="borde">
+                  <div class="borde cupon">
                     <span><b>Comprobante de entrega de correo electrónico a la persona beneficiaria</b></span>
-                    <label for="nombre-beneficiario-inea">Nombre de la persona beneficiaria del INEA:</label>
-                    <input type="text" name="nombre-beneficiario" id="nombre-beneficiario">
-                    <label for="cuenta-correo">Cuenta de correo:</label>
-                    <input type="text" name="cuenta-correo" id="cuenta-correo">
-                    <label for="pass">Contraseña:</label>
-                    <input type="text" name="pass" id="pass">
-                    <label for="acceso-internet"><b>Tiene acceso a Internet</b></label>
-                    <label for="si">SI<input type="radio" name="accesi-inter" id="si"></label>
-                    <label for="no">NO<input type="radio" name="accesi-inter" id="no"></label>
+                    
+                    <div class="form-group">
+                      <label for="nombre-beneficiario-inea">Nombre de la persona beneficiaria del INEA:</label>
+                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario">
+                    </div>
+                    <div class="form-group">
+                      <label for="cuenta-correo">Cuenta de correo:</label>
+                      <input type="text" class="form-control" name="cuenta-correo" id="cuenta-correo">
+                    </div>
+                    <div class="form-group">
+                      <label for="pass">Contraseña:</label>
+                      <input type="text" class="form-control" name="pass" id="pass">
+                    </div>
+                    <div class="form-group">
+                      <label for="acceso-internet"><b>Tiene acceso a Internet</b></label>
+                      <label for="si">SI <input type="radio" name="accesi-inter" id="si"></label>
+                      <label for="no">NO <input type="radio" name="accesi-inter" id="no"></label>
+                    </div>
+                    
+                    
                     <p><b>Es responsabilidad total del usuario del correo, el mal uso que se pueda dar al mismo.</b></p>
                     <p><b>La asignación y uso de este correo se relaciona con el proceso educativo de la persona beneficiaria</b></p>
-                    <p><b>PERSONA BENEFICIARIA DEL INEA</b></p>
+                    <p style="text-align: end;"><b>PERSONA BENEFICIARIA DEL INEA</b></p>
                   </div>
-                  <div class="borde">
+                  <div class="borde cupon">
                     <span><b>Comprobante de entrega de correo electrónico a la persona beneficiar</b></span>
+                    <div class="form-group">
                       <label for="nombre-beneficiario-inea">Nombre de la persona beneficiaria del INEA:</label>
-                      <input type="text" name="nombre-beneficiario" id="nombre-beneficiario">
+                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario">
+                    </div>
+                    <div class="form-group">
                       <label for="cuenta-correo">Cuenta de correo:</label>
-                      <input type="text" name="cuenta-correo" id="cuenta-correo">
+                      <input type="text" class="form-control" name="cuenta-correo" id="cuenta-correo">
+                    </div>
+                    <div class="form-group">
                       <label for="fecha">Fecha de entrega:</label>
-                      <input type="date" name="fecha" id="fecha">
-                      <label for="acceso-internet"><b>Tiene acceso a Internet</b></label>
-                      <label for="si">SI<input type="radio" name="accesi-inter" id="si"></label>
-                      <label for="no">NO<input type="radio" name="accesi-inter" id="no"></label>
+                      <input type="date" class="form-control" name="fecha" id="fecha">
+                    </div>
+                    <div class="form-group">
+                    <label for="acceso-internet"><b>Tiene acceso a Internet</b></label>
+                      <label for="si">SI <input type="radio" name="accesi-inter" id="si"></label>
+                      <label for="no">NO <input type="radio" name="accesi-inter" id="no"></label>
+                    </div>
+                    <div class="form-group">
                       <label for="firma"><b>Firma de la persona beneficiaria del INEA</b>:</label>
-                      <input type="text" name="firma" id="firma">
-                      <p><b>IEEA-UO</b></p>
+                      <!--firma-->
+                      <!--<input type="textarea" class="form-control" name="firma" id="firma">-->
+                      <textarea name="textarea" class="form-control" rows="5" cols="20">Firma</textarea>
+                    </div>
+                      
+                      
+                      
+                      
+                      <p style="text-align: end;"><b>IEEA-UO</b></p>
                   </div>
                 </div>
               </div>

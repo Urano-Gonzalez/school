@@ -116,7 +116,7 @@
   display: flex;
 }
 .cupones{
-  display: flex;
+ display: flex;
 }
 .radios-dificultades{
   flex-wrap: wrap;
@@ -128,4 +128,30 @@
   align-items: baseline;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.cupon{
+  max-width: 50%;
+}
+.firmas{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.columnas-firmas{
+  display: flex;
+}
+.declaracion-firmas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.unidad-operativa-circulo{
+  display: flex;
+  justify-content: space-around;
+}
+.cotejo{
+  justify-content: space-around;
+}
+.horas-capacitacion{
+  display: flex;
 }
