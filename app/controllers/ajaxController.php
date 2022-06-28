@@ -341,16 +341,23 @@ class ajaxController extends Controller {
     
     
     $estatusDelReporte = $statusReporte[0]["EXISTS (SELECT * FROM reportes_asistencias WHERE fecha_reporte='$fecha' AND id_grupo='$id')"];
-    
+    $sql_reporte = "SELECT * FROM reportes_asistencias WHERE fecha_reporte='$fecha' AND id_grupo='$id'";
+    $id_reporte_completo = Model::query($sql_reporte, [], ['transaction' => false]);
+    $id_reporte = $id_reporte_completo[0]['id_reporte'];
 
+
+   
     if($estatusDelReporte == 0){
       $sql = "INSERT INTO reportes_asistencias(fecha_reporte,id_grupo,json_check) VALUES ('$fecha',$id,'$json_check')";
     //
       Model::query($sql, [], ['transaction' => false]);
       json_output(json_build(200, $sql));
     }else{
-      $existe = "El reporte ya fue registrado";
-      json_output(json_build(201, $existe));
+      $actualizar = "UPDATE reportes_asistencias SET json_check='$json_check' WHERE id_reporte='$id_reporte'";
+      Model::query($actualizar, [], ['transaction' => false]);
+      json_output(json_build(203, $actualizar));
+
+      
     }
     
     
