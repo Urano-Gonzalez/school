@@ -59,7 +59,8 @@ class alumnosController extends Controller {
       'slug'   => 'alumnos',
       'button' => ['url' => 'alumnos', 'text' => '<i class="fas fa-table"></i> Alumnos'],
       'grupos' => grupoModel::all(),
-      'a'      => $alumno
+      'a'      => $alumno,
+      'id_alumno' => $id
     ];
 
     View::render('ver', $data);
@@ -422,7 +423,10 @@ class alumnosController extends Controller {
     //informacion unidad operativa
     $unidadOperativa = clean($_POST["unidad-operativa"]);
     $circuloEstudio = clean($_POST["circulo-estudio"]);
-    echo $motivoEstudiar;
+
+    //** Guardar data */
+
+    echo $id;
     echo '<br>';
     echo $otroMotivo;
     echo '<br>';

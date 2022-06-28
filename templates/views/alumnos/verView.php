@@ -87,7 +87,7 @@
           <div class="card-body">
             <form id="registro-inea" action="alumnos/registroINEA" method="post">
               <?php echo insert_inputs(); ?>
-              <input type="hidden" id="idBeneficiario" name="id" value="<?php echo $d->title; ?>" required>
+              <input type="hidden" id="idBeneficiario" name="id" value="<?php echo $d->id_alumno; ?>" required>
 
               <div class="form-group coordinacion-zona">
                 <label for="coordinacion-zona">Coordinación de Zona: </label>
@@ -182,8 +182,8 @@
           
               <!--Cultura-->
               <div class="borde cultura acomodar-horizontal">
-                <label for="se-considera-indigena">De acuerdo a su cultura, usted se considera indigena? <input type="radio" name="se-considera-indigena" id="se-considera-indigena" value="Se considera indigena"></label>
-                <label for="se-considera-afro">Usted se considera afromexicano(a) negro(a) o afrodescendiente? <input type="radio" name="se-considera-afro" id="se-considera-afro" value="Se considera afrodescendiente"></label>
+                <label for="se-considera-indigena">De acuerdo a su cultura, usted se considera indigena? <input type="checkbox" name="se-considera-indigena" id="se-considera-indigena" value="Se considera indigena"></label>
+                <label for="se-considera-afro">Usted se considera afromexicano(a) negro(a) o afrodescendiente? <input type="checkbox" name="se-considera-afro" id="se-considera-afro" value="Se considera afrodescendiente"></label>
               </div>
               <!-- ./cultura-->
               <!--Domicilio-->
@@ -260,7 +260,7 @@
                   <input type="email" class="form-control col-4" name="correo-personal" id="correo-personal" required value="santiago_mendozaisc@outlook.com">
                 </div>
                 <div class="form-group acomodar-horizontal ajustar-elementos">
-                  <label for="acceso-internet">Tiene acceso a internet <input type="radio" name="acceso-internet" id="acceso-internet"></label>
+                  <label for="acceso-internet">Tiene acceso a internet <input type="checkbox" name="acceso-internet" id="acceso-internet"></label>
                   <br>
                   <label for="correo-inea">Correo electronico INEA:</label>
                   <input type="email" class="form-control col-4" name="correo-inea" id="correo-inea" require value="santiago@inea.com">
