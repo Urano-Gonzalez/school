@@ -106,6 +106,7 @@
 }
 .documentacion{
   display: flex;
+  justify-content: space-around;
 }
 .fecha-p-final{
   display: flex;

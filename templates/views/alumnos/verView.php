@@ -97,7 +97,7 @@
               </div>
               <div class="form-group fecha-registro">
                   <label for="fecha-registro">FECHA DE REGISTRO</label>
-                  <input type="date" class="form-control col-4" id="fecha-registro" name="fecha-registro" placeholder="Fecha de registro" required>
+                  <input type="date" class="form-control col-4" id="fecha-registro" name="fecha-registro" placeholder="Fecha de registro">
               </div>
               <div class="form-group text-lg-left">
                 <label for="incorporacion"><input type="radio"  name="check-option" id="incorporacion" value="incorporacion"><b> Incorporación</b></label>
@@ -357,7 +357,7 @@
 
                     <label for="primaria-antecedente"><input type="radio" name="primaria-antecedente" id="primaria-antecedente" value="primaria-antecedente"> Primaria</label>
 
-                    <input type="text" name="primaria-grado" id="inputprimaria-grado"  value=""  pattern="" title="" placeholder="Grado">
+                    <input type="text" name="primaria-grado" id="primaria-grado"  value=""  pattern="" title="" placeholder="Grado">
                     <label for="secundaria-antecedente">
                     <input type="radio" name="secundaria-antecedente" id="secundaria-antecedente" value="secundaria"> Secundaria</label>
 
@@ -405,7 +405,7 @@
                   <br>
                   <label for="otro"><input type="radio" name="otroMotivo" id="otro" value="otro-motivo"> Otro</label>
 
-                  <input type="text" class="form-control col-4" name="otro-motivo-cual" id="otro-motivo">
+                  <input type="text" class="form-control col-4" name="otro-motivo-cual" id="otro-motivo-cual">
                 </div>
               </div>
               <!--./ Fin Motivacion a estudiar-->
@@ -435,9 +435,9 @@
                   <label for="documentacion-persona"><b>Documentación de la persona beneficiaria:</b></label>
                   <br>
                   <label for="fotografia"><input type="radio" name="fotografia" id="fotografia"> Fotografia</label>
-
+                  <br>
                   <label for="ficha-cereso"><input type="radio" name="ficha-cereso" id="ficha-cereso"> Ficha signaletica (CERESO)</label>
-
+                  <br>
                   <label for="documento-legal-equivalente"><input type="radio" name="documento-legal-equivalente" id="documento-legal-equivalente"> Documento legal equivalente (extranjeros)</label>
 
                 </div>

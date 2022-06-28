@@ -1675,6 +1675,7 @@ function guardarRegistroINEA(){
   let nombreZona = document.getElementById('nombre-zona').value;
   let fecha_registro = document.getElementById('fecha-registro').value;
   let incorporacion = document.querySelector('input[name="check-option"]:checked').value;
+  debugger
   // Datos generales
   let primerApellido = document.getElementById('primer-apellido').value;
   let segundoApellido = document.getElementById('segundo-apellido').value;
@@ -1753,7 +1754,7 @@ function guardarRegistroINEA(){
   let checkEjercicios = document.querySelector('input[name="check-ejercicios"]:checked').value;
   // Motivo de estudiar
   let motivoEstudiar = document.querySelector('input[name="motivo-estudiar"]:checked').value;
-  let otroMotivo = document.querySelector('input[name="otro-motivo"]:checked').value;
+  let otroMotivo = document.querySelector('input[name="otroMotivo"]:checked').value;
   let otroMotivoCual = document.getElementById('otro-motivo-cual').value;
   // Como se entero
   let comoSeEntero = document.querySelector('input[name="como-se-entero"]:checked').value;
@@ -1769,6 +1770,12 @@ function guardarRegistroINEA(){
   let informeINEA = document.querySelector('input[name="informe-calificaciones-inea"]:checked').value;
   let numeroConstancias = document.getElementById('numero-constancias').value;
   let horasCapacitacion = document.getElementById('horas-capacitacion').value;
-  debugger
+  // Datos de quien cotejo
+  let nombreDeQuienCotejo = document.getElementById('nombre-completo-cotejo').value;
+  let fechaCotejo = document.getElementById('fecha-cotejo').value;
+  // informacion unidad operativa
+  let unidadOperativa = document.getElementById('unidad-operativa').value;
+  let circuloEstudio = document.getElementById('circulo-estudio').value;
+  
   console.log('id: '+idBeneficiario);
 }
