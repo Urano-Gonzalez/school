@@ -331,29 +331,83 @@ class alumnosController extends Controller {
     $nacionalidad = clean($_POST["nacionalidad"]);
     $entidadNacimiento = clean($_POST["entidad-nacimiento"]);
     $sexo = clean($_POST["check-sexo"]);
-    echo $id;
+    // estado civil
+    $estadoCivil = clean($_POST["check-estado-civil"]);
+    $numeroHijos = clean($_POST["n-hijos"]);
+    $hablaEspa = clean($_POST["hablas-espanol"]);
+    $hablaLengua = clean($_POST["habla-dialecto-o-lengua"]);
+    $cualLengua = clean($_POST["cual-lengua"]);
+    $otroIdioma = clean($_POST["idioma-adicional"]);
+    $cualIdioma = clean($_POST["cual-adicional"]);
+    // cultura
+    $seConsideraIndigena = clean($_POST["se-considera-indigena"]);
+    $seConsideraAfro = clean($_POST["se-considera-afro"]);
+    // Domicilio
+    $tipoVialidad = clean($_POST["tipo-vialidad"]);
+    $nombreVialidad = clean($_POST["nombre-vialidad"]);
+    $numExterior = clean($_POST["num-exterior"]);
+    $numInterior = clean($_POST["num-interior"]);
+    // asentamiento humano
+    $tipoAsentamiento = clean($_POST["tipo-asentamiento"]);
+    $nombreAsentamiento = clean($_POST["nombre-asentamiento"]);
+    // entre vialidades 1
+    $tipoEntreVialidad1 = clean($_POST["tipo-entre-vialidad-1"]);
+    $nombreEntreVialidad1 = clean($_POST["nombre-entre-vialidad-1"]);
+    // entre vialidad 2
+    $tipoEntreVialidad2 = clean($_POST["tipo-entre-vialidad-2"]);
+    $nombreEntreVialidad2 = clean($_POST["nombre-entre-vialidad-2"]);
+    $cp = clean($_POST["c-p"]);
+    // localidad
+    $localidad = clean($_POST["localidad"]);
+    $municipio = clean($_POST["municipio"]);
+    $entidadFederativa = clean($_POST["entidad-federativa"]);
+    //telefonos
+    $telefonoFijo = clean($_POST["telefono-fijo"]);
+    $telefonoCelular = clean($_POST["telefono-celular"]);
+    // equipo computo
+    $equipoComputo = clean($_POST["equipo-computo"]);
+    //correo personal
+    $correoPersonal = clean($_POST["correo-personal"]);
+    //acceso internet
+    $accesoInternet = clean($_POST["acceso-internet"]);
+    // correo INEA
+    $correoINEA = clean($_POST["correo-inea"]);
+    // Dificultades
+    $caminarSubirBajar = clean($_POST["caminar-subir-bajar"]);
+    $oir = clean($_POST["oir"]);
+    $ver = clean($_POST["ver"]);
+    $banarseVestirseComer = clean($_POST["banarse-vestirse-comer"]);
+    $hablarComunicarse = clean($_POST["hablar-comunicarse"]);
+    $recordarConcentrarse = clean($_POST["recordar-concentrarse"]);
+    $condicionMental = clean($_POST["condicion-mental"]);
+    // trabajo
+    $trabajoActivo = clean($_POST["trabajo-activo"]);
+    $otroEmpleo = clean($_POST["otro-empleo"]);
+    // ocupacion
+    $ocupacion = clean($_POST["ocupacion"]);
+    // Nivel al que ingresa
+    $nivelIngreso = clean($_POST["nivel-ingreso"]);
+    // antecedentes escolares
+    $sinEstudios = clean($_POST["sin-estudios"]);
+    $primaria = clean($_POST["primaria-antecedente"]);
+    $gradoPrimaria = clean($_POST["primaria-grado"]);
+    $secundaria = clean($_POST["secundaria-antecedente"]);
+    $gradoSecundaria = clean($_POST["grado-secundaria"]);
+    //prueba
+    $ejercicioIngreso = clean($_POST["check-ejercicios"]);
+
+    echo $nivelIngreso;
     echo '<br>';
-    echo $numero_zona;
+    echo $sinEstudios;
     echo '<br>';
-    echo $fecha_registro;
+    echo $ejercicioIngreso;
     echo '<br>';
-    echo $incorporacion;
-    echo '<br>';
-    echo $primerApellido;
-    echo '<br>';
-    echo $segundoApellido;
-    echo '<br>';
-    echo $nombres;
-    echo '<br>';
-    echo $fechaNacimiento;
-    echo '<br>';
-    echo $rfe;
-    echo '<br>';
-    echo $nacionalidad;
-    echo '<br>';
-    echo $entidadNacimiento;
-    echo '<br>';
-    echo $sexo;
+    
+   
+    
+   
+   
+   
     die;
     Redirect::back();
   }

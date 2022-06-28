@@ -128,7 +128,7 @@
 .tipos-ocupacion{
   align-items: baseline;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .cupon{
   max-width: 50%;
@@ -163,4 +163,14 @@
 }
 .lenguas{
   justify-content: space-evenly;
+}
+.estudios{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.lenguas-nivel{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

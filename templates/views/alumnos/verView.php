@@ -275,18 +275,19 @@
                 
                 <br>
                 <div class="acomodar-horizontal radios-dificultades">
-                  <label for="caminar-subir-bajar" class="col-4">Caminar, subir o bajar <input type="radio" name="caminar-subir-bajar" id="caminar-subir-bajar" value="caminar-subir-bajar"></label>
-                  <label for="oir" class="col-4">Oir, aun usando aparato auditivo <input type="radio" name="oir" id="oir" value="oir"></label>
+                  <label for="caminar-subir-bajar" class="col-4">Caminar, subir o bajar <input type="checkbox" name="caminar-subir-bajar" id="caminar-subir-bajar" value="caminar-subir-bajar"></label>
 
-                  <label for="ver" class="col-4">Ver, aun usando lentes <input type="radio" name="ver" id="ver" value="ver"></label>
+                  <label for="oir" class="col-4">Oir, aun usando aparato auditivo <input type="checkbox" name="oir" id="oir" value="oir"></label>
 
-                  <label for="banarse-vestirse-comer" class="col-4">Bañarse, vestirse o comer <input type="radio" name="banarse-vestirse-comer" id="banarse-vestirse-comer" value="banarse-vestirse-comer"></label>
+                  <label for="ver" class="col-4">Ver, aun usando lentes <input type="checkbox" name="ver" id="ver" value="ver"></label>
 
-                  <label for="hablar-comunicarse" class="col-4">Hablar o comunicarse (por ejemplo: entender o ser entendidos por otros) <input type="radio" name="hablar-comunicarse" id="hablar-comunicarse" value="hablar-comunicarse"></label>
+                  <label for="banarse-vestirse-comer" class="col-4">Bañarse, vestirse o comer <input type="checkbox" name="banarse-vestirse-comer" id="banarse-vestirse-comer" value="banarse-vestirse-comer"></label>
 
-                  <label for="recordar-concentrarse" class="col-4">Recordar o concentrarse <input type="radio" name="recordar-concentrarse" id="recordar-concentrarse" value="recordar-concentrarse"></label>
+                  <label for="hablar-comunicarse" class="col-4">Hablar o comunicarse (por ejemplo: entender o ser entendidos por otros) <input type="checkbox" name="hablar-comunicarse" id="hablar-comunicarse" value="hablar-comunicarse"></label>
 
-                  <label for="condicion-mental" class="col-4">Tiene algun problema o condicion mental? (Autismo, sindrome de Down, esquizofrenia, etc) <input type="radio" name="condicion-mental" id="condicion-mental" value="condicion mental"></label>
+                  <label for="recordar-concentrarse" class="col-4">Recordar o concentrarse <input type="checkbox" name="recordar-concentrarse" id="recordar-concentrarse" value="recordar-concentrarse"></label>
+
+                  <label for="condicion-mental" class="col-4">Tiene algun problema o condicion mental? (Autismo, sindrome de Down, esquizofrenia, etc) <input type="checkbox" name="condicion-mental" id="condicion-mental" value="condicion mental"></label>
                 </div>
                 <span>Nota: Se puede seleccionar mas de una opcion.</span>
                 
@@ -296,7 +297,7 @@
               <div class="trabajo borde">
                 <div class="form-group acomodar-horizontal trabajo-estilos">
                   <label for="trabajo-activo"><b>Tiene trabajo activo?</b></label>
-                  <label for="jubilado-pensionado"><input type="radio" name="trabajo-activo" id="jubilado-pensionado" value="jubilado-pensionado"> Jubilado/Pensionado</label>
+                  <label for="jubilado-pensionado"><input type="radio" name="trabajo-activo" id="jubilado-pensionado" value="jubilado-pensionado" required> Jubilado/Pensionado</label>
 
                   <label for="desempleado"><input type="radio" name="trabajo-activo" id="desempleado" value="desempleado"> Desempleado</label>
 
@@ -305,34 +306,35 @@
                   <input type="text" class="form-control col-4" name="otro-empleo" id="otro-empleo" placeholder="Otro">
 
                 </div>
+
                 <div class="form-group tipos-ocupacion acomodar-horizontal">
                   <label for="tipos-ocupacion"><b>Tipos de ocupación:</b></label>
 
-                  <label for="trabajador-agropecuario"><input type="radio" name="trabajador-agropecuario" id="trabajador-agropecuario"> Trabajador agropecuario</label>
+                  <label for="trabajador-agropecuario"><input type="radio" name="ocupacion" id="trabajador-agropecuario" value="trabajador-agropecuario"> Trabajador agropecuario</label>
 
-                  <label for="inspector-supervisor"><input type="radio" name="inspector-supervisor" id="inspector-supervisor"> Inspector o supervisor</label>
+                  <label for="inspector-supervisor"><input type="radio" name="ocupacion" id="inspector-supervisor" value="inspector-supervisor"> Inspector o supervisor</label>
 
-                  <label for="artesano"><input type="radio" name="artesano" id="artesano"> Artesano</label>
+                  <label for="artesano"><input type="radio" name="ocupacion" id="artesano" value="artesano"> Artesano</label>
 
-                  <label for="obrero"><input type="radio" name="obrero" id="obrero"> Obrero</label>
+                  <label for="obrero"><input type="radio" name="ocupacion" id="obrero" value="obrero"> Obrero</label>
 
-                  <label for="ayudante"><input type="radio" name="ayudante" id="ayudante"> Ayudante o similar</label>
+                  <label for="ayudante"><input type="radio" name="ocupacion" id="ayudante" value="ayudante"> Ayudante o similar</label>
 
-                  <label for="empleado-gobierno"><input type="radio" name="empleado-gobierno" id="empleado-gobierno"> Empleado de gobierno</label>
+                  <label for="empleado-gobierno"><input type="radio" name="ocupacion" id="empleado-gobierno" value="empleado-gobierno"> Empleado de gobierno</label>
 
-                  <label for="operador"><input type="radio" name="operador" id="operador"> Operador de transporte o maquinaria en movimiento</label>
+                  <label for="operador"><input type="radio" name="ocupacion" id="operador" value="operador"> Operador de transporte o maquinaria en movimiento</label>
 
-                  <label for="comerciante-vendedor"><input type="radio" name="comerciante-vendedor" id="comerciante-vendedor"> Comerciante o vendedor</label>
+                  <label for="comerciante-vendedor"><input type="radio" name="ocupacion" id="comerciante-vendedor" value="comerciante"> Comerciante o vendedor</label>
 
-                  <label for="trabajador-hogar"><input type="radio" name="trabajar-hogar" id="trabajador-hogar"> Trabajador/a del hogar</label>
+                  <label for="trabajador-hogar"><input type="radio" name="ocupacion" id="trabajador-hogar" value="trabajador-hogar"> Trabajador/a del hogar</label>
 
-                  <label for="proteccion-vigilancia"><input type="radio" name="proteccion-vigilancia" id="proteccion-vigilancia"> Protección o vigilancia</label>
+                  <label for="proteccion-vigilancia"><input type="radio" name="ocupacion" id="proteccion-vigilancia" value="vigilancia"> Protección o vigilancia</label>
 
-                  <label for="quehaceres-hogar"><input type="radio" name="quehaceres-hogar" id="quehaceres-hogar"> Quehaceres del hogar</label>
+                  <label for="quehaceres-hogar"><input type="radio" name="ocupacion" id="quehaceres-hogar" value="quehaceres-hogar"> Quehaceres del hogar</label>
 
-                  <label for="trabajador-ambulante"><input type="radio" name="trabajador-ambulante" id="trabajador-ambulante"> Trabajador ambulante</label>
+                  <label for="trabajador-ambulante"><input type="radio" name="ocupacion" id="trabajador-ambulante" value="trabajador-ambulante"> Trabajador ambulante</label>
                   
-                  <label for="deportista"><input type="radio" name="deportista" id="deportista"> Deportista</label>
+                  <label for="deportista"><input type="radio" name="deportista" id="deportista" value="deportista"> Deportista</label>
                 </div>
               </div>
               <!--./Trabajo-->
@@ -341,7 +343,7 @@
               <div class="nivel-ingresa borde">
                 <div class="form-group">
                   <label for="nivel-al-que-ingresa"><b> Nivel al que ingresa:</b></label>
-                  <label for="alfabetizacion"><input type="radio" name="nivel-ingreso" id="alfabetizacion" value="alfabetizacion"> Alfabetización</label>
+                  <label for="alfabetizacion"><input type="radio" name="nivel-ingreso" id="alfabetizacion" value="alfabetizacion" required> Alfabetización</label>
                   
                   <label for="primaria"><input type="radio" name="nivel-ingreso" id="primaria" value="primaria"> Primaria</label>
 
@@ -352,29 +354,29 @@
                 </div>
                 <div class="form-group">
                   <label for="antecedentes-escolares"><b> Antecedentes escolares:</b></label>
-                  <div class="form-group">
+                  <div class="form-group estudios">
                     <label for="sin-estudios"><input type="radio" name="sin-estudios" id="sin-estudios" value="sin estudios"> Sin estudios</label>
 
                     <label for="primaria-antecedente"><input type="radio" name="primaria-antecedente" id="primaria-antecedente" value="primaria-antecedente"> Primaria</label>
 
-                    <input type="text" name="primaria-grado" id="primaria-grado"  value=""  pattern="" title="" placeholder="Grado">
+                    <input type="text" name="primaria-grado" id="primaria-grado" class="form-control col-4"  value=""  pattern="" title="" placeholder="Grado">
                     <label for="secundaria-antecedente">
                     <input type="radio" name="secundaria-antecedente" id="secundaria-antecedente" value="secundaria"> Secundaria</label>
 
-                    <input type="text" name="grado-secundaria" class="" id="grado-secundaria" placeholder="Grado">
+                    <input type="text" name="grado-secundaria" class="form-control col-4" id="grado-secundaria" placeholder="Grado">
 
                   </div>
-                  <div class="form-group">
+                  <div class="form-group lenguas-nivel">
                     <label for="hispanohablante"><input type="radio" name="hispanohablante" id="hispanohablante" value="hispanohablante"> Hispanohablante</label>
 
                     <label for="hablante-lengua-indigena"><input type="radio" name="hablante-lengua-indigena" id="hablante-lengua-indigena"> Hablante de lengua indigena</label>
 
-                    <label for="etnia-lengua">Etnia/Lengua</label>
-                    <input type="text" name="etnia-lengua" id="etnia-lengua" placeholder="Etnia/Lengua">
+              
+                    <input type="text" class="form-control col-4" name="etnia-lengua" id="etnia-lengua" placeholder="Etnia/Lengua">
 
                   </div>
-                  <div class="form-group">
-                    <label for="ejercicio-diagnostico"><input type="radio" name="check-ejercicios" id="ejercicio-diagnostico" value="ejercicio diagnostico"> Ejercicio diagnostico (alfabetización)</label>
+                  <div class="form-group estudios">
+                    <label for="ejercicio-diagnostico"><input type="radio" name="check-ejercicios" id="ejercicio-diagnostico" value="ejercicio diagnostico" required> Ejercicio diagnostico (alfabetización)</label>
 
                     <label for="examen-diagnostico"><input type="radio" name="check-ejercicios" id="examen-diagnostico" value="examen diagnostico"> Examen diagnostico</label>
 
