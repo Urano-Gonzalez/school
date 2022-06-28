@@ -296,58 +296,91 @@
               <div class="trabajo borde">
                 <div class="form-group acomodar-horizontal trabajo-estilos">
                   <label for="trabajo-activo"><b>Tiene trabajo activo?</b></label>
-                  <label for="jubilado-pensionado"><input type="radio" name="trabajo-activo" id="jubilado-pensionado"> Jubilado/Pensionado</label>
-                  <label for="desempleado"><input type="radio" name="trabajo-activo" id="desempleado"> Desempleado</label>
-                  <label for="estudiante"><input type="radio" name="trabajo-activo" id="estudiante"> Estudiante</label>
+                  <label for="jubilado-pensionado"><input type="radio" name="trabajo-activo" id="jubilado-pensionado" value="jubilado-pensionado"> Jubilado/Pensionado</label>
+
+                  <label for="desempleado"><input type="radio" name="trabajo-activo" id="desempleado" value="desempleado"> Desempleado</label>
+
+                  <label for="estudiante"><input type="radio" name="trabajo-activo" id="estudiante" value="estudiante"> Estudiante</label>
+
                   <input type="text" class="form-control col-4" name="otro-empleo" id="otro-empleo" placeholder="Otro">
+
                 </div>
                 <div class="form-group tipos-ocupacion acomodar-horizontal">
                   <label for="tipos-ocupacion"><b>Tipos de ocupación:</b></label>
+
                   <label for="trabajador-agropecuario"><input type="radio" name="trabajador-agropecuario" id="trabajador-agropecuario"> Trabajador agropecuario</label>
+
                   <label for="inspector-supervisor"><input type="radio" name="inspector-supervisor" id="inspector-supervisor"> Inspector o supervisor</label>
+
                   <label for="artesano"><input type="radio" name="artesano" id="artesano"> Artesano</label>
+
                   <label for="obrero"><input type="radio" name="obrero" id="obrero"> Obrero</label>
+
                   <label for="ayudante"><input type="radio" name="ayudante" id="ayudante"> Ayudante o similar</label>
+
                   <label for="empleado-gobierno"><input type="radio" name="empleado-gobierno" id="empleado-gobierno"> Empleado de gobierno</label>
+
                   <label for="operador"><input type="radio" name="operador" id="operador"> Operador de transporte o maquinaria en movimiento</label>
+
                   <label for="comerciante-vendedor"><input type="radio" name="comerciante-vendedor" id="comerciante-vendedor"> Comerciante o vendedor</label>
+
                   <label for="trabajador-hogar"><input type="radio" name="trabajar-hogar" id="trabajador-hogar"> Trabajador/a del hogar</label>
+
                   <label for="proteccion-vigilancia"><input type="radio" name="proteccion-vigilancia" id="proteccion-vigilancia"> Protección o vigilancia</label>
+
                   <label for="quehaceres-hogar"><input type="radio" name="quehaceres-hogar" id="quehaceres-hogar"> Quehaceres del hogar</label>
+
                   <label for="trabajador-ambulante"><input type="radio" name="trabajador-ambulante" id="trabajador-ambulante"> Trabajador ambulante</label>
+                  
                   <label for="deportista"><input type="radio" name="deportista" id="deportista"> Deportista</label>
                 </div>
               </div>
               <!--./Trabajo-->
+
               <!--Nivel al que ingresa-->
               <div class="nivel-ingresa borde">
                 <div class="form-group">
                   <label for="nivel-al-que-ingresa"><b> Nivel al que ingresa:</b></label>
-                  <label for="alfabetizacion"><input type="radio" name="nivel-ingreso" id="alfabetizacion"> Alfabetización</label>
-                  <label for="primaria"><input type="radio" name="nivel-ingreso" id="primaria"> Primaria</label>
-                  <label for="primaria-10-14"><input type="radio" name="nivel-ingreso" id="primaria-10-14"> Primaria 10-14</label>
-                  <label for="secundaria"><input type="radio" name="nivel-ingreso" id="secundaria"> Secundaria</label>
+                  <label for="alfabetizacion"><input type="radio" name="nivel-ingreso" id="alfabetizacion" value="alfabetizacion"> Alfabetización</label>
+                  
+                  <label for="primaria"><input type="radio" name="nivel-ingreso" id="primaria" value="primaria"> Primaria</label>
+
+                  <label for="primaria-10-14"><input type="radio" name="nivel-ingreso" id="primaria-10-14" value="primaria-10-14"> Primaria 10-14</label>
+
+                  <label for="secundaria"><input type="radio" name="nivel-ingreso" id="secundaria" value="secundaria"> Secundaria</label>
+
                 </div>
                 <div class="form-group">
                   <label for="antecedentes-escolares"><b> Antecedentes escolares:</b></label>
                   <div class="form-group">
-                    <label for="sin-estudios"><input type="radio" name="sin-estudios" id="sin-estudios"> Sin estudios</label>
-                    <label for="primaria-antecedente"><input type="radio" name="primaria-antecedente" id="primaria-antecedente"> Primaria</label>
+                    <label for="sin-estudios"><input type="radio" name="sin-estudios" id="sin-estudios" value="sin estudios"> Sin estudios</label>
+
+                    <label for="primaria-antecedente"><input type="radio" name="primaria-antecedente" id="primaria-antecedente" value="primaria-antecedente"> Primaria</label>
+
                     <input type="text" name="primaria-grado" id="inputprimaria-grado"  value=""  pattern="" title="" placeholder="Grado">
-                    <label for="secundaria-antecedente"><input type="radio" name="secundaria-antecedente" id="secundaria-antecedente"> Secundaria</label>
+                    <label for="secundaria-antecedente">
+                    <input type="radio" name="secundaria-antecedente" id="secundaria-antecedente" value="secundaria"> Secundaria</label>
+
                     <input type="text" name="grado-secundaria" class="" id="grado-secundaria" placeholder="Grado">
+
                   </div>
                   <div class="form-group">
-                    <label for="hispanohablante"><input type="radio" name="hispanohablante" id="hispanohablante"> Hispanohablante</label>
+                    <label for="hispanohablante"><input type="radio" name="hispanohablante" id="hispanohablante" value="hispanohablante"> Hispanohablante</label>
+
                     <label for="hablante-lengua-indigena"><input type="radio" name="hablante-lengua-indigena" id="hablante-lengua-indigena"> Hablante de lengua indigena</label>
+
                     <label for="etnia-lengua">Etnia/Lengua</label>
                     <input type="text" name="etnia-lengua" id="etnia-lengua" placeholder="Etnia/Lengua">
+
                   </div>
                   <div class="form-group">
-                    <label for="ejercicio-diagnostico"><input type="radio" name="ejercicio-diagnostico" id="ejercicio-diagnostico"> Ejercicio diagnostico (alfabetización)</label>
-                    <label for="examen-diagnostico"><input type="radio" name="examen-diagnostico" id="examen-diagnostico"> Examen diagnostico</label>
-                    <label for="reconocimiento-saberes"><input type="radio" name="reconocimiento-saberes" id="reconocimiento-saberes"> Reconocimiento de saberes</label>
-                    <label for="atencion-educativa"><input type="radio" name="atencion-educativa" id="atencion-educativa"> Atencion educativa</label>
+                    <label for="ejercicio-diagnostico"><input type="radio" name="check-ejercicios" id="ejercicio-diagnostico" value="ejercicio diagnostico"> Ejercicio diagnostico (alfabetización)</label>
+
+                    <label for="examen-diagnostico"><input type="radio" name="check-ejercicios" id="examen-diagnostico" value="examen diagnostico"> Examen diagnostico</label>
+
+                    <label for="reconocimiento-saberes"><input type="radio" name="check-ejercicios" id="reconocimiento-saberes" value="reconocimiento de saberes"> Reconocimiento de saberes</label>
+
+                    <label for="atencion-educativa"><input type="radio" name="check-ejercicios" id="atencion-educativa" value="atencion educativa"> Atencion educativa</label>
                   </div>
                 </div>
               </div>
@@ -357,15 +390,22 @@
               <div class="motivacion borde">
                 <div class="form-group">
                   <label for="motivacion"><b>Que le motiva a estudiar?</b></label>
-                  <label for="obtener-certificado-primaria-secundaria"><input type="radio" name="obtener-certificado-primaria-secundaria" id="obtener-certificado-primaria-secundaria"> Obtener el certificado de Primaria/Secundaria</label>
-                  <label for="continuar-media-superior"><input type="radio" name="continuar-media-superior" id="continuar-media-superior"> Continuar la educacion Media Superior</label>
-                  <label for="obtener-empleo"><input type="radio" name="obtener-empleo" id="obtener-empleo"> Obtener un empleo</label>
-                  <label for="condiciones-laborales"><input type="radio" name="condiciones-laborales" id="condiciones-laborales"> Mejorar mis condiciones laborales</label>
-                  <label for="ayudar-con-tarea"><input type="radio" name="ayudar-con-tarea" id="ayudar-con-tarea"> Ayudar a mis hijos/nietos con las tareas</label>
-                  <label for="superacion-personal"><input type="radio" name="superacion-personal" id="superacion-personal"> Superacion personal</label>
+                  <label for="obtener-certificado-primaria-secundaria"><input type="radio" name="motivo-estudiar" id="obtener-certificado-primaria-secundaria" value="obtener certificado primaria"> Obtener el certificado de Primaria/Secundaria</label>
+
+                  <label for="continuar-media-superior"><input type="radio" name="motivo-estudiar" id="continuar-media-superior" value="continuar media superior"> Continuar la educacion Media Superior</label>
+
+                  <label for="obtener-empleo"><input type="radio" name="motivo-estudiar" id="obtener-empleo" value="obtener empleo"> Obtener un empleo</label>
+
+                  <label for="condiciones-laborales"><input type="radio" name="motivo-estudiar" id="condiciones-laborales" value="mejorar empleo"> Mejorar mis condiciones laborales</label>
+
+                  <label for="ayudar-con-tarea"><input type="radio" name="motivo-estudiar" id="ayudar-con-tarea" value="ayudar-tareas"> Ayudar a mis hijos/nietos con las tareas</label>
+
+                  <label for="superacion-personal"><input type="radio" name="motivo-estudiar" id="superacion-personal" value="superacion-personal"> Superacion personal</label>
+
                   <br>
-                  <label for="otro"><input type="radio" name="otro" id="otro"> Otro</label>
-                  <input type="text" class="form-control col-4" name="otro-motivo" id="otro-motivo">
+                  <label for="otro"><input type="radio" name="otroMotivo" id="otro" value="otro-motivo"> Otro</label>
+
+                  <input type="text" class="form-control col-4" name="otro-motivo-cual" id="otro-motivo">
                 </div>
               </div>
               <!--./ Fin Motivacion a estudiar-->
@@ -374,8 +414,10 @@
               <div class="como-se-entero borde">
                 <div class="form-group">
                   <label for="como-se-entero"><b>Como se entero de nuestro servicio?</b></label>
-                  <label for="difucion-inea"><input type="radio" name="difucion-inea" id="difucion-inea"> Difucion del INEA</label>
-                  <label for="invitacion-personal"><input type="radio" name="invitacion-personal" id="invitacion-personal"> Invitacion personal</label>
+                  <label for="difucion-inea"><input type="radio" name="como-se-entero" id="difucion-inea" value="difucion-inea"> Difucion del INEA</label>
+
+                  <label for="invitacion-personal"><input type="radio" name="como-se-entero" id="invitacion-personal" value="invitacion-personal"> Invitacion personal</label>
+
                   <label for="como-se-entero-otro">Otro<input type="text" class="form-control" name="como-se-entero-otro" id="como-se-entero-otro"></label>
                 </div>
                 <div class="form-group acomodar-horizontal">
@@ -393,19 +435,27 @@
                   <label for="documentacion-persona"><b>Documentación de la persona beneficiaria:</b></label>
                   <br>
                   <label for="fotografia"><input type="radio" name="fotografia" id="fotografia"> Fotografia</label>
+
                   <label for="ficha-cereso"><input type="radio" name="ficha-cereso" id="ficha-cereso"> Ficha signaletica (CERESO)</label>
+
                   <label for="documento-legal-equivalente"><input type="radio" name="documento-legal-equivalente" id="documento-legal-equivalente"> Documento legal equivalente (extranjeros)</label>
+
                 </div>
                 <div class="form-group">
                   <label for="documentos-probatorios"><b>Documentos Probatorios / Constancias de capacitación</b></label>
                   <br>
-                  <label for="certificado-primaria"><input type="radio" name="certificado-primaria" id="certificado-primaria"> Certificado de primaria</label>
-                  <label for="informe-calificaciones-inea"><input type="radio" name="informe-calificaciones-inea" id="informe-calificaciones-ineacertificado-primaria"> Informe de calificaciones INEA</label>
+                  <label for="certificado-primaria"><input type="radio" name="certificado-primaria" id="certificado-primaria" value="certificado-primaria"> Certificado de primaria</label>
+
+                 
+
                   <label for="boletas-de-primaria"><input type="radio" name="boletas-de-primaria" id="boletas-de-primaria"> Boletas de primaria</label>
+
                   <input type="text" class="form-control col-4" name="grado-boleta-secundaria" id="grado-boleta-secundaria" placeholder="Grado">
+
                   <label for="boletas-de-secundaria"><input type="radio" name="boletas-de-secundaria" id="boletas-de-secundaria"> Boletas de secundaria</label>
                   <input type="text" class="form-control col-4" name="grado-boleta-secundaria" id="grado-boleta-secundaria" placeholder="Grado">
                   <br>
+                  <label for="informe-calificaciones-inea"><input type="radio" name="informe-calificaciones-inea" id="informe-calificaciones-inea"> Informe de calificaciones INEA</label>
                   <label for="contanciaa-capacitacion">Constancias de Capacitacion</label>
                   <div class="horas-capacitacion">
                     <div class="form-group">

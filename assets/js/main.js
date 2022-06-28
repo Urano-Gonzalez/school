@@ -1722,7 +1722,53 @@ function guardarRegistroINEA(){
   let banarseVestirseComer = document.querySelector('input[name="banarse-vestirse-comer"]:checked').value;
   let hablarComunicarse = document.querySelector('input[name="hablar-comunicarse"]:checked').value;
   let recordarConcentrarse = document.querySelector('input[name="recordar-concentrarse"]:checked').value;
-  let condicionMental = document.querySelector('input[name="condicion-mentals"]:checked').value;
+  let condicionMental = document.querySelector('input[name="condicion-mental"]:checked').value;
+  // Trabajo 
+  let trabajoActivo = document.querySelector('input[name="trabajo-activo"]:checked').value;
+  let otroEmpleo = document.getElementById('otro-empleo').value;
+  let trabajadorAgropecuario = document.querySelector('input[name="trabajador-agropecuario"]:checked').value;
+  let inspectorSupervisor = document.querySelector('input[name="inspector-supervisor"]:checked').value;
+  let artesano = document.querySelector('input[name="artesano"]:checked').value;
+  let obrero = document.querySelector('input[name="obrero"]:checked').value;
+  let ayudante = document.querySelector('input[name="ayudante"]:checked').value;
+  let empleadoGobierno = document.querySelector('input[name="empleado-gobierno"]:checked').value;
+  let operador  = document.querySelector('input[name="operador"]:checked').value;
+  let comercianteVendedor  = document.querySelector('input[name="comerciante-vendedor"]:checked').value;
+  let trabajadorHogar  = document.querySelector('input[name="trabajar-hogar"]:checked').value;
+  let proteccionVigilancia  = document.querySelector('input[name="proteccion-vigilancia"]:checked').value;
+  let quehaceresHogar  = document.querySelector('input[name="quehaceres-hogar"]:checked').value;
+  let trabajadorAmbulante  = document.querySelector('input[name="trabajador-ambulante"]:checked').value;
+  let deportista  = document.querySelector('input[name="deportista"]:checked').value;
+  // nivel al que ingresa
+  let nivelIngreso  = document.querySelector('input[name="nivel-ingreso"]:checked').value;
+  // antecedentes escolares
+  let sinEstudios  = document.querySelector('input[name="sin-estudios"]:checked').value;
+  let primariaAntecedente  = document.querySelector('input[name="primaria-antecedente"]:checked').value;
+  let primariaGrado = document.getElementById('primaria-grado').value;
+  let secundariaAntecedente  = document.querySelector('input[name="secundaria-antecedente"]:checked').value;
+  let secundariaGrado = document.getElementById('grado-secundaria').value;
+  let hispanohablante = document.querySelector('input[name="hispanohablante"]:checked').value;
+  let hablanteLenguaIndigena = document.querySelector('input[name="hablante-lengua-indigena"]:checked').value;
+  let etniaLengua = document.getElementById('etnia-lengua').value;
+  let checkEjercicios = document.querySelector('input[name="check-ejercicios"]:checked').value;
+  // Motivo de estudiar
+  let motivoEstudiar = document.querySelector('input[name="motivo-estudiar"]:checked').value;
+  let otroMotivo = document.querySelector('input[name="otro-motivo"]:checked').value;
+  let otroMotivoCual = document.getElementById('otro-motivo-cual').value;
+  // Como se entero
+  let comoSeEntero = document.querySelector('input[name="como-se-entero"]:checked').value;
+  let otroComoSeEntero = document.getElementById('como-se-entero-otro').value;
+  let subproyecto = document.getElementById('subproyecto').value;
+  let dependencia = document.getElementById('dependencia').value;
+  // documentacion personal
+  let fotografia = document.querySelector('input[name="fotografia"]:checked').value;
+  let fichaCereso = document.querySelector('input[name="ficha-cereso"]:checked').value;
+  let documentoEquivalente = document.querySelector('input[name="documento-legal-equivalente"]:checked').value;
+  // Documentos probatorios
+  let certificadoPrimaria = document.querySelector('input[name="certificado-primaria"]:checked').value;
+  let informeINEA = document.querySelector('input[name="informe-calificaciones-inea"]:checked').value;
+  let numeroConstancias = document.getElementById('numero-constancias').value;
+  let horasCapacitacion = document.getElementById('horas-capacitacion').value;
   debugger
   console.log('id: '+idBeneficiario);
 }
