@@ -161,3 +161,6 @@
   margin: 5px;
   padding: 10px;
 }
+.lenguas{
+  justify-content: space-evenly;
+}

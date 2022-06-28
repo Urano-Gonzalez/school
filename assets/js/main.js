@@ -1678,7 +1678,14 @@ function guardarRegistroINEA(){
   let numeroZona = document.getElementById('numero-zona').value;
   let nombreZona = document.getElementById('nombre-zona').value;
   let fecha_registro = document.getElementById('fecha-registro').value;
-  let incorporacion = document.querySelector('input[name="check-option"]:checked').value;
+  let incorporacion = document.querySelector('input[name="check-option"]:checked');
+  if(incorporacion == null){
+    toastr.error('Debe marcar alguna opción', '¡Upss!');
+    let divCheckIngreso = document.getElementById('check-ingreso');
+    divCheckIngreso.focus();
+  }
+  
+  console.log(incorporacion)
   debugger
   // Datos generales
   let primerApellido = document.getElementById('primer-apellido').value;

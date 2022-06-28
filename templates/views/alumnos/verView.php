@@ -143,7 +143,7 @@
                     </div>
                     <div class="form-group">
                       <label for="sexo">Sexo:</label>
-                      <label for="radio-sex-hombre"><input type="radio"  name="check-sexo" id="radio-sex-hombre" value="Hombre"> Hombre</label>
+                      <label for="radio-sex-hombre"><input type="radio"  name="check-sexo" id="radio-sex-hombre" value="Hombre" required> Hombre</label>
                       <label for="radio-sex-mujer"><input type="radio"  name="check-sexo" id="radio-sex-mujer" value="Mujer"> Mujer</label>
                     </div>
                   </div>
@@ -154,26 +154,26 @@
               <div class="estado-civil">
                 
                   <label for="estado-civil"><b>Estado civil:</b></label>
-                  <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero" value="Soltero"> Soltero</label>
+                  <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero" value="Soltero" required> Soltero</label>
                   <label for="casado"><input type="radio"  name="check-estado-civil" id="casado" value="Casado"> Casado</label>
                   <label for="union-libre"><input type="radio"  name="check-estado-civil" id="union-libre" value="Casado"> Unión libre</label>
                   <label for="separado"><input type="radio"  name="check-estado-civil" id="separado" value="Casado"> Separado</label>
                   <label for="divorciado"><input type="radio"  name="check-estado-civil" id="divorciado" value="Casado"> Divorciado</label>
                   <label for="viudo"><input type="radio"  name="check-estado-civil" id="viudo" value="Casado"> Viudo</label>
-                  <label for="n-hijos">Numero de hijos:<input type="number" class="form-control " name="n-hijos" id="n-hijos" placeholder="Numero de hijos" min="0"></label>
+                  <label for="n-hijos">Numero de hijos:<input type="number" class="form-control " name="n-hijos" id="n-hijos" placeholder="Numero de hijos" min="0" value="0"></label>
                   
                 
               </div>
               <!--./Estado civil-->
               <!--lenguas-->
               <div class=" lenguas borde acomodar-horizontal">
-                <label for="hablas-espanol">Habla español? <input type="radio" name="hablas-espanol" id="hablas-espanol"></label>
-                <label for="habla-dialecto-o-lengua">Habla algun dialecto o lengua indigena ? <input type="radio" name="habla-dialecto-o-lengua" id="habla-dialecto-o-lengua" value="habla-lengua-indigena"></label>
+                <label for="hablas-espanol">Habla español? <input type="checkbox" name="hablas-espanol" id="hablas-espanol" value="habla-espanol"></label>
+                <label for="habla-dialecto-o-lengua">Habla algun dialecto o lengua indigena ? <input type="checkbox" name="habla-dialecto-o-lengua" id="habla-dialecto-o-lengua" value="habla-lengua-indigena"></label>
                 <br>
     
-                <input type="text" class="form-control col-2" name="cual" id="cual-lengua" placeholder="Cual?" >
+                <input type="text" class="form-control col-2" name="cual-lengua" id="cual-lengua" placeholder="Cual?" >
                 <br>
-                <label for="idioma-adicional">Otro idioma adicional al español ? <input type="radio" name="idioma-adicional" id="idioma-adicional" value="habla-otro-idioma"></label>
+                <label for="idioma-adicional">Otro idioma adicional al español ? <input type="checkbox" name="idioma-adicional" id="idioma-adicional" value="habla-otro-idioma"></label>
                 <br>
               
                 <input type="text" class="form-control col-2" name="cual-adicional" id="cual-adicional" placeholder="Cual?">
@@ -193,13 +193,13 @@
                   <div class="form-group acomodar-horizontal">
                     <label for="vialidad">Vialidad:</label>
                     <div class="acomodar-vertical col-4">
-                      <input type="text" class="form-control" name="tipo-vialidad" id="tipo-vialidad" placeholder="Tipo" require value="privada">
+                      <input type="text" class="form-control" name="tipo-vialidad" id="tipo-vialidad" placeholder="Tipo" required value="privada">
                       
                     </div>
                     
-                    <input type="text"  class="form-control" name="nombre-vialidad" id="nombre-vialidad" placeholder="Nombre vialidad" require value="Oyamel">
-                    <input type="text"  class="form-control col-2" name="num-exterior" id="num-exterior" placeholder="Núm. Exterior" require value="127">
-                    <input type="text"  class="form-control col-2" name="num-interior" id="num-interior" placeholder="Núm. Interior" require value="127">
+                    <input type="text"  class="form-control" name="nombre-vialidad" id="nombre-vialidad" placeholder="Nombre vialidad" required value="Oyamel">
+                    <input type="text"  class="form-control col-2" name="num-exterior" id="num-exterior" placeholder="Núm. Exterior" required value="127">
+                    <input type="text"  class="form-control col-2" name="num-interior" id="num-interior" placeholder="Núm. Interior" required value="127">
                 </div>
                 <span>(Tipo: andador, avenida, boulevard, callejón, calle, cerrada, privada, corredor, prolongación, carretera, camino, terraceria, etc)</span>
                 </div>
@@ -208,8 +208,8 @@
                   <div class="form-group acomodar-horizontal">
                     <label for="asentamiento-humano">Asentamiento humano:</label>
                     
-                    <input type="text" class="form-control col-4" name="tipo-asentamiento" id="tipo-asentamiento" placeholder="Tipo" require value="colonia">
-                    <input type="text" class="form-control col-4" name="nombre-asentamiento" id="nombre-asentamiento" placeholder="Nombre" require value="hacienda2">
+                    <input type="text" class="form-control col-4" name="tipo-asentamiento" id="tipo-asentamiento" placeholder="Tipo" required value="colonia">
+                    <input type="text" class="form-control col-4" name="nombre-asentamiento" id="nombre-asentamiento" placeholder="Nombre" required value="hacienda2">
                     
                   </div>
                   <span>(Tipo: colonia, conjunto habitacional, ejido, ex hacienda, fraccinamiento, manzana. H., pueblo, rancho, zona militar, etc)</span>
@@ -217,47 +217,47 @@
                 <hr>
                 <div class="form-group acomodar-horizontal">
                   <label for="entre-que-vialidad">Entre que vialidad: </label>
-                  <input type="text" class="form-control col-4" name="tipo-entre-vialidad-1" id="tipo-entre-vialidad-1" placeholder="Tipo" require value="privada">
-                  <input type="text" class="form-control col-4" name="nombre-entre-vialidad-1" id="nombre-entre-vialidad-1" placeholder="Nombre" require value="diamante">
+                  <input type="text" class="form-control col-4" name="tipo-entre-vialidad-1" id="tipo-entre-vialidad-1" placeholder="Tipo" required value="privada">
+                  <input type="text" class="form-control col-4" name="nombre-entre-vialidad-1" id="nombre-entre-vialidad-1" placeholder="Nombre" required value="diamante">
                 </div>
                 <div class="form-group acomodar-horizontal">
                   <label for="entre-que-vialidad-2">Y <br> que vialidad:</label>
-                  <input type="text" class="form-control" name="tipo-entre-vialidad-2" id="tipo-entre-vialidad-2" placeholder="Tipo" require value="privada">
-                  <input type="text" class="form-control" name="nombre-entre-vialidad-2" id="nombre-entre-vialidad-2" placeholder="Nombre" require value="crisolita">
-                  <input type="text" class="form-control" name="c-p" id="c-p" placeholder="C.P" require value="51225">
+                  <input type="text" class="form-control" name="tipo-entre-vialidad-2" id="tipo-entre-vialidad-2" placeholder="Tipo" required value="privada">
+                  <input type="text" class="form-control" name="nombre-entre-vialidad-2" id="nombre-entre-vialidad-2" placeholder="Nombre" required value="crisolita">
+                  <input type="text" class="form-control" name="c-p" id="c-p" placeholder="C.P" required value="51225">
                 </div>
                 <hr>
                 <div class="localidad acomodar-horizontal">
                   <div class="form-group">
                     <label for="localidad">Localidad:</label>
-                    <input type="text" class="form-control" name="localidad" id="localidad" placeholder="Localidad" require value="hacienda">
+                    <input type="text" class="form-control" name="localidad" id="localidad" placeholder="Localidad" required value="hacienda">
                   </div>
                   <div class="form-group">
                     <label for="municipio">Municipio:</label>
-                    <input type="text" class="form-control" name="municipio" id="municipio" placeholder="Municipio" require value="Tultepec">
+                    <input type="text" class="form-control" name="municipio" id="municipio" placeholder="Municipio" required value="Tultepec">
                   </div>
                   <div class="form-group">
                     <label for="entidad-federativa">Entidad federativa:</label>
-                    <input type="text" class="form-control" name="entidad-federativa" id="entidad-federativa" placeholder="Entidad federativa" require value="EDO.MEX">
+                    <input type="text" class="form-control" name="entidad-federativa" id="entidad-federativa" placeholder="Entidad federativa" required value="EDO.MEX">
                   </div>
                 </div>
                 <!--Telefonos-->
                 <div class="telefonos acomodar-horizontal">
                   <div class="form-group">
                     <label for="telefono-fijo">Telefono fijo:</label>
-                    <input type="tel" class="form-control" name="telefono-fijo" id="telefono-fijo" placeholder="Numero (10 digitos)" require value="5533043275">
+                    <input type="tel" class="form-control" name="telefono-fijo" id="telefono-fijo" placeholder="Numero (10 digitos)" required value="5533043275">
                   </div>
                   <div class="form-group">
                     <label for="telefono-celular">Telefono celular:</label>
-                    <input type="tel" class="form-control" name="telefono-celular" id="telefono-celular" placeholder="Numero (10 digitos)" require value="5533043275">
+                    <input type="tel" class="form-control" name="telefono-celular" id="telefono-celular" placeholder="Numero (10 digitos)" required value="5533043277">
                   </div>
                 </div>
                 <!--./Telefonos-->
                 <div class="form-group acomodar-horizontal ajustar-elementos">
-                  <label for="equipo-computo">Tiene equipo de computo <input type="radio" name="equipo-computo" id="equipo-computo"></label>
+                  <label for="equipo-computo">Tiene equipo de computo <input type="checkbox" name="equipo-computo" id="equipo-computo" value="si-tiene-equipo"></label>
                   <br>
                   <label for="correo-personal">Correo electronico personal:</label>
-                  <input type="email" class="form-control col-4" name="correo-personal" id="correo-personal" require value="santiago_mendozaisc@outlook.com">
+                  <input type="email" class="form-control col-4" name="correo-personal" id="correo-personal" required value="santiago_mendozaisc@outlook.com">
                 </div>
                 <div class="form-group acomodar-horizontal ajustar-elementos">
                   <label for="acceso-internet">Tiene acceso a internet <input type="radio" name="acceso-internet" id="acceso-internet"></label>
