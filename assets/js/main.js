@@ -1675,6 +1675,54 @@ function guardarRegistroINEA(){
   let nombreZona = document.getElementById('nombre-zona').value;
   let fecha_registro = document.getElementById('fecha-registro').value;
   let incorporacion = document.querySelector('input[name="check-option"]:checked').value;
+  // Datos generales
+  let primerApellido = document.getElementById('primer-apellido').value;
+  let segundoApellido = document.getElementById('segundo-apellido').value;
+  let nombres = document.getElementById('nombres').value;
+  let fechaNacimientoBeneficiario = document.getElementById('fecha-nacimiento').value;
+  let rfe = document.getElementById('rfe').value;
+  let nacionalidad = document.getElementById('nacionalidad').value;
+  let entidadNacimiento = document.getElementById('entidad-nacimiento').value;
+  let sexo = document.querySelector('input[name="check-sexo"]:checked').value;
+  let estadoCivil = document.querySelector('input[name="check-estado-civil"]:checked').value;
+  let numeroHijos = document.getElementById('n-hijos').value;
+  let hablaLenguaIndigena = document.querySelector('input[name="habla-dialecto-o-lengua"]:checked').value;
+  let cualLengua = document.getElementById('cual-lengua').value;
+  let hablaOtroIdioma = document.querySelector('input[name="idioma-adicional"]:checked').value;
+  let cualAdicional = document.getElementById('cual-adicional').value;
+  let seConsideraIndigena = document.querySelector('input[name="se-considera-indigena"]:checked').value;
+  let seConsideraAfro = document.querySelector('input[name="se-considera-afro"]:checked').value;
+  // fin datos generales
+
+  // Domicilio
+  let tipoVialidad = document.getElementById('tipo-vialidad').value;
+  let nombreVialidad = document.getElementById('nombre-vialidad').value;
+  let numExterior = document.getElementById('num-exterior').value;
+  let numInterior = document.getElementById('num-interior').value;
+  let tipoAsentamiento  = document.getElementById('tipo-asentamiento').value;
+  let nombreAsentamiento  = document.getElementById('nombre-asentamiento').value;
+  let tipoEntreVialidadUNO  = document.getElementById('tipo-entre-vialidad-1').value;
+  let nombreEntreVialidadUNO  = document.getElementById('nombre-entre-vialidad-1').value;
+  let tipoEntreVialidadDOS  = document.getElementById('tipo-entre-vialidad-2').value;
+  let nombreEntreVialidadDOS  = document.getElementById('nombre-entre-vialidad-2').value;
+  let cp  = document.getElementById('c-p').value;
+  let lsocalidad  = document.getElementById('localidad').value;
+  let municipio  = document.getElementById('municipio').value;
+  let entidadFederativa  = document.getElementById('entidad-federativa').value;
+  let telefonoFijo  = document.getElementById('telefono-fijo').value;
+  let telefonoCelular  = document.getElementById('telefono-celular').value;
+  let equipoComputo = document.querySelector('input[name="equipo-computo"]:checked').value;
+  let accesoInternet = document.querySelector('input[name="acceso-internet"]:checked').value;
+  let correoPersonal = document.getElementById('correo-personal').value;
+  let correoINEA = document.getElementById('correo-inea').value;
+  // Dificultades
+  let caminarSubirBajar = document.querySelector('input[name="caminar-subir-bajar"]:checked').value;
+  let oir = document.querySelector('input[name="oir"]:checked').value;
+  let ver = document.querySelector('input[name="ver"]:checked').value;
+  let banarseVestirseComer = document.querySelector('input[name="banarse-vestirse-comer"]:checked').value;
+  let hablarComunicarse = document.querySelector('input[name="hablar-comunicarse"]:checked').value;
+  let recordarConcentrarse = document.querySelector('input[name="recordar-concentrarse"]:checked').value;
+  let condicionMental = document.querySelector('input[name="condicion-mentals"]:checked').value;
   debugger
   console.log('id: '+idBeneficiario);
 }

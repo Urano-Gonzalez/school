@@ -143,8 +143,8 @@
                     </div>
                     <div class="form-group">
                       <label for="sexo">Sexo:</label>
-                      <label for="radio-sex-hombre"><input type="radio"  name="check-sexo" id="radio-sex-hombre"> Hombre</label>
-                      <label for="radio-sex-mujer"><input type="radio"  name="check-sexo" id="radio-sex-mujer"> Mujer</label>
+                      <label for="radio-sex-hombre"><input type="radio"  name="check-sexo" id="radio-sex-hombre" value="Hombre"> Hombre</label>
+                      <label for="radio-sex-mujer"><input type="radio"  name="check-sexo" id="radio-sex-mujer" value="Mujer"> Mujer</label>
                     </div>
                   </div>
                 
@@ -154,13 +154,13 @@
               <div class="estado-civil">
                 
                   <label for="estado-civil"><b>Estado civil:</b></label>
-                  <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero"> Soltero</label>
-                  <label for="casado"><input type="radio"  name="check-estado-civil" id="casado"> Casado</label>
-                  <label for="union-libre"><input type="radio"  name="check-estado-civil" id="union-libre"> Unión libre</label>
-                  <label for="separado"><input type="radio"  name="check-estado-civil" id="separado"> Separado</label>
-                  <label for="divorciado"><input type="radio"  name="check-estado-civil" id="divorciado"> Divorciado</label>
-                  <label for="viudo"><input type="radio"  name="check-estado-civil" id="viudo"> Viudo</label>
-                  <label for="n-hijos">Numero de hijos:<input type="number" class="form-control " name="n-hijos" id="n-hijos" placeholder="Numero de hijos"></label>
+                  <label for="soltero"><input type="radio"  name="check-estado-civil" id="soltero" value="Soltero"> Soltero</label>
+                  <label for="casado"><input type="radio"  name="check-estado-civil" id="casado" value="Casado"> Casado</label>
+                  <label for="union-libre"><input type="radio"  name="check-estado-civil" id="union-libre" value="Casado"> Unión libre</label>
+                  <label for="separado"><input type="radio"  name="check-estado-civil" id="separado" value="Casado"> Separado</label>
+                  <label for="divorciado"><input type="radio"  name="check-estado-civil" id="divorciado" value="Casado"> Divorciado</label>
+                  <label for="viudo"><input type="radio"  name="check-estado-civil" id="viudo" value="Casado"> Viudo</label>
+                  <label for="n-hijos">Numero de hijos:<input type="number" class="form-control " name="n-hijos" id="n-hijos" placeholder="Numero de hijos" min="0"></label>
                   
                 
               </div>
@@ -168,12 +168,12 @@
               <!--lenguas-->
               <div class=" lenguas borde acomodar-horizontal">
                 <label for="hablas-espanol">Habla español? <input type="radio" name="hablas-espanol" id="hablas-espanol"></label>
-                <label for="habla-dialecto-o-lengua">Habla algun dialecto o lengua indigena ? <input type="radio" name="habla-dialecto-o-lengua" id="habla-dialecto-o-lengua"></label>
+                <label for="habla-dialecto-o-lengua">Habla algun dialecto o lengua indigena ? <input type="radio" name="habla-dialecto-o-lengua" id="habla-dialecto-o-lengua" value="habla-lengua-indigena"></label>
                 <br>
     
-                <input type="text" class="form-control col-2" name="cual" id="cual" placeholder="Cual?" >
+                <input type="text" class="form-control col-2" name="cual" id="cual-lengua" placeholder="Cual?" >
                 <br>
-                <label for="idioma-adicional">Otro idioma adicional al español ? <input type="radio" name="idioma-adicional" id="idioma-adicional"></label>
+                <label for="idioma-adicional">Otro idioma adicional al español ? <input type="radio" name="idioma-adicional" id="idioma-adicional" value="habla-otro-idioma"></label>
                 <br>
               
                 <input type="text" class="form-control col-2" name="cual-adicional" id="cual-adicional" placeholder="Cual?">
@@ -182,8 +182,8 @@
           
               <!--Cultura-->
               <div class="borde cultura acomodar-horizontal">
-                <label for="se-considera-indigena">De acuerdo a su cultura, usted se considera indigena? <input type="radio" name="se-considera-indigenra" id="se-considera-indigena"></label>
-                <label for="se-considera-afro">Usted se considera afromexicano(a) negro(a) o afrodescendiente? <input type="radio" name="se-considera-afro" id="se-considera-afro"></label>
+                <label for="se-considera-indigena">De acuerdo a su cultura, usted se considera indigena? <input type="radio" name="se-considera-indigena" id="se-considera-indigena" value="Se considera indigena"></label>
+                <label for="se-considera-afro">Usted se considera afromexicano(a) negro(a) o afrodescendiente? <input type="radio" name="se-considera-afro" id="se-considera-afro" value="Se considera afrodescendiente"></label>
               </div>
               <!-- ./cultura-->
               <!--Domicilio-->
@@ -275,13 +275,18 @@
                 
                 <br>
                 <div class="acomodar-horizontal radios-dificultades">
-                  <label for="caminar-subir-bajar" class="col-4">Caminar, subir o bajar <input type="radio" name="caminar-subir-bajar" id="caminar-subir-bajar"></label>
-                  <label for="oir" class="col-4">Oir, aun usando aparato auditivo <input type="radio" name="oir" id="oir"></label>
-                  <label for="ver" class="col-4">Ver, aun usando lentes <input type="radio" name="ver" id="ver"></label>
-                  <label for="banarse-vestirse-comer" class="col-4">Bañarse, vestirse o comer <input type="radio" name="banarse-vestirse-comer" id="banarse-vestirse-comer"></label>
-                  <label for="hablar-comunicarse" class="col-4">Hablar o comunicarse (por ejemplo: entender o ser entendidos por otros) <input type="radio" name="hablar-comunicarse" id="hablar-comunicarse"></label>
-                  <label for="recordar-concentrarse" class="col-4">Recordar o concentrarse <input type="radio" name="recordar-concentrarse" id="recordar-concentrarse"></label>
-                  <label for="condicion-mental" class="col-4">Tiene algun problema o condicion mental? (Autismo, sindrome de Down, esquizofrenia, etc) <input type="radio" name="condicion-mental" id="condicion-mental"></label>
+                  <label for="caminar-subir-bajar" class="col-4">Caminar, subir o bajar <input type="radio" name="caminar-subir-bajar" id="caminar-subir-bajar" value="caminar-subir-bajar"></label>
+                  <label for="oir" class="col-4">Oir, aun usando aparato auditivo <input type="radio" name="oir" id="oir" value="oir"></label>
+
+                  <label for="ver" class="col-4">Ver, aun usando lentes <input type="radio" name="ver" id="ver" value="ver"></label>
+
+                  <label for="banarse-vestirse-comer" class="col-4">Bañarse, vestirse o comer <input type="radio" name="banarse-vestirse-comer" id="banarse-vestirse-comer" value="banarse-vestirse-comer"></label>
+
+                  <label for="hablar-comunicarse" class="col-4">Hablar o comunicarse (por ejemplo: entender o ser entendidos por otros) <input type="radio" name="hablar-comunicarse" id="hablar-comunicarse" value="hablar-comunicarse"></label>
+
+                  <label for="recordar-concentrarse" class="col-4">Recordar o concentrarse <input type="radio" name="recordar-concentrarse" id="recordar-concentrarse" value="recordar-concentrarse"></label>
+
+                  <label for="condicion-mental" class="col-4">Tiene algun problema o condicion mental? (Autismo, sindrome de Down, esquizofrenia, etc) <input type="radio" name="condicion-mental" id="condicion-mental" value="condicion mental"></label>
                 </div>
                 <span>Nota: Se puede seleccionar mas de una opcion.</span>
                 
