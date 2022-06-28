@@ -85,22 +85,22 @@
         <!--Contenido de card-->
       <div class="collapse show" id="alumno_data_completa">
           <div class="card-body">
-            <form id="registro-inea" method="post">
+            <form id="registro-inea" action="alumnos/registroINEA" method="post">
               <?php echo insert_inputs(); ?>
-              <input type="hidden" id="idBeneficiario" name="id" id="idBeneficiario" value="<?php echo $d->a->id; ?>" required>
+              <input type="hidden" id="idBeneficiario" name="id" value="<?php echo $d->title; ?>" required>
 
               <div class="form-group coordinacion-zona">
                 <label for="coordinacion-zona">Coordinación de Zona: </label>
-                <input type="text" class="form-control col-4 " id="numero-zona" name="numero-zona" placeholder="Número de zona" require value="01">
+                <input type="text" class="form-control col-4 " id="numero-zona" name="numero-zona" placeholder="Número de zona" required value="01">
                 <br>
-                <input type="text" class="form-control col-4" id="nombre-zona" name="nombre-zona" placeholder="Nombre de zona" require value="Zona 01">
+                <input type="text" class="form-control col-4" id="nombre-zona" name="nombre-zona" placeholder="Nombre de zona" required value="Zona 01">
               </div>
               <div class="form-group fecha-registro">
                   <label for="fecha-registro">FECHA DE REGISTRO</label>
-                  <input type="date" class="form-control col-4" id="fecha-registro" name="fecha-registro" placeholder="Fecha de registro">
+                  <input type="date" class="form-control col-4" id="fecha-registro" name="fecha-registro" placeholder="Fecha de registro" required>
               </div>
-              <div class="form-group text-lg-left">
-                <label for="incorporacion"><input type="radio"  name="check-option" id="incorporacion" value="incorporacion"><b> Incorporación</b></label>
+              <div class="form-group text-lg-left" id="check-ingreso">
+                <label for="incorporacion"><input type="radio"  name="check-option" id="incorporacion" value="incorporacion" required><b> Incorporación</b></label>
                 <label for="reincorporacion"><input type="radio"  name="check-option" id="reincorporacion" value="reincorporacion"><b> Reincorporación</b></label>
                 <label for="registro-sasa"><input type="radio"  name="check-option" id="registro-sasa" value="registro-sasa"><b> Registro en SASA</b></label>
                 <label for="registro-siga"><input type="radio"  name="check-option" id="registro-siga" value="registro-siga"><b> Registro en SIGA</b></label>
@@ -112,22 +112,22 @@
                   </div>
                   <div class="form-group apellidos">
                     <label for="apellidos">Apellidos:</label>
-                    <input type="text" class="form-control" name="primer-apellido" id="primer-apellido" placeholder="Primer Apellido" require value="Martinez">
+                    <input type="text" class="form-control" name="primer-apellido" id="primer-apellido" placeholder="Primer Apellido" required value="Martinez">
                     <br>
-                    <input type="text" class="form-control" name="segundo-apellido" id="segundo-apellido" placeholder="Segundo Apellido" require value="Mendoza">
+                    <input type="text" class="form-control" name="segundo-apellido" id="segundo-apellido" placeholder="Segundo Apellido" required value="Mendoza">
                   </div>
                   <div class="form-group nombre">
                     <label for="nombres">Nombre(s):</label>
-                    <input type="text" class="form-control" name="nombres" id="nombres" placeholder="Nombre(s)" require value="erick santiago">
+                    <input type="text" class="form-control" name="nombres" id="nombres" placeholder="Nombre(s)" required value="erick santiago">
                   </div>
                   <div class="fecha-rfe">
                     <div class="form-group">
                       <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
-                      <input type="date" class="form-control" name="fecha-nacimiento" id="fecha-nacimiento" require>
+                      <input type="date" class="form-control" name="fecha-nacimiento" id="fecha-nacimiento" required>
                     </div>
                     <div class="form-group">
                       <label for="rfe">RFE:</label>
-                      <input type="text" class="form-control" name="rfe" id="rfe" placeholder="RFE" require value="RGSREEAF">
+                      <input type="text" class="form-control" name="rfe" id="rfe" placeholder="RFE" required value="RGSREEAF">
                     </div>
                   </div>
                   
@@ -674,7 +674,8 @@
               </div>
               <!--./ultima parte-->
               <br>
-              <button class="btn btn-success" type="button" onClick="guardarRegistroINEA();" <?php echo empty($d->grupos) ? 'disabled' : null; ?>>Guardar cambios</button>
+              <!--<button class="btn btn-success" type="button" onClick="guardarRegistroINEA();" <?php echo empty($d->grupos) ? 'disabled' : null; ?>>Guardar cambios</button>-->
+              <button class="btn btn-success" type="submit" <?php echo empty($d->grupos) ? 'disabled' : null; ?>>Guardar registro</button>
               <button class="btn btn-info" onClick="descargarRegistroINEA()">Descargar</button>
             </form>
           </div>

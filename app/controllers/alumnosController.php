@@ -321,12 +321,39 @@ class alumnosController extends Controller {
     $numero_zona = clean($_POST["numero-zona"]);
     $nombre_zona = clean($_POST["nombre-zona"]);
     $fecha_registro = clean($_POST["fecha-registro"]);
-    $incorporacion = clean($_POST["incorporacion"]);
-    
+    $incorporacion = clean($_POST["check-option"]);
+    // Datos generales
+    $primerApellido = clean($_POST["primer-apellido"]);
+    $segundoApellido = clean($_POST["segundo-apellido"]);
+    $nombres = clean($_POST["nombres"]);
+    $fechaNacimiento = clean($_POST["fecha-nacimiento"]);
+    $rfe = clean($_POST["rfe"]);
+    $nacionalidad = clean($_POST["nacionalidad"]);
+    $entidadNacimiento = clean($_POST["entidad-nacimiento"]);
+    $sexo = clean($_POST["check-sexo"]);
     echo $id;
+    echo '<br>';
     echo $numero_zona;
+    echo '<br>';
     echo $fecha_registro;
+    echo '<br>';
     echo $incorporacion;
+    echo '<br>';
+    echo $primerApellido;
+    echo '<br>';
+    echo $segundoApellido;
+    echo '<br>';
+    echo $nombres;
+    echo '<br>';
+    echo $fechaNacimiento;
+    echo '<br>';
+    echo $rfe;
+    echo '<br>';
+    echo $nacionalidad;
+    echo '<br>';
+    echo $entidadNacimiento;
+    echo '<br>';
+    echo $sexo;
     die;
     Redirect::back();
   }
