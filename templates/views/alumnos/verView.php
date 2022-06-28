@@ -390,9 +390,9 @@
 
               <!--Motivacion a estudiar-->
               <div class="motivacion borde">
-                <div class="form-group">
+                <div class="form-group motivacion-content">
                   <label for="motivacion"><b>Que le motiva a estudiar?</b></label>
-                  <label for="obtener-certificado-primaria-secundaria"><input type="radio" name="motivo-estudiar" id="obtener-certificado-primaria-secundaria" value="obtener certificado primaria"> Obtener el certificado de Primaria/Secundaria</label>
+                  <label for="obtener-certificado-primaria-secundaria"><input type="radio" name="motivo-estudiar" id="obtener-certificado-primaria-secundaria" value="obtener certificado primaria" required> Obtener el certificado de Primaria/Secundaria</label>
 
                   <label for="continuar-media-superior"><input type="radio" name="motivo-estudiar" id="continuar-media-superior" value="continuar media superior"> Continuar la educacion Media Superior</label>
 
@@ -405,9 +405,7 @@
                   <label for="superacion-personal"><input type="radio" name="motivo-estudiar" id="superacion-personal" value="superacion-personal"> Superacion personal</label>
 
                   <br>
-                  <label for="otro"><input type="radio" name="otroMotivo" id="otro" value="otro-motivo"> Otro</label>
-
-                  <input type="text" class="form-control col-4" name="otro-motivo-cual" id="otro-motivo-cual">
+                  <input type="text" class="form-control col-4" name="otro-motivo-cual" id="otro-motivo-cual" placeholder="Otro">
                 </div>
               </div>
               <!--./ Fin Motivacion a estudiar-->
@@ -416,11 +414,14 @@
               <div class="como-se-entero borde">
                 <div class="form-group">
                   <label for="como-se-entero"><b>Como se entero de nuestro servicio?</b></label>
-                  <label for="difucion-inea"><input type="radio" name="como-se-entero" id="difucion-inea" value="difucion-inea"> Difucion del INEA</label>
+                  <div class="como-se-entero">
+                    <label for="difucion-inea"><input type="radio" name="como-se-entero" id="difucion-inea" value="difucion-inea"> Difucion del INEA</label>
 
-                  <label for="invitacion-personal"><input type="radio" name="como-se-entero" id="invitacion-personal" value="invitacion-personal"> Invitacion personal</label>
+                    <label for="invitacion-personal"><input type="radio" name="como-se-entero" id="invitacion-personal" value="invitacion-personal"> Invitacion personal</label>
 
-                  <label for="como-se-entero-otro">Otro<input type="text" class="form-control" name="como-se-entero-otro" id="como-se-entero-otro"></label>
+                    <input type="text" class="form-control" name="como-se-entero-otro" id="como-se-entero-otro" placeholder="Otro">
+                  </div>
+                  
                 </div>
                 <div class="form-group acomodar-horizontal">
                   <label for="subproyecto"><b>Subproyecto:</b></label>
@@ -436,11 +437,11 @@
                 <div class="form-group">
                   <label for="documentacion-persona"><b>Documentación de la persona beneficiaria:</b></label>
                   <br>
-                  <label for="fotografia"><input type="radio" name="fotografia" id="fotografia"> Fotografia</label>
+                  <label for="fotografia"><input type="radio" name="fotografia" id="fotografia" value="fotografia"> Fotografia</label>
                   <br>
-                  <label for="ficha-cereso"><input type="radio" name="ficha-cereso" id="ficha-cereso"> Ficha signaletica (CERESO)</label>
+                  <label for="ficha-cereso"><input type="radio" name="ficha-cereso" id="ficha-cereso" value="ficha-cereso"> Ficha signaletica (CERESO)</label>
                   <br>
-                  <label for="documento-legal-equivalente"><input type="radio" name="documento-legal-equivalente" id="documento-legal-equivalente"> Documento legal equivalente (extranjeros)</label>
+                  <label for="documento-legal-equivalente"><input type="radio" name="documento-legal-equivalente" id="documento-legal-equivalente" value="documento-equivalente"> Documento legal equivalente (extranjeros)</label>
 
                 </div>
                 <div class="form-group">
@@ -452,12 +453,12 @@
 
                   <label for="boletas-de-primaria"><input type="radio" name="boletas-de-primaria" id="boletas-de-primaria"> Boletas de primaria</label>
 
-                  <input type="text" class="form-control col-4" name="grado-boleta-secundaria" id="grado-boleta-secundaria" placeholder="Grado">
+                  <input type="text" class="form-control col-4" name="grado-boleta-primaria" id="grado-boleta-secundaria" placeholder="Grado">
 
                   <label for="boletas-de-secundaria"><input type="radio" name="boletas-de-secundaria" id="boletas-de-secundaria"> Boletas de secundaria</label>
                   <input type="text" class="form-control col-4" name="grado-boleta-secundaria" id="grado-boleta-secundaria" placeholder="Grado">
                   <br>
-                  <label for="informe-calificaciones-inea"><input type="radio" name="informe-calificaciones-inea" id="informe-calificaciones-inea"> Informe de calificaciones INEA</label>
+                  <label for="informe-calificaciones-inea"><input type="radio" name="informe-calificaciones-inea" id="informe-calificaciones-inea" value="informeINEA"> Informe de calificaciones INEA</label>
                   <label for="contanciaa-capacitacion">Constancias de Capacitacion</label>
                   <div class="horas-capacitacion">
                     <div class="form-group">

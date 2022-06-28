@@ -395,13 +395,38 @@ class alumnosController extends Controller {
     $gradoSecundaria = clean($_POST["grado-secundaria"]);
     //prueba
     $ejercicioIngreso = clean($_POST["check-ejercicios"]);
-
-    echo $nivelIngreso;
+    // motivo para estudiar
+    $motivoEstudiar = clean($_POST["motivo-estudiar"]);
+    $otroMotivo = clean($_POST["otro-motivo-cual"]);
+    // Como se entero
+    $comoSeEntero = clean($_POST["como-se-entero"]);
+    $comoSeEnteroOtro = clean($_POST["como-se-entero-otro"]);
+    $subProyecto = clean($_POST["subproyecto"]);
+    $dependencia = clean($_POST["dependencia"]);
+    // Documentacion personal
+    $fotografia = clean($_POST["fotografia"]);
+    $fichaCereso = clean($_POST["ficha-cereso"]);
+    $documentoEquivalente = clean($_POST["documento-legal-equivalente"]);
+    // documentos probatorios
+    $certificadoPrimaria = clean($_POST["certificado-primaria"]);
+    $boletaPrimaria = clean($_POST["boletas-de-primaria"]);
+    $gradoBoletaPrimaria = clean($_POST["grado-boleta-primaria"]);
+    $boletaSecundaria = clean($_POST["boletas-de-secundaria"]);
+    $gradoBoletaSecundaria = clean($_POST["grado-boleta-secundaria"]);
+    $informeCalificaciones = clean($_POST["informe-calificaciones-inea"]);
+    $numeroConstancias = clean($_POST["numero-constancias"]);
+    $horasCapacitacion= clean($_POST["horas-capacitacion"]);
+    // Documentos de cotejo
+    $nombreQuienCotejo = clean($_POST["nombre-completo-cotejo"]);
+    $fechaCotejo = clean($_POST["fecha-cotejo"]);
+    //informacion unidad operativa
+    $unidadOperativa = clean($_POST["unidad-operativa"]);
+    $circuloEstudio = clean($_POST["circulo-estudio"]);
+    echo $motivoEstudiar;
     echo '<br>';
-    echo $sinEstudios;
+    echo $otroMotivo;
     echo '<br>';
-    echo $ejercicioIngreso;
-    echo '<br>';
+ 
     
    
     
