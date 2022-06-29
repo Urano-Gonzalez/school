@@ -464,12 +464,12 @@
                   <div class="horas-capacitacion">
                     <div class="form-group">
                       <label for="numero-constancias">Numero:</label>
-                      <input type="text" class="form-control" name="numero-constancias" id="numero-constancias" value="5">
+                      <input type="text" class="form-control" name="numero-constancias" id="numero-constancias" value="<?php echo $d->numero_constancias; ?>">
                     </div>
                   
                     <div class="form-group">
                       <label for="horas-capacitacion">Horas:</label>
-                      <input type="text" class="form-control" name="horas-capacitacion" id="horas-capacitacion" value="25">
+                      <input type="text" class="form-control" name="horas-capacitacion" id="horas-capacitacion" value="<?php echo $d->horas_capacitacion; ?>">
                     </div>
                  
                   </div>
@@ -553,7 +553,7 @@
               <div class="parte-final borde">
                 <div class="form-group fecha-p-final">
                   <label for="fecha-llenado-registro">FECHA DE LLENADO DEL REGISTRO</label>
-                  <input type="date" class="form-control col-4" name="fecha-llenado-registro" id="fecha-llenado-registro">
+                  <input type="date" class="form-control col-4" name="fecha-llenado-registro" id="fecha-llenado-registro" value="<?php echo $d->fecha_registro; ?>">
                 </div>
                 <div class="form-group">
                   <p>Autorizo el uso de la información registrada en este documento, con la finalidad de generar y respaldar datos relevantes para la toma de decisiones en los procesos de
@@ -647,7 +647,7 @@
                     <span><b>Comprobante de entrega de correo electrónico a la persona beneficiar</b></span>
                     <div class="form-group">
                       <label for="nombre-beneficiario-inea">Nombre de la persona beneficiaria del INEA:</label>
-                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario" require value=<?php echo $d->nombres_inea; ?>">
+                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario" require value="<?php echo $d->nombres_inea;?>">
                     </div>
                     <div class="form-group">
                       <label for="cuenta-correo">Cuenta de correo:</label>
