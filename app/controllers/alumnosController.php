@@ -433,10 +433,6 @@ class alumnosController extends Controller {
 
 
 
-    echo $id;
-    echo '<br>';
-    echo $otroMotivo;
-    echo '<br>';
  
     
    
