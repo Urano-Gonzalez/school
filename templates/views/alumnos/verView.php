@@ -78,7 +78,7 @@
 <div class="row">
   <div class="col-xl-12 col-md-6 col-12">
     <!--Card completar data-->
-    <div class="card shadow mb-4">
+    <div class="card shadow mb-4" id="reporteINEA">
       <a href="#alumno_data_completa" class="d-block card-header py-3" data-toggle="collapse"
               role="button" aria-expanded="true" aria-controls="alumno_data_completa">
               <h6 class="m-0 font-weight-bold text-primary">REGISTRO DE LA PERSONA BENEFICIARIA DEL INEA | <?php echo $d->title; ?></h6>
@@ -680,7 +680,7 @@
               <br>
               <!--<button class="btn btn-success" type="button" onClick="guardarRegistroINEA();" <?php echo empty($d->grupos) ? 'disabled' : null; ?>>Guardar cambios</button>-->
               <button class="btn btn-success" type="submit" <?php echo empty($d->grupos) ? 'disabled' : null; ?>>Guardar registro</button>
-              <button class="btn btn-info" onClick="descargarRegistroINEA()">Descargar</button>
+              <button class="btn btn-info" type="button" onClick="descargarRegistroINEA()">Descargar</button>
             </form>
           </div>
       </div>

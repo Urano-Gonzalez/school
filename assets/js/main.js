@@ -1644,30 +1644,34 @@ function primerGrupo(){
 
 /**Descargar registro INEA */
 function descargarRegistroINEA(){
-  console.log("Descargar")
-  var doc = new jsPDF();
-  //doc.text(20, 20, 'Hola mundo');
-  //doc.text(20,30, 'Vamos a generar un pdf desde el lado del cliente');
-  // Add new
-  //doc.addPage();
-  //doc.text(20,20, 'Prueba pdf');
-  //
-  //doc.save('Documento.pdf');
-  var reporte = $('#alumno_data_completa').html();
-  var specialElementHandlers = {
-    '#elementH': function (element, renderer) {
-        return true;
-    }
-};
-doc.fromHTML(reporte, 15, 15, {
-    'width': 170,
-    'elementHandlers': specialElementHandlers
-});
-
-// Save the PDF
-doc.save('sample-document.pdf');
-
-// Save the PDF
+  console.log("Descargar reporte")
+  //$('#reporteINEA').css('transform','scale(2)');
+  var xxHEIGHT = $('#reporteINEA').height();
+  var xxWIDTH = $('#reporteINEA').width();
+  var carta_width = '842';
+  var carta_heigth = '5450';
+  var HTML_Width = xxWIDTH;
+  var HTML_Height = xxHEIGHT;
+  var top_left_margin = 0;
+  var PDF_Width = HTML_Width;
+  var PDF_Height = PDF_Width;
+  var canvas_image_width = HTML_Width;
+  var canvas_image_height = HTML_Height;
+  var totalPDFPages = 1;
+  html2canvas($("#reporteINEA")[0], {
+            
+  }).then(function (canvas) {
+      var imgData = canvas.toDataURL("image/png", 1.0);
+      var pdf = new jsPDF('l', 'pt', [carta_width, carta_heigth]);
+      //pdf.addPage(carta_width, HTML_Height);
+      pdf.addImage(imgData, 'PNG', top_left_margin, top_left_margin, carta_width, HTML_Height);
+    
+      
+      
+      pdf.save("registroINEA.pdf");
+     
+  });
+  $('#reporteINEA').css('transform','scale(1)');
 
 }
 // Registro INEA
