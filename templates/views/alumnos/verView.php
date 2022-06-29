@@ -10,7 +10,7 @@
           <h6 class="m-0 font-weight-bold text-primary"><?php echo $d->title; ?></h6>
       </a>
       <!-- Card Content - Collapse -->
-      <div class="collapse show" id="alumno_data">
+      <div class="collapse hide" id="alumno_data">
           <div class="card-body">
             <form action="alumnos/post_editar" method="post">
               <?php echo insert_inputs(); ?>
@@ -359,7 +359,7 @@
 
                     <label for="primaria-antecedente"><input type="radio" name="primaria-antecedente" id="primaria-antecedente" value="primaria-antecedente"> Primaria</label>
 
-                    <input type="text" name="primaria-grado" id="primaria-grado" class="form-control col-4"  value=""  pattern="" title="" placeholder="Grado">
+                    <input type="text" name="primaria-grado" id="primaria-grado" class="form-control col-4"  placeholder="Grado">
                     <label for="secundaria-antecedente">
                     <input type="radio" name="secundaria-antecedente" id="secundaria-antecedente" value="secundaria"> Secundaria</label>
 
@@ -451,11 +451,11 @@
 
                  
 
-                  <label for="boletas-de-primaria"><input type="radio" name="boletas-de-primaria" id="boletas-de-primaria"> Boletas de primaria</label>
+                  <label for="boletas-de-primaria"><input type="radio" name="boletas-de-primaria" id="boletas-de-primaria" value="boleta de primaria"> Boletas de primaria</label>
 
                   <input type="text" class="form-control col-4" name="grado-boleta-primaria" id="grado-boleta-secundaria" placeholder="Grado">
 
-                  <label for="boletas-de-secundaria"><input type="radio" name="boletas-de-secundaria" id="boletas-de-secundaria"> Boletas de secundaria</label>
+                  <label for="boletas-de-secundaria"><input type="radio" name="boletas-de-secundaria" id="boletas-de-secundaria" value="boletas de secundaria"> Boletas de secundaria</label>
                   <input type="text" class="form-control col-4" name="grado-boleta-secundaria" id="grado-boleta-secundaria" placeholder="Grado">
                   <br>
                   <label for="informe-calificaciones-inea"><input type="radio" name="informe-calificaciones-inea" id="informe-calificaciones-inea" value="informeINEA"> Informe de calificaciones INEA</label>
