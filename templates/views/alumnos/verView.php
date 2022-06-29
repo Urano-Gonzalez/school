@@ -1,6 +1,7 @@
 <?php require_once INCLUDES.'inc_header.php'; ?>
 
 <div class="row">
+  <?php var_dump($d); ?>
   <div class="col-xl-6 col-md-6 col-12">
     <!-- Collapsable Card Example -->
     <div class="card shadow mb-4">

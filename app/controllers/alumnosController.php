@@ -54,19 +54,113 @@ class alumnosController extends Controller {
     }
 
     //** Registro INEA  */
+    $sqlRegistroINEA= "SELECT * FROM registro_beneficiario WHERE id_alumno='$id'";
+    $registroAlumno = Model::query($sqlRegistroINEA, [], ['transaction' => false]);
     
 
+    if($registroAlumno == false){
+      $data =
+      [
+        'title'  => sprintf('Alumno #%s', $alumno['numero']),
+        'slug'   => 'alumnos',
+        'button' => ['url' => 'alumnos', 'text' => '<i class="fas fa-table"></i> Alumnos'],
+        'grupos' => grupoModel::all(),
+        'a'      => $alumno,
+        'id_alumno' => $id
+      ];
+    }else{
+      $data =
+      [
+        'title'  => sprintf('Alumno #%s', $alumno['numero']),
+        'slug'   => 'alumnos',
+        'button' => ['url' => 'alumnos', 'text' => '<i class="fas fa-table"></i> Alumnos'],
+        'grupos' => grupoModel::all(),
+        'a'      => $alumno,
+        'id_alumno' => $id,
+        'numero_zona' =>$registroAlumno[0]['numero_zona'],
+        'nombre_zona' =>$registroAlumno[0]['nombre_zona'],
+        'fecha-registro' =>$registroAlumno[0]['fecha_registro'],
+        'incorporacion' =>$registroAlumno[0]['incorporacion'],
+        'primer_apellido' =>$registroAlumno[0]['primer_apellido'],
+        'segundo_apellido' =>$registroAlumno[0]['segundo_apellido'],
+        'nombres-inea' =>$registroAlumno[0]['nombres'],
+        'fecha_nacimiento' =>$registroAlumno[0]['fecha_nacimiento'],
+        'rfe' =>$registroAlumno[0]['rfe'],
+        'nacionalidad' =>$registroAlumno[0]['nacionalidad'],
+        'entidad_nacimiento' =>$registroAlumno[0]['entidad_nacimiento'],
+        'sexo' =>$registroAlumno[0]['sexo'],
+        'estado_civil' =>$registroAlumno[0]['estado_civil'],
+        'numero_hijos' =>$registroAlumno[0]['numero_hijos'],
+        'habla_espa' =>$registroAlumno[0]['habla_espa'],
+        'habla_lengua' =>$registroAlumno[0]['habla_lengua'],
+        'cual_lengua' =>$registroAlumno[0]['cual_lengua'],
+        'otro_idioma' =>$registroAlumno[0]['otro_idioma'],
+        'cual_idioma' =>$registroAlumno[0]['cual_idioma'],
+        'se_considera_indigena' =>$registroAlumno[0]['se_considera_indigena'],
+        'se_considera_afro' =>$registroAlumno[0]['se_considera_afro'],
+        'tipo_vialidad' =>$registroAlumno[0]['tipo_vialidad'],
+        'nombre_vialidad' =>$registroAlumno[0]['nombre_vialidad'],
+        'numero_exterior' =>$registroAlumno[0]['numero_exterior'],
+        'numero_interior' =>$registroAlumno[0]['numero_interior'],
+        'tipo_asentamiento' =>$registroAlumno[0]['tipo_asentamiento'],
+        'nombre_asentamiento' =>$registroAlumno[0]['nombre_asentamiento'],
+        'tipo_entre_vialidad_1' =>$registroAlumno[0]['tipo_entre_vialidad_1'],
+        'nombre_entre_vialidad_1' =>$registroAlumno[0]['nombre_entre_vialidad_1'],
+        'tipo_entre_vialidad_2' =>$registroAlumno[0]['tipo_entre_vialidad_2'],
+        'nombre_entre_vialidad_2' =>$registroAlumno[0]['nombre_entre_vialidad_2'],
+        'cp' =>$registroAlumno[0]['cp'],
+        'localidad' =>$registroAlumno[0]['localidad'],
+        'municipio' =>$registroAlumno[0]['municipio'],
+        'entidad_federativa' =>$registroAlumno[0]['entidad_federativa'],
+        'telefono_fijo' =>$registroAlumno[0]['telefono_fijo'],
+        'telefono_celular' =>$registroAlumno[0]['telefono_celular'],
+        'equipo_computo' =>$registroAlumno[0]['equipo_computo'],
+        'correo_personal' =>$registroAlumno[0]['correo_personal'],
+        'acceso_internet' =>$registroAlumno[0]['acceso_internet'],
+        'correo_inea' =>$registroAlumno[0]['correo_inea'],
+        'caminar_subir_bajar' =>$registroAlumno[0]['caminar_subir_bajar'],
+        'oir' =>$registroAlumno[0]['oir'],
+        'ver' =>$registroAlumno[0]['ver'],
+        'banarse_vestirse_comer' =>$registroAlumno[0]['banarse_vestirse_comer'],
+        'hablar_comunicar' =>$registroAlumno[0]['hablar_comunicar'],
+        'recordar_concentrarse' =>$registroAlumno[0]['recordar_concentrarse'],
+        'condicion_mental' =>$registroAlumno[0]['condicion_mental'],
+        'trabajo_activo' =>$registroAlumno[0]['trabajo_activo'],
+        'otro_empleo' =>$registroAlumno[0]['otro_empleo'],
+        'ocupacion' =>$registroAlumno[0]['ocupacion'],
+        'nivel_ingreso' =>$registroAlumno[0]['nivel_ingreso'],
+        'sin_estudios' =>$registroAlumno[0]['sin_estudios'],
+        'primaria' =>$registroAlumno[0]['primaria'],
+        'grado_primaria' =>$registroAlumno[0]['grado_primaria'],
+        'secundaria' =>$registroAlumno[0]['secundaria'],
+        'grado_secundaria' =>$registroAlumno[0]['grado_secundaria'],
+        'ejercicio_ingreso' =>$registroAlumno[0]['ejercicio_ingreso'],
+        'motivo_estudiar' =>$registroAlumno[0]['motivo_estudiar'],
+        'otro_motivo' =>$registroAlumno[0]['otro_motivo'],
+        'como_se_entero' =>$registroAlumno[0]['como_se_entero'],
+        'como_se_entero_otro' =>$registroAlumno[0]['como_se_entero_otro'],
+        'subproyecto' =>$registroAlumno[0]['subproyecto'],
+        'dependencia' =>$registroAlumno[0]['dependencia'],
+        'fotografia' =>$registroAlumno[0]['fotografia'],
+        'ficha_cereso' =>$registroAlumno[0]['ficha_cereso'],
+        'documento_equivalente' =>$registroAlumno[0]['documento_equivalente'],
+        'certificado_primaria' =>$registroAlumno[0]['certificado_primaria'],
+        'boleta_primaria' =>$registroAlumno[0]['boleta_primaria'],
+        'grado_boleta_primaria' =>$registroAlumno[0]['grado_boleta_primaria'],
+        'boleta_secundaria' =>$registroAlumno[0]['boleta_secundaria'],
+        'grado_boleta_secundaria' =>$registroAlumno[0]['grado_boleta_secundaria'],
+        'informe_calificaciones' =>$registroAlumno[0]['informe_calificaciones'],
+        'numero_constancias' =>$registroAlumno[0]['numero_constancias'],
+        'horas_capacitacion' =>$registroAlumno[0]['horas_capacitacion'],
+        'nombre_quien_cotejo' =>$registroAlumno[0]['nombre_quien_cotejo'],
+        'fecha_cotejo' =>$registroAlumno[0]['fecha_cotejo'],
+        'unidad_operativa' =>$registroAlumno[0]['unidad_operativa'],
+        'circulo_estudio' =>$registroAlumno[0]['circulo_estudio']
+  
+      ];
+    }
 
-
-    $data =
-    [
-      'title'  => sprintf('Alumno #%s', $alumno['numero']),
-      'slug'   => 'alumnos',
-      'button' => ['url' => 'alumnos', 'text' => '<i class="fas fa-table"></i> Alumnos'],
-      'grupos' => grupoModel::all(),
-      'a'      => $alumno,
-      'id_alumno' => $id
-    ];
+    
 
     View::render('ver', $data);
   }
@@ -523,8 +617,6 @@ class alumnosController extends Controller {
       unidad_operativa='$unidadOperativa',
       circulo_estudio='$circuloEstudio' 
       WHERE id_alumno='$id'";
-      var_dump($actualizarINEA);
-      die;
       Model::query($actualizarINEA, [], ['transaction' => false]);
       Flasher::new('Registro actualizado exitosamente.');
 
