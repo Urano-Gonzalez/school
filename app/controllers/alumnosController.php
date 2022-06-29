@@ -426,6 +426,13 @@ class alumnosController extends Controller {
 
     //** Guardar data */
 
+    $sql = "INSERT INTO registro_beneficiario(id_alumno,numero_zona,nombre_zona,fecha_registro,incorporacion,primer_apellido,segundo_apellido,nombres,fecha_nacimiento,rfe,nacionalidad,entidad_nacimiento,sexo,estado_civil,numero_hijos,habla_espa,habla_lengua,cual_lengua,otro_idioma,cual_idioma,se_considera_indigena,se_considera_afro,tipo_vialidad,nombre_vialidad,numero_exterior,numero_interior,tipo_asentamiento,nombre_asentamiento,tipo_entre_vialidad_1,nombre_entre_vialidad_1,tipo_entre_vialidad_2,nombre_entre_vialidad_2,cp,localidad,municipio,entidad_federativa,telefono_fijo,telefono_celular,equipo_computo,correo_personal,acceso_internet,correo_inea)
+    VALUES('$id','$numero_zona','$nombre_zona','$fecha_registro','$incorporacion','$primerApellido','$segundoApellido','$nombres','$fechaNacimiento','$rfe','$nacionalidad','$entidadNacimiento','$sexo','$estadoCivil','$numeroHijos','$hablaEspa','$hablaLengua','$cualLengua','$otroIdioma','$cualIdioma','$seConsideraIndigena','$seConsideraAfro','$tipoVialidad','$nombreVialidad','$numExterior','$numInterior','$tipoAsentamiento','$nombreAsentamiento','$tipoEntreVialidad1','$nombreEntreVialidad1','$tipoEntreVialidad2','$nombreEntreVialidad2','$cp','$localidad','$municipio','$entidadFederativa','$telefonoFijo','$telefonoCelular','$equipoComputo','$correoPersonal','$accesoInternet','$correoINEA')";
+    Model::query($sql, [], ['transaction' => false]);
+   
+
+
+
     echo $id;
     echo '<br>';
     echo $otroMotivo;
@@ -435,9 +442,8 @@ class alumnosController extends Controller {
    
     
    
+    Flasher::new('Registro guardado exitosamente.');
    
-   
-    die;
     Redirect::back();
   }
   /** Registro INEA */
