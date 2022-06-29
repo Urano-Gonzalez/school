@@ -53,6 +53,11 @@ class alumnosController extends Controller {
       Redirect::back();
     }
 
+    //** Registro INEA  */
+    
+
+
+
     $data =
     [
       'title'  => sprintf('Alumno #%s', $alumno['numero']),
@@ -424,22 +429,107 @@ class alumnosController extends Controller {
     $unidadOperativa = clean($_POST["unidad-operativa"]);
     $circuloEstudio = clean($_POST["circulo-estudio"]);
 
-    //** Guardar data */
+    /** Verificar si existe el reporte */
+    $verificarSiExiste = "SELECT EXISTS (SELECT * FROM registro_beneficiario WHERE id_alumno='$id')";
+    $statusReporte = Model::query($verificarSiExiste, [], ['transaction' => false]);
+    $statusFinalINEA = $statusReporte[0]["EXISTS (SELECT * FROM registro_beneficiario WHERE id_alumno='$id')"];
 
-    $sql = "INSERT INTO registro_beneficiario(id_alumno,numero_zona,nombre_zona,fecha_registro,incorporacion,primer_apellido,segundo_apellido,nombres,fecha_nacimiento,rfe,nacionalidad,entidad_nacimiento,sexo,estado_civil,numero_hijos,habla_espa,habla_lengua,cual_lengua,otro_idioma,cual_idioma,se_considera_indigena,se_considera_afro,tipo_vialidad,nombre_vialidad,numero_exterior,numero_interior,tipo_asentamiento,nombre_asentamiento,tipo_entre_vialidad_1,nombre_entre_vialidad_1,tipo_entre_vialidad_2,nombre_entre_vialidad_2,cp,localidad,municipio,entidad_federativa,telefono_fijo,telefono_celular,equipo_computo,correo_personal,acceso_internet,correo_inea,caminar_subir_bajar,oir,ver,banarse_vestirse_comer,hablar_comunicar,recordar_concentrarse,condicion_mental,trabajo_activo,otro_empleo,ocupacion,nivel_ingreso,sin_estudios,primaria,grado_primaria,secundaria,grado_secundaria,ejercicio_ingreso,motivo_estudiar,otro_motivo,como_se_entero,como_se_entero_otro,subproyecto,dependencia,fotografia,ficha_cereso,documento_equivalente,certificado_primaria,boleta_primaria,grado_boleta_primaria,boleta_secundaria,grado_boleta_secundaria,informe_calificaciones,numero_constancias,horas_capacitacion,nombre_quien_cotejo,fecha_cotejo,unidad_operativa,circulo_estudio)
-    VALUES('$id','$numero_zona','$nombre_zona','$fecha_registro','$incorporacion','$primerApellido','$segundoApellido','$nombres','$fechaNacimiento','$rfe','$nacionalidad','$entidadNacimiento','$sexo','$estadoCivil','$numeroHijos','$hablaEspa','$hablaLengua','$cualLengua','$otroIdioma','$cualIdioma','$seConsideraIndigena','$seConsideraAfro','$tipoVialidad','$nombreVialidad','$numExterior','$numInterior','$tipoAsentamiento','$nombreAsentamiento','$tipoEntreVialidad1','$nombreEntreVialidad1','$tipoEntreVialidad2','$nombreEntreVialidad2','$cp','$localidad','$municipio','$entidadFederativa','$telefonoFijo','$telefonoCelular','$equipoComputo','$correoPersonal','$accesoInternet','$correoINEA','$caminarSubirBajar','$oir','$ver','$banarseVestirseComer','$hablarComunicarse','$recordarConcentrarse','$condicionMental','$trabajoActivo','$otroEmpleo','$ocupacion','$nivelIngreso','$sinEstudios','$primaria','$gradoPrimaria','$secundaria','$gradoSecundaria','$ejercicioIngreso','$motivoEstudiar','$otroMotivo','$comoSeEntero','$comoSeEnteroOtro','$subProyecto','$dependencia','$fotografia','$fichaCereso','$documentoEquivalente','$certificadoPrimaria','$boletaPrimaria','$gradoBoletaPrimaria','$boletaSecundaria','$gradoBoletaSecundaria','$informeCalificaciones','$numeroConstancias','$horasCapacitacion','$nombreQuienCotejo','$fechaCotejo','$unidadOperativa','$circuloEstudio')";
-    Model::query($sql, [], ['transaction' => false]);
-   
+    if($statusFinalINEA == 0){
+      //** Guardar data */
+      $sql = "INSERT INTO registro_beneficiario(id_alumno,numero_zona,nombre_zona,fecha_registro,incorporacion,primer_apellido,segundo_apellido,nombres,fecha_nacimiento,rfe,nacionalidad,entidad_nacimiento,sexo,estado_civil,numero_hijos,habla_espa,habla_lengua,cual_lengua,otro_idioma,cual_idioma,se_considera_indigena,se_considera_afro,tipo_vialidad,nombre_vialidad,numero_exterior,numero_interior,tipo_asentamiento,nombre_asentamiento,tipo_entre_vialidad_1,nombre_entre_vialidad_1,tipo_entre_vialidad_2,nombre_entre_vialidad_2,cp,localidad,municipio,entidad_federativa,telefono_fijo,telefono_celular,equipo_computo,correo_personal,acceso_internet,correo_inea,caminar_subir_bajar,oir,ver,banarse_vestirse_comer,hablar_comunicar,recordar_concentrarse,condicion_mental,trabajo_activo,otro_empleo,ocupacion,nivel_ingreso,sin_estudios,primaria,grado_primaria,secundaria,grado_secundaria,ejercicio_ingreso,motivo_estudiar,otro_motivo,como_se_entero,como_se_entero_otro,subproyecto,dependencia,fotografia,ficha_cereso,documento_equivalente,certificado_primaria,boleta_primaria,grado_boleta_primaria,boleta_secundaria,grado_boleta_secundaria,informe_calificaciones,numero_constancias,horas_capacitacion,nombre_quien_cotejo,fecha_cotejo,unidad_operativa,circulo_estudio)
+      VALUES('$id','$numero_zona','$nombre_zona','$fecha_registro','$incorporacion','$primerApellido','$segundoApellido','$nombres','$fechaNacimiento','$rfe','$nacionalidad','$entidadNacimiento','$sexo','$estadoCivil','$numeroHijos','$hablaEspa','$hablaLengua','$cualLengua','$otroIdioma','$cualIdioma','$seConsideraIndigena','$seConsideraAfro','$tipoVialidad','$nombreVialidad','$numExterior','$numInterior','$tipoAsentamiento','$nombreAsentamiento','$tipoEntreVialidad1','$nombreEntreVialidad1','$tipoEntreVialidad2','$nombreEntreVialidad2','$cp','$localidad','$municipio','$entidadFederativa','$telefonoFijo','$telefonoCelular','$equipoComputo','$correoPersonal','$accesoInternet','$correoINEA','$caminarSubirBajar','$oir','$ver','$banarseVestirseComer','$hablarComunicarse','$recordarConcentrarse','$condicionMental','$trabajoActivo','$otroEmpleo','$ocupacion','$nivelIngreso','$sinEstudios','$primaria','$gradoPrimaria','$secundaria','$gradoSecundaria','$ejercicioIngreso','$motivoEstudiar','$otroMotivo','$comoSeEntero','$comoSeEnteroOtro','$subProyecto','$dependencia','$fotografia','$fichaCereso','$documentoEquivalente','$certificadoPrimaria','$boletaPrimaria','$gradoBoletaPrimaria','$boletaSecundaria','$gradoBoletaSecundaria','$informeCalificaciones','$numeroConstancias','$horasCapacitacion','$nombreQuienCotejo','$fechaCotejo','$unidadOperativa','$circuloEstudio')";
+      Model::query($sql, [], ['transaction' => false]);
+      Flasher::new('Registro guardado exitosamente.');
+    }else{
+      $actualizarINEA = "UPDATE registro_beneficiario 
+      SET 
+      numero_zona='$numero_zona',
+      nombre_zona='$nombre_zona',
+      fecha_registro='$fecha_registro',
+      incorporacion='$incorporacion',
+      primer_apellido='$primerApellido',
+      segundo_apellido='$segundoApellido',
+      nombres='$nombres',
+      fecha_nacimiento='$fechaNacimiento',
+      rfe='$rfe',
+      nacionalidad='$nacionalidad',
+      entidad_nacimiento='$entidadNacimiento',
+      sexo='$sexo',
+      estado_civil='$estadoCivil',
+      numero_hijos='$numeroHijos',
+      habla_espa='$hablaEspa',
+      habla_lengua='$hablaLengua',
+      cual_lengua='$cualLengua',
+      otro_idioma='$otroIdioma',
+      cual_idioma='$cualIdioma',
+      se_considera_indigena='$seConsideraIndigena',
+      se_considera_afro='$seConsideraAfro',
+      tipo_vialidad='$tipoVialidad',
+      nombre_vialidad='$nombreVialidad',
+      numero_exterior='$numExterior',
+      numero_interior='$numInterior',
+      tipo_asentamiento='$tipoAsentamiento',
+      nombre_asentamiento='$nombreAsentamiento',
+      tipo_entre_vialidad_1='$tipoEntreVialidad1',
+      nombre_entre_vialidad_1='$nombreEntreVialidad1',
+      tipo_entre_vialidad_2='$tipoEntreVialidad2',
+      nombre_entre_vialidad_2='$nombreEntreVialidad2',
+      cp='$cp',
+      localidad='$localidad',
+      municipio='$municipio',
+      entidad_federativa='$entidadFederativa',
+      telefono_fijo='$telefonoFijo',
+      telefono_celular='$telefonoCelular',
+      equipo_computo='$equipoComputo',
+      correo_personal='$correoPersonal',
+      acceso_internet='$accesoInternet',
+      correo_inea='$correoINEA',
+      caminar_subir_bajar='$caminarSubirBajar',
+      oir='$oir',
+      ver='$ver',
+      banarse_vestirse_comer='$banarseVestirseComer',
+      hablar_comunicar='$hablarComunicarse',
+      recordar_concentrarse='$recordarConcentrarse',
+      condicion_mental='$condicionMental',
+      trabajo_activo='$trabajoActivo',
+      otro_empleo='$otroEmpleo',
+      ocupacion='$ocupacion',
+      nivel_ingreso='$nivelIngreso',
+      sin_estudios='$sinEstudios',
+      primaria='$primaria',
+      grado_primaria='$gradoPrimaria',
+      secundaria='$secundaria',
+      grado_secundaria='$gradoSecundaria',
+      ejercicio_ingreso='$ejercicioIngreso',
+      motivo_estudiar='$motivoEstudiar',
+      otro_motivo='$otroMotivo',
+      como_se_entero='$comoSeEntero',
+      como_se_entero_otro='$comoSeEnteroOtro',
+      subproyecto='$subProyecto',
+      dependencia='$dependencia',
+      fotografia='$fotografia',
+      ficha_cereso='$fichaCereso',
+      documento_equivalente='$documentoEquivalente',
+      certificado_primaria='$certificadoPrimaria',
+      boleta_primaria='$boletaPrimaria',
+      grado_boleta_primaria='$gradoBoletaPrimaria',
+      boleta_secundaria='$boletaSecundaria',
+      grado_boleta_secundaria='$gradoBoletaSecundaria',
+      informe_calificaciones='$informeCalificaciones',
+      numero_constancias='$numeroConstancias',
+      horas_capacitacion='$horasCapacitacion',
+      nombre_quien_cotejo='$nombreQuienCotejo',
+      fecha_cotejo='$fechaCotejo',
+      unidad_operativa='$unidadOperativa',
+      circulo_estudio='$circuloEstudio' 
+      WHERE id_alumno='$id'";
+      var_dump($actualizarINEA);
+      die;
+      Model::query($actualizarINEA, [], ['transaction' => false]);
+      Flasher::new('Registro actualizado exitosamente.');
 
-
-
- 
+    }
     
-   
-    
-   
-    Flasher::new('Registro guardado exitosamente.');
-   
     Redirect::back();
   }
   /** Registro INEA */
