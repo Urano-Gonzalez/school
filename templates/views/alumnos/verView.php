@@ -92,13 +92,13 @@
 
               <div class="form-group coordinacion-zona">
                 <label for="coordinacion-zona">Coordinación de Zona: </label>
-                <input type="text" class="form-control col-4 " id="numero-zona" name="numero-zona" placeholder="Número de zona" required value="01">
+                <input type="text" class="form-control col-4 " id="numero-zona" name="numero-zona" placeholder="Número de zona" required value="<?php echo $d->numero_zona; ?>">
                 <br>
-                <input type="text" class="form-control col-4" id="nombre-zona" name="nombre-zona" placeholder="Nombre de zona" required value="Zona 01">
+                <input type="text" class="form-control col-4" id="nombre-zona" name="nombre-zona" placeholder="Nombre de zona" required value="<?php echo $d->nombre_zona; ?>">
               </div>
               <div class="form-group fecha-registro">
                   <label for="fecha-registro">FECHA DE REGISTRO</label>
-                  <input type="date" class="form-control col-4" id="fecha-registro" name="fecha-registro" placeholder="Fecha de registro" required>
+                  <input type="date" class="form-control col-4" id="fecha-registro" name="fecha-registro" placeholder="Fecha de registro" value="<?php echo $d->fecha_registro; ?>" required>
               </div>
               <div class="form-group text-lg-left" id="check-ingreso">
                 <label for="incorporacion"><input type="radio"  name="check-option" id="incorporacion" value="incorporacion" required><b> Incorporación</b></label>
@@ -113,22 +113,22 @@
                   </div>
                   <div class="form-group apellidos">
                     <label for="apellidos">Apellidos:</label>
-                    <input type="text" class="form-control" name="primer-apellido" id="primer-apellido" placeholder="Primer Apellido" required value="Martinez">
+                    <input type="text" class="form-control" name="primer-apellido" id="primer-apellido" placeholder="Primer Apellido" required value="<?php echo $d->primer_apellido; ?>">
                     <br>
-                    <input type="text" class="form-control" name="segundo-apellido" id="segundo-apellido" placeholder="Segundo Apellido" required value="Mendoza">
+                    <input type="text" class="form-control" name="segundo-apellido" id="segundo-apellido" placeholder="Segundo Apellido" required value="<?php echo $d->segundo_apellido; ?>">
                   </div>
                   <div class="form-group nombre">
                     <label for="nombres">Nombre(s):</label>
-                    <input type="text" class="form-control" name="nombres" id="nombres" placeholder="Nombre(s)" required value="erick santiago">
+                    <input type="text" class="form-control" name="nombres" id="nombres" placeholder="Nombre(s)" required value="<?php echo $d->nombres_inea; ?>">
                   </div>
                   <div class="fecha-rfe">
                     <div class="form-group">
                       <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
-                      <input type="date" class="form-control" name="fecha-nacimiento" id="fecha-nacimiento" required>
+                      <input type="date" class="form-control" name="fecha-nacimiento" id="fecha-nacimiento" value="<?php echo $d->fecha_nacimiento; ?>" required>
                     </div>
                     <div class="form-group">
                       <label for="rfe">RFE:</label>
-                      <input type="text" class="form-control" name="rfe" id="rfe" placeholder="RFE" required value="RGSREEAF">
+                      <input type="text" class="form-control" name="rfe" id="rfe" placeholder="RFE" required value="<?php echo $d->rfe; ?>">
                     </div>
                   </div>
                   
@@ -136,11 +136,11 @@
                   <div class="nacionalidad">
                     <div class="form-group">
                       <label for="nacionalidad">Nacionalidad:</label>
-                      <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad" require value="Mexicano">
+                      <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad" require value="<?php echo $d->nacionalidad; ?>">
                     </div>
                     <div class="form-group">
                       <label for="entidad-nacimiento">Entidad de nacimiento:</label>
-                      <input type="text" class="form-control" name="entidad-nacimiento" id="entidad-nacimiento" placeholder="Entidad de nacimiento" require value="coacalco">
+                      <input type="text" class="form-control" name="entidad-nacimiento" id="entidad-nacimiento" placeholder="Entidad de nacimiento" require value="<?php echo $d->entidad_nacimiento; ?>">
                     </div>
                     <div class="form-group">
                       <label for="sexo">Sexo:</label>
@@ -194,13 +194,13 @@
                   <div class="form-group acomodar-horizontal">
                     <label for="vialidad">Vialidad:</label>
                     <div class="acomodar-vertical col-4">
-                      <input type="text" class="form-control" name="tipo-vialidad" id="tipo-vialidad" placeholder="Tipo" required value="privada">
+                      <input type="text" class="form-control" name="tipo-vialidad" id="tipo-vialidad" placeholder="Tipo" required value="<?php echo $d->tipo_vialidad; ?>">
                       
                     </div>
                     
-                    <input type="text"  class="form-control" name="nombre-vialidad" id="nombre-vialidad" placeholder="Nombre vialidad" required value="Oyamel">
-                    <input type="text"  class="form-control col-2" name="num-exterior" id="num-exterior" placeholder="Núm. Exterior" required value="127">
-                    <input type="text"  class="form-control col-2" name="num-interior" id="num-interior" placeholder="Núm. Interior" required value="127">
+                    <input type="text"  class="form-control" name="nombre-vialidad" id="nombre-vialidad" placeholder="Nombre vialidad" required value="<?php echo $d->nombre_vialidad; ?>">
+                    <input type="text"  class="form-control col-2" name="num-exterior" id="num-exterior" placeholder="Núm. Exterior" required value="<?php echo $d->numero_exterior; ?>">
+                    <input type="text"  class="form-control col-2" name="num-interior" id="num-interior" placeholder="Núm. Interior" required value="<?php echo $d->numero_interior; ?>">
                 </div>
                 <span>(Tipo: andador, avenida, boulevard, callejón, calle, cerrada, privada, corredor, prolongación, carretera, camino, terraceria, etc)</span>
                 </div>
@@ -209,8 +209,8 @@
                   <div class="form-group acomodar-horizontal">
                     <label for="asentamiento-humano">Asentamiento humano:</label>
                     
-                    <input type="text" class="form-control col-4" name="tipo-asentamiento" id="tipo-asentamiento" placeholder="Tipo" required value="colonia">
-                    <input type="text" class="form-control col-4" name="nombre-asentamiento" id="nombre-asentamiento" placeholder="Nombre" required value="hacienda2">
+                    <input type="text" class="form-control col-4" name="tipo-asentamiento" id="tipo-asentamiento" placeholder="Tipo" required value="<?php echo $d->tipo_asentamiento; ?>">
+                    <input type="text" class="form-control col-4" name="nombre-asentamiento" id="nombre-asentamiento" placeholder="Nombre" required value="<?php echo $d->nombre_asentamiento; ?>">
                     
                   </div>
                   <span>(Tipo: colonia, conjunto habitacional, ejido, ex hacienda, fraccinamiento, manzana. H., pueblo, rancho, zona militar, etc)</span>
@@ -218,39 +218,39 @@
                 <hr>
                 <div class="form-group acomodar-horizontal">
                   <label for="entre-que-vialidad">Entre que vialidad: </label>
-                  <input type="text" class="form-control col-4" name="tipo-entre-vialidad-1" id="tipo-entre-vialidad-1" placeholder="Tipo" required value="privada">
-                  <input type="text" class="form-control col-4" name="nombre-entre-vialidad-1" id="nombre-entre-vialidad-1" placeholder="Nombre" required value="diamante">
+                  <input type="text" class="form-control col-4" name="tipo-entre-vialidad-1" id="tipo-entre-vialidad-1" placeholder="Tipo" required value="<?php echo $d->tipo_entre_vialidad_1; ?>">
+                  <input type="text" class="form-control col-4" name="nombre-entre-vialidad-1" id="nombre-entre-vialidad-1" placeholder="Nombre" required value="<?php echo $d->nombre_entre_vialidad_1; ?>">
                 </div>
                 <div class="form-group acomodar-horizontal">
                   <label for="entre-que-vialidad-2">Y <br> que vialidad:</label>
-                  <input type="text" class="form-control" name="tipo-entre-vialidad-2" id="tipo-entre-vialidad-2" placeholder="Tipo" required value="privada">
-                  <input type="text" class="form-control" name="nombre-entre-vialidad-2" id="nombre-entre-vialidad-2" placeholder="Nombre" required value="crisolita">
-                  <input type="text" class="form-control" name="c-p" id="c-p" placeholder="C.P" required value="51225">
+                  <input type="text" class="form-control" name="tipo-entre-vialidad-2" id="tipo-entre-vialidad-2" placeholder="Tipo" required value="<?php echo $d->tipo_entre_vialidad_2; ?>">
+                  <input type="text" class="form-control" name="nombre-entre-vialidad-2" id="nombre-entre-vialidad-2" placeholder="Nombre" required value="<?php echo $d->nombre_entre_vialidad_2; ?>">
+                  <input type="text" class="form-control" name="c-p" id="c-p" placeholder="C.P" required value="<?php echo $d->cp; ?>">
                 </div>
                 <hr>
                 <div class="localidad acomodar-horizontal">
                   <div class="form-group">
                     <label for="localidad">Localidad:</label>
-                    <input type="text" class="form-control" name="localidad" id="localidad" placeholder="Localidad" required value="hacienda">
+                    <input type="text" class="form-control" name="localidad" id="localidad" placeholder="Localidad" required value="<?php echo $d->localidad; ?>">
                   </div>
                   <div class="form-group">
                     <label for="municipio">Municipio:</label>
-                    <input type="text" class="form-control" name="municipio" id="municipio" placeholder="Municipio" required value="Tultepec">
+                    <input type="text" class="form-control" name="municipio" id="municipio" placeholder="Municipio" required value="<?php echo $d->municipio; ?>">
                   </div>
                   <div class="form-group">
                     <label for="entidad-federativa">Entidad federativa:</label>
-                    <input type="text" class="form-control" name="entidad-federativa" id="entidad-federativa" placeholder="Entidad federativa" required value="EDO.MEX">
+                    <input type="text" class="form-control" name="entidad-federativa" id="entidad-federativa" placeholder="Entidad federativa" required value="<?php echo $d->entidad_federativa; ?>">
                   </div>
                 </div>
                 <!--Telefonos-->
                 <div class="telefonos acomodar-horizontal">
                   <div class="form-group">
                     <label for="telefono-fijo">Telefono fijo:</label>
-                    <input type="tel" class="form-control" name="telefono-fijo" id="telefono-fijo" placeholder="Numero (10 digitos)" required value="5533043275">
+                    <input type="tel" class="form-control" name="telefono-fijo" id="telefono-fijo" placeholder="Numero (10 digitos)" required value="<?php echo $d->telefono_fijo; ?>">
                   </div>
                   <div class="form-group">
                     <label for="telefono-celular">Telefono celular:</label>
-                    <input type="tel" class="form-control" name="telefono-celular" id="telefono-celular" placeholder="Numero (10 digitos)" required value="5533043277">
+                    <input type="tel" class="form-control" name="telefono-celular" id="telefono-celular" placeholder="Numero (10 digitos)" required value="<?php echo $d->telefono_celular; ?>">
                   </div>
                 </div>
                 <!--./Telefonos-->
@@ -258,13 +258,13 @@
                   <label for="equipo-computo">Tiene equipo de computo <input type="checkbox" name="equipo-computo" id="equipo-computo" value="si-tiene-equipo"></label>
                   <br>
                   <label for="correo-personal">Correo electronico personal:</label>
-                  <input type="email" class="form-control col-4" name="correo-personal" id="correo-personal" required value="santiago_mendozaisc@outlook.com">
+                  <input type="email" class="form-control col-4" name="correo-personal" id="correo-personal" required value="<?php echo $d->correo_personal; ?>">
                 </div>
                 <div class="form-group acomodar-horizontal ajustar-elementos">
                   <label for="acceso-internet">Tiene acceso a internet <input type="checkbox" name="acceso-internet" id="acceso-internet"></label>
                   <br>
                   <label for="correo-inea">Correo electronico INEA:</label>
-                  <input type="email" class="form-control col-4" name="correo-inea" id="correo-inea" require value="santiago@inea.com">
+                  <input type="email" class="form-control col-4" name="correo-inea" id="correo-inea" require value="<?php echo $d->correo_inea; ?>">
                 </div>
                 
               </div>
@@ -488,12 +488,12 @@
                 </div>
                 <div class="form-group">
                   <label for="nombre-completo">Nombre completo de quien cotejo los documentos</label>
-                  <input type="text"  class="form-control" name="nombre-completo-cotejo" id="nombre-completo-cotejo" require value="Ivan Ovalle">
+                  <input type="text"  class="form-control" name="nombre-completo-cotejo" id="nombre-completo-cotejo" require value="<?php echo $d->nombre_quien_cotejo; ?>">
                 </div>
                 <div class="cotejo acomodar-horizontal">
                   <div class="form-group">
                     <label for="fecha-cotejo">Fecha de cotejo de documentos</label>
-                    <input type="date" class="form-control" name="fecha-cotejo" id="fecha-cotejo" require>
+                    <input type="date" class="form-control" name="fecha-cotejo" id="fecha-cotejo" value="<?php echo $d->fecha_cotejo; ?>" require>
                   </div>
                   <div class="form-group">
                     <label for="firma-cotejo">Firma de quien cotejo los documentos</label>
@@ -515,11 +515,11 @@
                 <div class="unidad-operativa-circulo">
                   <div class="form-group acomodar-horizontal">
                     <label for="unidad-operativa"><b>Unidad operativa</b></label>
-                    <input type="text" class="form-control" name="unidad-operativa" id="unidad-operativa" require value="0203udn">
+                    <input type="text" class="form-control" name="unidad-operativa" id="unidad-operativa" require value="<?php echo $d->unidad_operativa; ?>">
                   </div>
                   <div class="form-group acomodar-horizontal">
                     <label for="circulo-estudio"><b>Circulo de estudio</b></label>
-                    <input type="text" class="form-control" name="circulo-estudio" id="circulo-estudio" require value="primer circulo">
+                    <input type="text" class="form-control" name="circulo-estudio" id="circulo-estudio" require value="<?php echo $d->circulo_estudio; ?>">
                   </div>
                 </div>
                 
@@ -622,15 +622,15 @@
                     
                     <div class="form-group">
                       <label for="nombre-beneficiario-inea">Nombre de la persona beneficiaria del INEA:</label>
-                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario" require value="Erick Santiago">
+                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario" require value="<?php echo $d->nombres_inea; ?>">
                     </div>
                     <div class="form-group">
                       <label for="cuenta-correo">Cuenta de correo:</label>
-                      <input type="text" class="form-control" name="cuenta-correo" id="cuenta-correo" require value="santiago_mendoza.com">
+                      <input type="text" class="form-control" name="cuenta-correo" id="cuenta-correo" require value="<?php echo $d->correo_personal; ?>">
                     </div>
                     <div class="form-group">
                       <label for="pass">Contraseña:</label>
-                      <input type="password" class="form-control" name="pass" id="pass" require value="TeHyCa420">
+                      <input type="password" class="form-control" name="pass" id="pass" require value="">
                     </div>
                     <div class="form-group">
                       <label for="acceso-internet"><b>Tiene acceso a Internet</b></label>
@@ -647,15 +647,15 @@
                     <span><b>Comprobante de entrega de correo electrónico a la persona beneficiar</b></span>
                     <div class="form-group">
                       <label for="nombre-beneficiario-inea">Nombre de la persona beneficiaria del INEA:</label>
-                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario" require value="Santiago mendoza">
+                      <input type="text" class="form-control" name="nombre-beneficiario" id="nombre-beneficiario" require value=<?php echo $d->nombres_inea; ?>">
                     </div>
                     <div class="form-group">
                       <label for="cuenta-correo">Cuenta de correo:</label>
-                      <input type="text" class="form-control" name="cuenta-correo" id="cuenta-correo" require value="pedro@pedro.com">
+                      <input type="text" class="form-control" name="cuenta-correo" id="cuenta-correo" require value="<?php echo $d->correo_personal; ?>">
                     </div>
                     <div class="form-group">
                       <label for="fecha">Fecha de entrega:</label>
-                      <input type="date" class="form-control" name="fecha" id="fecha" require>
+                      <input type="date" class="form-control" name="fecha" id="fecha" value="<?php echo $d->fecha_registro; ?>" require>
                     </div>
                     <div class="form-group">
                     <label for="acceso-internet"><b>Tiene acceso a Internet</b></label>
