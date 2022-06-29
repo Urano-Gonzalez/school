@@ -1658,6 +1658,28 @@ function descargarRegistroINEA(){
   var canvas_image_width = HTML_Width;
   var canvas_image_height = HTML_Height;
   var totalPDFPages = 1;
+  let timerInterval
+      Swal.fire({
+        title: 'Descargando registro',
+        html: '',
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading()
+          const b = Swal.getHtmlContainer().querySelector('b')
+          timerInterval = setInterval(() => {
+            b.textContent = Swal.getTimerLeft()
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log('I was closed by the timer')
+        }
+      })
   html2canvas($("#reporteINEA")[0], {
             
   }).then(function (canvas) {
@@ -1665,7 +1687,7 @@ function descargarRegistroINEA(){
       var pdf = new jsPDF('l', 'pt', [carta_width, carta_heigth]);
       //pdf.addPage(carta_width, HTML_Height);
       pdf.addImage(imgData, 'PNG', top_left_margin, top_left_margin, carta_width, HTML_Height);
-    
+      
       
       
       pdf.save("registroINEA.pdf");
