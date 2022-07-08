@@ -1816,3 +1816,18 @@ function guardarRegistroINEA(){
   
   console.log('id: '+idBeneficiario);
 }
+
+function registro(status){
+  console.log(status)
+  if(status == true){
+    console.log("Minimo")
+    $("#alumno_data").show();
+    $("#alumno_data_completa").hide();
+    //primerGrupo();
+  }else{
+    console.log("INEA")
+    $("#alumno_data").hide();
+    $("#alumno_data_completa").show();
+    //$("#tabla").hide();
+  }
+}

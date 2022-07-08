@@ -1,15 +1,25 @@
 <?php require_once INCLUDES.'inc_header.php'; ?>
-
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+	  <h6 class="m-0 font-weight-bold text-primary">Información beneficiario</h6>
+  </div>
+  <div class="card-body">
+      <button class="btn btn-info" onClick="registro(true);" type="button">Información beneficiario</button>
+      <button class="btn btn-info" onClick="registro(false);" type="button">Registro INEA</button>
+  </div>
+</div>
 <div class="row">
   
   <div class="col-xl-6 col-md-6 col-12">
     <!-- Collapsable Card Example -->
-    <div class="card shadow mb-4">
+    <div class="card mb-4">
       <!-- Card Header - Accordion -->
+      <!--
       <a href="#alumno_data" class="d-block card-header py-3" data-toggle="collapse"
           role="button" aria-expanded="true" aria-controls="alumno_data">
           <h6 class="m-0 font-weight-bold text-primary"><?php echo $d->title; ?></h6>
       </a>
+-->
       <!-- Card Content - Collapse -->
       <div class="collapse hide" id="alumno_data">
           <div class="card-body">
@@ -78,13 +88,15 @@
 <div class="row">
   <div class="col-xl-12 col-md-6 col-12">
     <!--Card completar data-->
-    <div class="card shadow mb-4" id="reporteINEA">
+    <div class="card  mb-4" id="reporteINEA">
+      <!--
       <a href="#alumno_data_completa" class="d-block card-header py-3" data-toggle="collapse"
               role="button" aria-expanded="true" aria-controls="alumno_data_completa">
               <h6 class="m-0 font-weight-bold text-primary">REGISTRO DE LA PERSONA BENEFICIARIA DEL INEA | <?php echo $d->title; ?></h6>
       </a> 
+              -->
         <!--Contenido de card-->
-      <div class="collapse show" id="alumno_data_completa">
+      <div class="collapse hide" id="alumno_data_completa">
           <div class="card-body">
             <form id="registro-inea" action="alumnos/registroINEA" method="post">
               <?php echo insert_inputs(); ?>
