@@ -271,7 +271,7 @@ class alumnosController extends Controller {
 
       // Validar rol
       if (!is_admin($this->rol)) {
-        throw new Exception(get_notificaciones(1));
+        //throw new Exception(get_notificaciones(1));
       }
 
       $nombres       = clean($_POST["nombres"]);
@@ -286,16 +286,17 @@ class alumnosController extends Controller {
       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         throw new Exception('Ingresa un correo electrónico válido.');
       }
-
+/*
       // Validar el nombre del usuario
-      if (strlen($nombres) < 5) {
+      if (strlen($nombres) < 3) {
         throw new Exception('Ingresa un nombre válido.');
       }
 
       // Validar el apellido del usuario
-      if (strlen($apellidos) < 5) {
+      if (strlen($apellidos) < 3) {
         throw new Exception('Ingresa un apellido válido.');
       }
+      */
 
       // Validar el password del usuario
       if (strlen($password) < 5) {
@@ -323,7 +324,7 @@ class alumnosController extends Controller {
         'password'        => password_hash($password.AUTH_SALT, PASSWORD_BCRYPT),
         'hash'            => generate_token(),
         'rol'             => 'alumno',
-        'status'          => 'pendiente',
+        'status'          => 'activo',
         'creado'          => now()
       ];
 
@@ -335,18 +336,19 @@ class alumnosController extends Controller {
 
       // Insertar a la base de datos
       if (!$id = alumnoModel::add(alumnoModel::$t1, $data)) {
-        throw new Exception(get_notificaciones(2));
+        //throw new Exception(get_notificaciones(2));
       }
 
       $data2['id_alumno'] = $id;
 
       // Insertar a la base de datos
       if (!$id_ga = grupoModel::add(grupoModel::$t3, $data2)) {
-        throw new Exception(get_notificaciones(2));
+        //throw new Exception(get_notificaciones(2));
       }
+       
 
       // Email de confirmación de correo
-      mail_confirmar_cuenta($id);
+      //mail_confirmar_cuenta($id);
 
       $alumno = alumnoModel::by_id($id);
       $grupo  = grupoModel::by_id($id_grupo);
@@ -706,6 +708,7 @@ class alumnosController extends Controller {
   /** Registro INEA */
   function borrar($id)
   {
+    
     try {
       if (!check_get_data(['_t'], $_GET) || !Csrf::validate($_GET['_t'])) {
         throw new Exception(get_notificaciones());
@@ -720,7 +723,7 @@ class alumnosController extends Controller {
       if (!$alumno = alumnoModel::by_id($id)) {
         throw new Exception('No existe el alumno en la base de datos.');
       }
-
+    
       // Borramos el registro y sus conexiones
       if (alumnoModel::eliminar($alumno['id']) === false) {
         throw new Exception(get_notificaciones(4));

@@ -64,11 +64,12 @@ class adminModel extends Model {
 
     $sql        = 'SELECT u.rol, COUNT(u.id) AS total FROM usuarios u GROUP BY u.rol';
     $comunidad  = parent::query($sql);
-
+/*
     $ingresos   = get_ingresos();
 
     $ensenanza  = leccionModel::total_by_year();
 
+    */
     return
     [
       'materias'   => $materias,

@@ -14,12 +14,13 @@
 </div>
 
 <!-- Nav Item - Lecciones -->
+<!--
 <li class="nav-item <?php echo $slug === 'alumno-lecciones' ? 'active' : null; ?>">
   <a class="nav-link" href="alumno/lecciones">
     <i class="fas fa-fw fa-chalkboard-teacher"></i>
     <span>Lecciones</span></a>
 </li>
-
+-->
 <!-- Nav Item - Grupos del profesor -->
 <li class="nav-item <?php echo $slug === 'alumno-grupo' ? 'active' : null; ?>">
   <a class="nav-link" href="alumno/grupo">

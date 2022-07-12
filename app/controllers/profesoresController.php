@@ -88,7 +88,7 @@ class profesoresController extends Controller {
         'telefono'        => null,
         'hash'            => generate_token(),
         'rol'             => 'profesor',
-        'status'          => 'pendiente',
+        'status'          => 'activo',
         'creado'          => now()
       ];
 
@@ -148,8 +148,8 @@ class profesoresController extends Controller {
       ];
 
       // En caso de que se cambie el correo electrónico
-      if ($profesor['email'] !== $email && !in_array($profesor['status'], ['pendiente', 'suspendido'])) {
-        $data['status'] = 'pendiente';
+      if ($profesor['email'] !== $email && !in_array($profesor['status'], ['activo', 'suspendido'])) {
+        $data['status'] = 'activo';
       }
 
       // En caso de que se cambie la contraseña

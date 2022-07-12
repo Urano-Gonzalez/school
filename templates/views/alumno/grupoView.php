@@ -103,10 +103,11 @@
                 <?php foreach ($d->g->materias as $m): ?>
                   <li class="list-group-item">
                     <?php echo sprintf('<b>%s</b> por <b>%s</b>', $m->materia, $m->profesor); ?>
-
+<!--
                     <div class="btn-group float-right">
-                      <a class="btn btn-success btn-sm" href="<?php echo buildURL('alumno/lecciones', ['id_materia' => $m->id_materia, 'id_profesor' => $m->id_profesor], false, false); ?>"><i class="fas fa-play-circle"></i></a>
+                      <a class="btn btn-success btn-sm" href="<?php echo buildURL('alumno/lecciones', ['id_materia' => $m->id_materia, 'id_profesor' => $m->id_profesor], false, false); ?>"></a>
                     </div>
+                -->
                   </li>
                 <?php endforeach; ?>
               </ul>

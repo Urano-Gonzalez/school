@@ -53,7 +53,7 @@
 		</div>
 	</div>
 
-	<!-- Pending Requests Card Example -->
+	<!-- Pending Requests Card Example 
 	<div class="col-xl-3 col-md-6 mb-4">
 		<div class="card border-left-warning shadow h-100 py-2">
 			<div class="card-body">
@@ -69,14 +69,15 @@
 			</div>
 		</div>
 	</div>
+-->
 </div>
 
 <!-- Content Row -->
 <div class="row">
-	<!-- Ingresos -->
+	<!-- Ingresos 
 	<div class="col-xl-8 col-lg-7">
 		<div class="card shadow mb-4">
-			<!-- Card Header - Dropdown -->
+		
 			<div
 				class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 				<h6 class="m-0 font-weight-bold text-primary">Resumen de Ingresos</h6>
@@ -92,7 +93,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- Card Body -->
+			
 			<div class="card-body">
 				<div class="chart-area">
 					<canvas id="resumen_ingresos_chart"></canvas>
@@ -100,6 +101,7 @@
 			</div>
 		</div>
 	</div>
+-->
 
 	<!-- Roles -->
 	<div class="col-xl-4 col-lg-5">
@@ -117,10 +119,10 @@
 		</div>
 	</div>
 
-  <!-- Lecciones registradas por mes -->
+  <!-- Lecciones registradas por mes 
 	<div class="col-xl-12 col-lg-12">
 		<div class="card shadow mb-4">
-			<!-- Card Header - Dropdown -->
+			
 			<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 				<h6 class="m-0 font-weight-bold text-primary">Resumen de enseñanza</h6>
 				<div class="dropdown no-arrow">
@@ -135,7 +137,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- Card Body -->
+			
 			<div class="card-body">
 				<div class="chart-area">
 					<canvas id="resumen_enseñanza_chart"></canvas>
@@ -143,13 +145,14 @@
 			</div>
 		</div>
 	</div>
+-->
 </div>
 
 <!-- Content Row -->
 <div class="row">
-	<!-- Content Column -->
+	<!-- Content Column 
 	<div class="col-lg-6 mb-4">
-		<!-- Project Card Example -->
+		
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
 				<h6 class="m-0 font-weight-bold text-primary">Proyectos</h6>
@@ -173,9 +176,10 @@
 			</div>
 		</div>
 	</div>
+						-->
 
 	<div class="col-lg-6 mb-4">
-		<!-- Anuncios educativos -->
+		<!-- Anuncios educativos 
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
 				<h6 class="m-0 font-weight-bold text-primary">Anuncio Educativo</h6>
@@ -185,6 +189,7 @@
 				<p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores culpa doloremque consectetur ea assumenda molestias nostrum rerum alias fugit eum!.</p>
 			</div>
 		</div>
+						-->
 	</div>
 </div>
 
