@@ -28,15 +28,31 @@ class asistenciaController extends Controller{
         $materias = materiaModel::materias_profesor($this->id);
         json_encode($materias, true);
        
+        //Verificar si es admin
         
-        $data = 
-        [
-        'title' => 'Asistencia de alumnos',
-        'slug'  => 'asistencia',
-        'id_prof' => $this->id,
-        'materias' => $materias,
-        'grupos' => profesorModel::grupos_asignados($this->id),
-        ];
+        
+        
+        if($this->rol == "root"){
+          $data = 
+          [
+          'title' => 'Asistencia de alumnos',
+          'slug'  => 'asistencia',
+          'id_prof' => $this->id,
+          'materias' => $materias,
+          'grupos' => profesorModel::all_grupos(),
+          ];
+        }else{
+          $data = 
+          [
+          'title' => 'Asistencia de alumnos',
+          'slug'  => 'asistencia',
+          'id_prof' => $this->id,
+          'materias' => $materias,
+          'grupos' => profesorModel::grupos_asignados($this->id),
+          ];
+        }
+        
+        
         
         // Descomentar vista si requerida
         View::render('index', $data);

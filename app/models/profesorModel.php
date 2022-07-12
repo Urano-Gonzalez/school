@@ -137,6 +137,10 @@ class profesorModel extends Model {
     WHERE mp.id_profesor = :id';
     return PaginationHandler::paginate($sql, ['id' => $id_profesor]);
   }
+  static function all_grupos(){
+    $sql = 'SELECT *FROM  grupos';
+    return PaginationHandler::paginate($sql);
+  }
 
   static function asignado_a_grupo($id_profesor, $id_grupo)
   {
