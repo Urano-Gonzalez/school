@@ -12,7 +12,7 @@
 					<thead>
 						<tr>
 							<th>Nombre</th>
-							<th width="10%">Acción</th>
+							<!--<th width="10%">Acción</th>-->
 						</tr>
 					</thead>
 					<tbody>
@@ -20,12 +20,7 @@
 							<tr>
 								<!--<td><a href="<?php echo sprintf('grupos/materia/%s', $m->id); ?>"><?php echo $m->nombre; ?></a></td>-->
 								<td><a href="#"><?php echo $m->nombre; ?></a></td>
-								<td>
-									<div class="btn-group">
-                    <!--<a class="btn btn-success btn-sm" href="<?php echo buildURL('lecciones/agregar', ['id_materia' => $m->id], false, false); ?>"><i class="fas fa-plus"></i></a>-->
-										<!--<a class="btn btn-success btn-sm" href="<?php echo sprintf('grupos/materia/%s', $m->id); ?>"><i class="fas fa-eye"></i></a>-->
-									</div>
-								</td>
+								
 							</tr>
 						<?php endforeach; ?>
 					</tbody>
