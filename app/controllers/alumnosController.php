@@ -282,79 +282,92 @@ class alumnosController extends Controller {
       $conf_password = clean($_POST["conf_password"]);
       $id_grupo      = clean($_POST["id_grupo"]);
 
-      // Validar que el correo sea válido
-      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        throw new Exception('Ingresa un correo electrónico válido.');
+      // Validar que no exista alumno
+      $verificarAlumnoExiste = "SELECT EXISTS (SELECT * FROM usuarios WHERE email='$email')";
+      $statusAlumno = Model::query($verificarAlumnoExiste, [], ['transaction' => false]);
+      $estatusDelAlumno = $statusAlumno[0]["EXISTS (SELECT * FROM usuarios WHERE email='$email')"];
+      var_dump($estatusDelAlumno);
+      
+      if($estatusDelAlumno ==1){
+        throw new Exception('Ya existe el correo.');
+      }else{
+        // Validar que el correo sea válido
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+          throw new Exception('Ingresa un correo electrónico válido.');
+        }
+        /*
+        // Validar el nombre del usuario
+        if (strlen($nombres) < 3) {
+          throw new Exception('Ingresa un nombre válido.');
+        }
+
+        // Validar el apellido del usuario
+        if (strlen($apellidos) < 3) {
+          throw new Exception('Ingresa un apellido válido.');
+        }
+        */
+
+        // Validar el password del usuario
+        if (strlen($password) < 5) {
+          throw new Exception('Ingresa una contraseña mayor a 5 caracteres.');
+        }
+
+        // Validar ambas contraseñas
+        if ($password !== $conf_password) {
+          throw new Exception('Las contraseñas no son iguales.');
+        }
+
+        // Exista el id_grupo
+        if ($id_grupo === '' || !grupoModel::by_id($id_grupo)) {
+          throw new Exception('Selecciona un grupo válido.');
+        }
+
+        $data   =
+        [
+          'numero'          => rand(111111, 999999),
+          'nombres'         => $nombres,
+          'apellidos'       => $apellidos,
+          'nombre_completo' => sprintf('%s %s', $nombres, $apellidos),
+          'email'           => $email,
+          'telefono'        => $telefono,
+          'password'        => password_hash($password.AUTH_SALT, PASSWORD_BCRYPT),
+          'hash'            => generate_token(),
+          'rol'             => 'alumno',
+          'status'          => 'activo',
+          'creado'          => now()
+        ];
+
+        $data2 =
+        [
+          'id_alumno' => null,
+          'id_grupo'  => $id_grupo
+        ];
+
+        // Insertar a la base de datos
+        if (!$id = alumnoModel::add(alumnoModel::$t1, $data)) {
+          //throw new Exception(get_notificaciones(2));
+        }
+
+        $data2['id_alumno'] = $id;
+
+        // Insertar a la base de datos
+        if (!$id_ga = grupoModel::add(grupoModel::$t3, $data2)) {
+          //throw new Exception(get_notificaciones(2));
+        }
+        
+
+        // Email de confirmación de correo
+        //mail_confirmar_cuenta($id);
+
+        $alumno = alumnoModel::by_id($id);
+        $grupo  = grupoModel::by_id($id_grupo);
+
+        Flasher::new(sprintf('Alumno <b>%s</b> agregado con éxito e inscrito al grupo <b>%s</b>.', $alumno['nombre_completo'], $grupo['nombre']), 'success');
+        Redirect::back();
       }
-/*
-      // Validar el nombre del usuario
-      if (strlen($nombres) < 3) {
-        throw new Exception('Ingresa un nombre válido.');
-      }
 
-      // Validar el apellido del usuario
-      if (strlen($apellidos) < 3) {
-        throw new Exception('Ingresa un apellido válido.');
-      }
-      */
 
-      // Validar el password del usuario
-      if (strlen($password) < 5) {
-        throw new Exception('Ingresa una contraseña mayor a 5 caracteres.');
-      }
-
-      // Validar ambas contraseñas
-      if ($password !== $conf_password) {
-        throw new Exception('Las contraseñas no son iguales.');
-      }
-
-      // Exista el id_grupo
-      if ($id_grupo === '' || !grupoModel::by_id($id_grupo)) {
-        throw new Exception('Selecciona un grupo válido.');
-      }
-
-      $data   =
-      [
-        'numero'          => rand(111111, 999999),
-        'nombres'         => $nombres,
-        'apellidos'       => $apellidos,
-        'nombre_completo' => sprintf('%s %s', $nombres, $apellidos),
-        'email'           => $email,
-        'telefono'        => $telefono,
-        'password'        => password_hash($password.AUTH_SALT, PASSWORD_BCRYPT),
-        'hash'            => generate_token(),
-        'rol'             => 'alumno',
-        'status'          => 'activo',
-        'creado'          => now()
-      ];
-
-      $data2 =
-      [
-        'id_alumno' => null,
-        'id_grupo'  => $id_grupo
-      ];
-
-      // Insertar a la base de datos
-      if (!$id = alumnoModel::add(alumnoModel::$t1, $data)) {
-        //throw new Exception(get_notificaciones(2));
-      }
-
-      $data2['id_alumno'] = $id;
-
-      // Insertar a la base de datos
-      if (!$id_ga = grupoModel::add(grupoModel::$t3, $data2)) {
-        //throw new Exception(get_notificaciones(2));
-      }
-       
-
-      // Email de confirmación de correo
-      //mail_confirmar_cuenta($id);
-
-      $alumno = alumnoModel::by_id($id);
-      $grupo  = grupoModel::by_id($id_grupo);
-
-      Flasher::new(sprintf('Alumno <b>%s</b> agregado con éxito e inscrito al grupo <b>%s</b>.', $alumno['nombre_completo'], $grupo['nombre']), 'success');
-      Redirect::back();
+     
 
     } catch (PDOException $e) {
       Flasher::new($e->getMessage(), 'danger');
@@ -400,10 +413,12 @@ class alumnosController extends Controller {
       $changed_g     = $db_id_g === $id_grupo ? false : true;
 
       // Validar existencia del correo electrónico
+      /*
       $sql = 'SELECT * FROM usuarios WHERE email = :email AND id != :id LIMIT 1';
       if (usuarioModel::query($sql, ['email' => $email, 'id' => $id])) {
         throw new Exception('El correo electrónico ya existe en la base de datos.');
       }
+      */
 
       // Validar que el correo sea válido
       if ($changed_email && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -411,12 +426,12 @@ class alumnosController extends Controller {
       }
 
       // Validar el nombre del usuario
-      if (strlen($nombres) < 5) {
+      if (strlen($nombres) < 3) {
         throw new Exception('Ingresa un nombre válido.');
       }
 
       // Validar el apellido del usuario
-      if (strlen($apellidos) < 5) {
+      if (strlen($apellidos) < 3) {
         throw new Exception('Ingresa un apellido válido.');
       }
 

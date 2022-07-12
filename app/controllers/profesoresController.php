@@ -133,40 +133,54 @@ class profesoresController extends Controller {
       $telefono  = clean($_POST["telefono"]);
       $password  = clean($_POST["password"]);
 
-      // Validar que el correo sea válido
-      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        throw new Exception('Ingresa un correo electrónico válido.');
+
+      //Validar si existe un correo
+      $verificarProfeExiste = "SELECT EXISTS (SELECT * FROM usuarios WHERE email='$email')";
+      $statusProfe = Model::query($verificarProfeExiste, [], ['transaction' => false]);
+      $estatusDelProfe = $statusProfe[0]["EXISTS (SELECT * FROM usuarios WHERE email='$email')"];
+      var_dump($estatusDelProfe);
+      if($estatusDelProfe ==1){
+        throw new Exception('Ya existe el correo');
+       
+      }else{
+        // Validar que el correo sea válido
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+          throw new Exception('Ingresa un correo electrónico válido.');
+        }
+
+        $data   =
+        [
+          'nombres'         => $nombres,
+          'apellidos'       => $apellidos,
+          'nombre_completo' => sprintf('%s %s', $nombres, $apellidos),
+          'email'           => $email,
+          'telefono'        => $telefono
+        ];
+
+        // En caso de que se cambie el correo electrónico
+        if ($profesor['email'] !== $email && !in_array($profesor['status'], ['activo', 'suspendido'])) {
+          $data['status'] = 'activo';
+        }
+
+        // En caso de que se cambie la contraseña
+        if (!empty($password) && !password_verify($password.AUTH_SALT, $profesor['password'])) {
+          $data['password'] = password_hash($password.AUTH_SALT, PASSWORD_BCRYPT);
+        }
+
+        // Insertar a la base de datos
+        if (!profesorModel::update(profesorModel::$t1, ['id' => $id], $data)) {
+          throw new Exception(get_notificaciones(3));
+        }
+
+        // Volver a cargar la información del profesor
+        $profesor = profesorModel::by_id($id);
+
+        Flasher::new(sprintf('Profesor <b>%s</b> actualizado con éxito.', $profesor['nombre_completo']), 'success');
+        Redirect::back();
       }
+        
 
-      $data   =
-      [
-        'nombres'         => $nombres,
-        'apellidos'       => $apellidos,
-        'nombre_completo' => sprintf('%s %s', $nombres, $apellidos),
-        'email'           => $email,
-        'telefono'        => $telefono
-      ];
-
-      // En caso de que se cambie el correo electrónico
-      if ($profesor['email'] !== $email && !in_array($profesor['status'], ['activo', 'suspendido'])) {
-        $data['status'] = 'activo';
-      }
-
-      // En caso de que se cambie la contraseña
-      if (!empty($password) && !password_verify($password.AUTH_SALT, $profesor['password'])) {
-        $data['password'] = password_hash($password.AUTH_SALT, PASSWORD_BCRYPT);
-      }
-
-      // Insertar a la base de datos
-      if (!profesorModel::update(profesorModel::$t1, ['id' => $id], $data)) {
-        throw new Exception(get_notificaciones(3));
-      }
-
-      // Volver a cargar la información del profesor
-      $profesor = profesorModel::by_id($id);
-
-      Flasher::new(sprintf('Profesor <b>%s</b> actualizado con éxito.', $profesor['nombre_completo']), 'success');
-      Redirect::back();
+     
 
     } catch (PDOException $e) {
       Flasher::new($e->getMessage(), 'danger');

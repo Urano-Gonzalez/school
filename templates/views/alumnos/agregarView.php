@@ -16,27 +16,27 @@
               <?php echo insert_inputs(); ?>
               
               <div class="form-group">
-                <label for="nombres">Nombre(s)</label>
+                <label for="nombres">Nombre(s)*</label>
                 <input type="text" class="form-control" id="nombres" name="nombres" required>
               </div>
 
               <div class="form-group">
-                <label for="apellidos">Apellido(s)</label>
+                <label for="apellidos">Apellido(s)*</label>
                 <input type="text" class="form-control" id="apellidos" name="apellidos" required>
               </div>
 
               <div class="form-group">
-                <label for="email">Correo electrónico</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <label for="email">Correo electrónico*</label>
+                <input type="email" class="form-control" id="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" name="email" required>
               </div>
 
               <div class="form-group">
-                <label for="telefono">Teléfono</label>
-                <input type="text" class="form-control" id="telefono" name="telefono">
+                <label for="telefono">Teléfono*</label>
+                <input type="tel" minlength="10" maxlength="10" size="10" required class="form-control" id="telefono" name="telefono">
               </div>
 
               <div class="form-group">
-                <label for="password">Contraseña</label>
+                <label for="password">Contraseña*</label>
                 <input type="password" class="form-control" id="password" name="password">
               </div>
 

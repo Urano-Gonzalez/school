@@ -11,7 +11,7 @@
 
     <!--Vista capturar asistencia-->
     <div class="card-body " id="capturar-asistencia" style="display:none;" >
-        <?php if (!empty($d->id_prof)): ?>
+        <?php if (!empty($d->grupos->rows)): ?>
             <div class="form-group">
                     <b>Fecha: <?php echo(date('d-m-Y')); ?> </b>
             </div>
@@ -40,7 +40,9 @@
         <div class="wrapper_alumnos" ><!--  agregar con ajax la lista de materias --></div>
         <br>
         <div class="boton-guardar-reporte">
-            <button class="btn btn-success" form="guardar-asistencia-form" onClick="guardarReporte();" type="button">Guardar asistencia</button>
+            <?php if(!empty($d->grupos->rows)): ?>
+                <button class="btn btn-success" form="guardar-asistencia-form" onClick="guardarReporte();" type="button">Guardar asistencia</button>
+            <?php endif; ?>
         </div>
     </div>
     <!--Fin vista asistencia-->
@@ -48,7 +50,7 @@
     <!--Vista consultar reporte asitencia-->
     <div class="card-body" id="consultar-asistencia" style="display:none;">
         
-        <?php if (!empty($d->id_prof)): ?>
+        <?php if (!empty($d->grupos->rows)): ?>
             <form id="form-consultar-reporte" method="Post">
                 <div class="form-group">
                     <b>Fecha: <?php echo(date('d-m-Y')); ?> </b>
