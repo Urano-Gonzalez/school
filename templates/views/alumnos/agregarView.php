@@ -32,7 +32,7 @@
 
               <div class="form-group">
                 <label for="telefono">Teléfono*</label>
-                <input type="tel" minlength="10" maxlength="10" size="10" required class="form-control" id="telefono" name="telefono">
+                <input type="tel" minlength="10" maxlength="10" size="10" required class="form-control" id="telefono" name="telefono" pattern="[0-9]{9}">
               </div>
 
               <div class="form-group">

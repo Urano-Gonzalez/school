@@ -44,7 +44,7 @@
 
               <div class="form-group">
                 <label for="telefono">Teléfono*</label>
-                <input type="tel" class="form-control" id="telefono" name="telefono" minlength="10" maxlength="10" size="10" required value="<?php echo $d->a->telefono; ?>">
+                <input type="tel" class="form-control" id="telefono" name="telefono" minlength="10" maxlength="10" size="10" pattern="[0-9]{9}" required value="<?php echo $d->a->telefono; ?>">
               </div>
 
               <div class="form-group">
