@@ -32,7 +32,7 @@
 
               <div class="form-group">
                 <label for="telefono">Teléfono*</label>
-                <input type="tel" minlength="10" maxlength="10" size="10" required class="form-control" id="telefono" name="telefono" pattern="[0-9]{9}">
+                <input type="tel" minlength="10" maxlength="10" size="10" required class="form-control" id="telefono" name="telefono" pattern="[0-9]{10}">
               </div>
 
               <div class="form-group">
@@ -41,7 +41,7 @@
               </div>
 
               <div class="form-group">
-                <label for="conf_password">Confirmar contraseña</label>
+                <label for="conf_password">Confirmar contraseña*</label>
                 <input type="password" class="form-control" id="conf_password" name="conf_password">
               </div>
 
