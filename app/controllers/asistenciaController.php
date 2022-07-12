@@ -40,6 +40,7 @@ class asistenciaController extends Controller{
           'id_prof' => $this->id,
           'materias' => $materias,
           'grupos' => profesorModel::all_grupos(),
+          'nombre' => get_user('nombre_completo'),
           ];
         }else{
           $data = 
