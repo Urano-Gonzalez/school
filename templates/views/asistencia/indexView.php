@@ -64,9 +64,17 @@
                         <?php endforeach; ?>
                     </select>
                 </div>
-                <div class="form-group">
-                    <input type="date" class="form-control" id="fecha_consulta">
+                <div class="fechasConsulta">
+                    <div class="form-group">
+                        <label for="">Fecha desde:</label>
+                        <input type="date" class="form-control" id="fecha_consulta">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Fecha hasta:</label>
+                        <input type="date" class="form-control" id="fecha_consulta2">
+                    </div>
                 </div>
+                
                 <div class="form-group boton-consultar-reporte">
                     <button class="btn btn-success" onClick="consultarReporte();" type="button">Consultar reporte de asistencia</button>
                 </div>

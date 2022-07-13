@@ -179,3 +179,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.fechasConsulta{
+  display: flex;
+  justify-content: space-around;
+}

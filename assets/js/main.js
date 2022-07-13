@@ -1505,16 +1505,19 @@ function consultarReporte(){
   let id_grupo = select.value;
 
   let fecha = document.getElementById("fecha_consulta").value;
+  let fechaHasta = document.getElementById("fecha_consulta2").value;
 
   console.log("consultar reporte")
   console.log(id_grupo)
   console.log(fecha)
+  console.log(fechaHasta)
   // Peticion Ajax
   csrf = Bee.csrf;
   console.log(csrf)
   dataCheck = {
     "id_grupo": id_grupo,
-    "fecha": fecha
+    "fecha": fecha,
+    "fechaHasta": fechaHasta
   }
   $.ajaxSetup({ 
     headers: { 'X-CSRF-TOKEN': csrf } }); 
@@ -1527,7 +1530,7 @@ function consultarReporte(){
     $.ajax({
       url: 'ajax/traerCheck',
       type: 'get',
-      dataType: 'json',
+      //dataType: 'json',
       data : { 
         '_t': Bee.csrf,
         dataCheck,
@@ -1539,6 +1542,7 @@ function consultarReporte(){
       }
     }).done(function(res) {
       console.log("Esta es la respuesta del controller")
+      console.log(res)
       //console.log(res.data)
   
       $("#tabla").show();
