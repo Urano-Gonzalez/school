@@ -81,17 +81,21 @@
             </form>
             <div class="mostrarReporte" id="vista-reporte" >
                 <table class="table table-bordered" id="tabla" width="100%" cellspacing="0">
-					<thead>
+					<thead id="thead">
+                        <!--
                         <tr>
                             <th>Fecha: <?php echo(date('d-m-Y')); ?></th>
                             <th>User: <?php echo($d->nombre); ?></th>
                         </tr>
+                        -->
+                        <!--
 						<tr>
 							
 							<th>Nombre</th>
 							<th>Status</th>
-							
+                        
 						</tr>
+                        -->
 					</thead>
 					<tbody id="cuerpo-tabla">
                         

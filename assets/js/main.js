@@ -1548,22 +1548,37 @@ function consultarReporte(){
       $("#tabla").show();
     //console.log(DatosJson);
    
-    var jsonReporte = JSON.parse(res.data)
+   // var jsonReporte = JSON.parse(res.data)
+    for(valor of res.data){
+      console.log("Item " + valor.id_reporte);
+      console.log("Fecha reporte " + valor.fecha_reporte);
 
-    
+      //Vista reporte
     
 
 
-    for (x of jsonReporte){
-      console.log(x.name)
-    if(x.status == 1){
-      $("#tabla").append('<tr>' + '<td  style="dislay: none;">' + x.name + '</td>' + '<td  style="dislay: none;">' + x.status + '</td>');
-    }else{
-      $("#tabla").append('<tr>' + '<td  style="dislay: none;">' + x.name + '</td>' + '<td  style="dislay: none;">' + x.status + '</td>');
-    }
-    
+
+      $("#tabla").append('<tr>' + '<th  style="dislay: none;">' +'Id reporte: '+ valor.id_reporte + '</th>' + '<th  style="dislay: none;">' +'Fecha reporte: '+ valor.fecha_reporte + '</th>');
+      
+      var jsonReporte = JSON.parse(valor.json_check)
+      
+      for (x of jsonReporte){
         
+      if(x.status == 1){
+        $("#tabla").append('<tr>' + '<td  style="dislay: none;">' + x.name + '</td>' + '<td  style="dislay: none;">' + x.status + '</td>');
+      }else{
+        $("#tabla").append('<tr>' + '<td  style="dislay: none;">' + x.name + '</td>' + '<td  style="dislay: none;">' + x.status + '</td>');
+      }
+      
+          
+      }
     }
+
+    
+    
+
+
+    
     $('#contenedor-boton').append(' <button class="btn btn-success" id="boton-descargar" onClick="exportTableToExcel();" type="button">Descargar reporte</button>');
 
 
